@@ -294,7 +294,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                MessageBox.Show("오류입니다.");
+                
             }
             finally
             {
@@ -314,7 +314,7 @@ namespace HadoFND
         }
 
         //
-        // 수신 이벤트가 발생하면 아래 부분이 실행된다.
+        // 시리얼 수신 이벤트가 발생하면 아래 부분이 실행된다.
         //
         private void indicatorSerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -374,8 +374,7 @@ namespace HadoFND
                         {
                             //
                             // 경광등으로 신호 전달
-                            //
-                            
+                            //                            
                         }
                         //
                         // 현재 추가 중량 및 총 중량 DB에 기록
@@ -409,7 +408,10 @@ namespace HadoFND
                             finally
                             {
                                 conn.Close();
+                                // 이전 총 중량에 현재 총 중량 넣기
                                 beforeTotalWeight = currentTotalWeight;
+                                // 작업 수 갱신
+                                WorkCount_Textbox.Text = currentWorkCount.ToString();
                             }
                         }
                     }
@@ -417,9 +419,7 @@ namespace HadoFND
             }
             catch(Exception ex)
             {
-                var text = "시리얼 통신 오류";
-                MessageBox.Show(text);
-                return;
+                
             }            
         }
 
