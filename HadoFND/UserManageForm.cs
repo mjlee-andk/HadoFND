@@ -13,7 +13,8 @@ namespace HadoFND
 {
     public partial class UserManageForm : MetroFramework.Forms.MetroForm // 상속 클래스 변경
     {
-        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "hado", "root", "root");
+        ConfigFile _configFile = new ConfigFile();
+
         MySqlConnection conn;
         string selectedUserId = "";
 
@@ -34,6 +35,12 @@ namespace HadoFND
         {
             try
             {
+                //
+                // 환경설정 파일 로드
+                //
+                _configFile = _configFile.Load();
+
+                string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
                 conn = new MySqlConnection(connectString);
                 conn.Open();
 

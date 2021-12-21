@@ -21,8 +21,7 @@ namespace HadoFND
     {
         ConfigFile _configFile = new ConfigFile();
 
-        // DB 연결 및 데이터 가져오기
-        string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", "127.0.0.1", "hado", "root", "root");
+        // DB 연결 및 데이터 가져오기        
         MySqlConnection conn;
 
         List<DataFormat.Product> productList; // 제품 목록
@@ -54,6 +53,7 @@ namespace HadoFND
             //
             try
             {
+                string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
                 conn = new MySqlConnection(connectString);
                 conn.Open();
 
@@ -269,7 +269,6 @@ namespace HadoFND
                 cmd.Parameters.AddWithValue("@product_id", currentProductId);
                 MySqlDataReader dr = cmd.ExecuteReader();
 
-
                 // 데이터 있는 경우
                 if (dr.HasRows)
                 {
@@ -311,16 +310,6 @@ namespace HadoFND
                 WorkStart_Button.Enabled = true;
                 WorkEnd_Button.Enabled = false;
                 Product_Name_Combobox.Enabled = true;
-
-                //
-                // 시리얼 통신 종료
-                //
-                if (indicatorSerialPort.IsOpen)
-                {
-                    indicatorSerialPort.Close();
-                    //indicatorSerialPort.Dispose();
-                    //indicatorSerialPort = null;
-                }
             }
         }
 
