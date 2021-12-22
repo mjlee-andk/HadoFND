@@ -157,7 +157,7 @@ namespace HadoFND
         }
 
         // 최소 무게
-        // 최소 무게를 초과해야 DB에 저장 된다.
+        // 프로그램이 인식할 수 있는 최소 무게를 설정한다. 최소 무게 이하일 경우 작업 기록이 되지 않는다.
         int _min_weight = 50;
 
         public int Min_Weight
@@ -165,6 +165,16 @@ namespace HadoFND
             get { return _min_weight; }
             set { _min_weight = value; }
         }
+
+        // 엑셀 파일 저장 경로
+        string _file_path = "";
+
+        public string File_Path
+        {
+            get { return _file_path; }
+            set { _file_path = value; }
+        }
+
 
         string filename = "config.dat";
 

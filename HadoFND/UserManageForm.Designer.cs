@@ -40,9 +40,6 @@
             this.UserAccount_Label = new MetroFramework.Controls.MetroLabel();
             this.UserName_TextBox = new MetroFramework.Controls.MetroTextBox();
             this.UserName_Label = new MetroFramework.Controls.MetroLabel();
-            this.User_ListView = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UserList_Datagridview = new MetroFramework.Controls.MetroGrid();
             this.UserPasswordConfirm_Label = new MetroFramework.Controls.MetroLabel();
             this.UserPasswordConfirm_TextBox = new MetroFramework.Controls.MetroTextBox();
@@ -199,35 +196,10 @@
             this.UserName_Label.TabIndex = 11;
             this.UserName_Label.Text = "이름";
             // 
-            // User_ListView
-            // 
-            this.User_ListView.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.User_ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.User_ListView.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.User_ListView.FullRowSelect = true;
-            this.User_ListView.Location = new System.Drawing.Point(23, 127);
-            this.User_ListView.Name = "User_ListView";
-            this.User_ListView.OwnerDraw = true;
-            this.User_ListView.Size = new System.Drawing.Size(387, 300);
-            this.User_ListView.TabIndex = 10;
-            this.User_ListView.UseCompatibleStateImageBehavior = false;
-            this.User_ListView.UseSelectable = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "계정";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "이름";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // UserList_Datagridview
             // 
             this.UserList_Datagridview.AllowUserToResizeRows = false;
-            this.UserList_Datagridview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.UserList_Datagridview.BackgroundColor = System.Drawing.Color.Silver;
             this.UserList_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserList_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.UserList_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -251,7 +223,7 @@
             this.UserList_Datagridview.EnableHeadersVisualStyles = false;
             this.UserList_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.UserList_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.UserList_Datagridview.Location = new System.Drawing.Point(36, 132);
+            this.UserList_Datagridview.Location = new System.Drawing.Point(23, 127);
             this.UserList_Datagridview.Name = "UserList_Datagridview";
             this.UserList_Datagridview.ReadOnly = true;
             this.UserList_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -266,7 +238,7 @@
             this.UserList_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.UserList_Datagridview.RowTemplate.Height = 23;
             this.UserList_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UserList_Datagridview.Size = new System.Drawing.Size(361, 281);
+            this.UserList_Datagridview.Size = new System.Drawing.Size(440, 300);
             this.UserList_Datagridview.TabIndex = 20;
             this.UserList_Datagridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserList_Datagridview_CellClick);
             // 
@@ -326,7 +298,6 @@
             this.Controls.Add(this.UserAccount_Label);
             this.Controls.Add(this.UserName_TextBox);
             this.Controls.Add(this.UserName_Label);
-            this.Controls.Add(this.User_ListView);
             this.Name = "UserManageForm";
             this.Text = "유저 관리";
             this.Load += new System.EventHandler(this.UserManageForm_Load);
@@ -347,9 +318,6 @@
         private MetroFramework.Controls.MetroLabel UserAccount_Label;
         private MetroFramework.Controls.MetroTextBox UserName_TextBox;
         private MetroFramework.Controls.MetroLabel UserName_Label;
-        private MetroFramework.Controls.MetroListView User_ListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private MetroFramework.Controls.MetroGrid UserList_Datagridview;
         private MetroFramework.Controls.MetroLabel UserPasswordConfirm_Label;
         private MetroFramework.Controls.MetroTextBox UserPasswordConfirm_TextBox;

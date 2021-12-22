@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Product_ListView = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductCodeNumber_Label = new MetroFramework.Controls.MetroLabel();
             this.ProductCodeNumber_TextBox = new MetroFramework.Controls.MetroTextBox();
             this.ProductName_TextBox = new MetroFramework.Controls.MetroTextBox();
@@ -47,37 +43,6 @@
             this.ProductList_Datagridview = new MetroFramework.Controls.MetroGrid();
             ((System.ComponentModel.ISupportInitialize)(this.ProductList_Datagridview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Product_ListView
-            // 
-            this.Product_ListView.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Product_ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.Product_ListView.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Product_ListView.FullRowSelect = true;
-            this.Product_ListView.Location = new System.Drawing.Point(23, 126);
-            this.Product_ListView.Name = "Product_ListView";
-            this.Product_ListView.OwnerDraw = true;
-            this.Product_ListView.Size = new System.Drawing.Size(387, 300);
-            this.Product_ListView.TabIndex = 0;
-            this.Product_ListView.UseCompatibleStateImageBehavior = false;
-            this.Product_ListView.UseSelectable = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "품번";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "제품명";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "표준중량";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ProductCodeNumber_Label
             // 
@@ -236,7 +201,7 @@
             // ProductList_Datagridview
             // 
             this.ProductList_Datagridview.AllowUserToResizeRows = false;
-            this.ProductList_Datagridview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ProductList_Datagridview.BackgroundColor = System.Drawing.Color.Silver;
             this.ProductList_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProductList_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ProductList_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -260,7 +225,7 @@
             this.ProductList_Datagridview.EnableHeadersVisualStyles = false;
             this.ProductList_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ProductList_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ProductList_Datagridview.Location = new System.Drawing.Point(37, 131);
+            this.ProductList_Datagridview.Location = new System.Drawing.Point(23, 126);
             this.ProductList_Datagridview.Name = "ProductList_Datagridview";
             this.ProductList_Datagridview.ReadOnly = true;
             this.ProductList_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -275,7 +240,7 @@
             this.ProductList_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ProductList_Datagridview.RowTemplate.Height = 23;
             this.ProductList_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProductList_Datagridview.Size = new System.Drawing.Size(359, 284);
+            this.ProductList_Datagridview.Size = new System.Drawing.Size(440, 300);
             this.ProductList_Datagridview.TabIndex = 10;
             this.ProductList_Datagridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductList_Datagridview_CellClick);
             // 
@@ -294,7 +259,6 @@
             this.Controls.Add(this.ProductName_Label);
             this.Controls.Add(this.ProductCodeNumber_TextBox);
             this.Controls.Add(this.ProductCodeNumber_Label);
-            this.Controls.Add(this.Product_ListView);
             this.Name = "ProductManageForm";
             this.Text = "제품 관리";
             this.Load += new System.EventHandler(this.ProductManageForm_Load);
@@ -305,11 +269,6 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroListView Product_ListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private MetroFramework.Controls.MetroLabel ProductCodeNumber_Label;
         private MetroFramework.Controls.MetroTextBox ProductCodeNumber_TextBox;
         private MetroFramework.Controls.MetroTextBox ProductName_TextBox;
