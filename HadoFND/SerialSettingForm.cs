@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO.Ports;
+//using System.IO.Ports;
+using RJCP.IO.Ports;
 
 namespace HadoFND
 {
@@ -39,8 +40,8 @@ namespace HadoFND
             //
             // 연결 가능한 시리얼포트 목록 가져오기
             //
-            Indicator_Port_ComboBox.DataSource = SerialPort.GetPortNames();
-            Led_Port_ComboBox.DataSource = SerialPort.GetPortNames();
+            Indicator_Port_ComboBox.DataSource = SerialPortStream.GetPortNames();
+            Led_Port_ComboBox.DataSource = SerialPortStream.GetPortNames();
 
             //
             // 환경설정 파일 로드
@@ -111,7 +112,7 @@ namespace HadoFND
                 Indicator_Stopbits_ComboBox.SelectedText = "1";
                 Indicator_Stopbits_ComboBox.SelectedIndex = 0;
             }
-            else if (_configFile.StopBits == StopBits.OnePointFive)
+            else if (_configFile.StopBits == StopBits.One5)
             {
                 Indicator_Stopbits_ComboBox.SelectedText = "1.5";
                 Indicator_Stopbits_ComboBox.SelectedIndex = 1;
@@ -182,7 +183,7 @@ namespace HadoFND
                 Led_Stopbits_ComboBox.SelectedText = "1";
                 Led_Stopbits_ComboBox.SelectedIndex = 0;
             }
-            else if (_configFile.Led_StopBits == StopBits.OnePointFive)
+            else if (_configFile.Led_StopBits == StopBits.One5)
             {
                 Led_Stopbits_ComboBox.SelectedText = "1.5";
                 Led_Stopbits_ComboBox.SelectedIndex = 1;
@@ -304,14 +305,14 @@ namespace HadoFND
                 _configFile.Parity = Parity.Odd;
             }
 
-            _configFile.StopBits = StopBits.None;
+            _configFile.StopBits = StopBits.One;
             if (indicatorStopbits == "1")
             {
                 _configFile.StopBits = StopBits.One;
             }
             if (indicatorStopbits == "1.5")
             {
-                _configFile.StopBits = StopBits.OnePointFive;
+                _configFile.StopBits = StopBits.One5;
             }
             if (indicatorStopbits == "2")
             {
@@ -332,14 +333,14 @@ namespace HadoFND
                 _configFile.Led_Parity = Parity.Odd;
             }
 
-            _configFile.Led_StopBits = StopBits.None;
+            _configFile.Led_StopBits = StopBits.One;
             if (ledStopbits == "1")
             {
                 _configFile.Led_StopBits = StopBits.One;
             }
             if (ledStopbits == "1.5")
             {
-                _configFile.Led_StopBits = StopBits.OnePointFive;
+                _configFile.Led_StopBits = StopBits.One5;
             }
             if (ledStopbits == "2")
             {

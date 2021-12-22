@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO.Ports;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.IO;
+//using System.IO;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Threading;
+using RJCP.IO.Ports;
 
 namespace HadoFND
 {
@@ -28,6 +30,8 @@ namespace HadoFND
 
         int selectedProductHiValue = 0; // 선택한 제품의 상한값
         int selectedProductLoValue = 0; // 선택한 제품의 하한값
+
+        SerialPortStream indicatorSerialPort;
 
         public MainForm()
         {
@@ -55,7 +59,7 @@ namespace HadoFND
             //
             // 환경설정 파일 로드
             //
-            _configFile = _configFile.Load();
+            _configFile = _configFile.Load();            
 
             //
             // DB에 등록된 제품 로드
@@ -226,34 +230,28 @@ namespace HadoFND
             }
 
             //
+            // 시리얼 포트 설정
+            //
+
+            
+
+
+            //
             // 시리얼 통신 연결 여부 확인
             //
             try
             {
-                if (indicatorSerialPort == null)
-                {
-                    indicatorSerialPort = new SerialPort();
-                }
+                indicatorSerialPort = new SerialPortStream(_configFile.Comport, _configFile.BaudRate, _configFile.DataBits, _configFile.Parity, _configFile.StopBits);
 
-                if (!indicatorSerialPort.IsOpen) // 연결 끊겨 있을 경우
-                {
-                    indicatorSerialPort.PortName = _configFile.Comport;
-                    indicatorSerialPort.BaudRate = _configFile.BaudRate;
-                    indicatorSerialPort.DataBits = _configFile.DataBits;
-                    indicatorSerialPort.Parity = _configFile.Parity;
-                    indicatorSerialPort.StopBits = _configFile.StopBits;
-
-                    indicatorSerialPort.DataReceived += new SerialDataReceivedEventHandler(indicatorSerialPort_DataReceived);
-
-                    indicatorSerialPort.Open();
-                }
+                indicatorSerialPort.DataReceived += indicatorSerialPort_DataReceived;
+                indicatorSerialPort.Open();
 
                 //
                 // 영점 잡기
                 //
                 indicatorSerialPort.Write("MZ\r\n");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var text = "시리얼 통신 연결 오류";
                 MessageBox.Show(text);
@@ -330,15 +328,24 @@ namespace HadoFND
                 // 상한,하한 표시 초기화
                 Hi_Textbox.Text = "0";
                 Lo_Textbox.Text = "0";
+
+                try
+                {
+                    indicatorSerialPort.Close();
+                }
+                catch(Exception ex)
+                {
+
+                }
             }
         }
 
         //
         // 시리얼 수신 이벤트가 발생하면 아래 부분이 실행된다.
         //
-        private void indicatorSerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void indicatorSerialPort_DataReceived(object sender, RJCP.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            this.Invoke(new EventHandler(IndicatorSerialReceived)); // 메인 쓰레드와 수신 쓰레드의 충돌을 방지하기 위해 Invoke 사용. IndicatorSerialReceived로 이동하여 추가 작업 실행.
+            this.Invoke(new EventHandler(IndicatorSerialReceived)); // 메인 쓰레드와 수신 쓰레드의 충돌을 방지하기 위해 Invoke 사용. IndicatorSerialReceived로 이동하여 추가 작업 실행.            
         }
 
         //
@@ -457,10 +464,10 @@ namespace HadoFND
             // 이전 엑셀 파일 삭제
             try
             {
-                FileInfo oldFile = new FileInfo(fileName);
+                System.IO.FileInfo oldFile = new System.IO.FileInfo(fileName);
                 if (oldFile.Exists)
                 {
-                    File.SetAttributes(oldFile.FullName, FileAttributes.Normal);
+                    System.IO.File.SetAttributes(oldFile.FullName, System.IO.FileAttributes.Normal);
                     oldFile.Delete();
                 }
             }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.SerialSetting_Button = new MetroFramework.Controls.MetroButton();
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductManage_Button = new MetroFramework.Controls.MetroButton();
@@ -51,7 +50,6 @@
             this.Weight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.TotalWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.indicatorSerialPort = new System.IO.Ports.SerialPort(this.components);
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -434,10 +432,6 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // indicatorSerialPort
-            // 
-            this.indicatorSerialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.indicatorSerialPort_DataReceived);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -483,7 +477,6 @@
         private MetroFramework.Controls.MetroTextBox Hi_Textbox;
         private MetroFramework.Controls.MetroTextBox WorkCount_Textbox;
         private MetroFramework.Controls.MetroTextBox WorkDate_Textbox;
-        private System.IO.Ports.SerialPort indicatorSerialPort;
         private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
     }
 }
