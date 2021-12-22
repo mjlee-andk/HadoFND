@@ -250,9 +250,10 @@ namespace HadoFND
         // 엑셀 추출
         //
         private void ExcelExport_Button_Click(object sender, EventArgs e)
-        {
+        {            
             try
             {
+                Cursor.Current = Cursors.WaitCursor;
                 var currentFilePath = _configFile.File_Path;
 
                 //
@@ -296,10 +297,6 @@ namespace HadoFND
                 xlsWorkbook = xlsApp.Workbooks.Add(misValue);
                 xlsWorksheet = (Excel.Worksheet)xlsWorkbook.Sheets[1];
 
-                //var sqlselect = "SELECT * FROM scales;";
-                //MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
-                //MySqlDataReader dr = cmd.ExecuteReader();
-
                 //
                 // 엑셀의 row, column은 인덱스가 1부터 시작한다.
                 //
@@ -307,21 +304,23 @@ namespace HadoFND
                 dr = cmd.ExecuteReader();
 
                 // DB 컬럼명 입력
+                // 엑셀 첫 행에 조회한 데이터의 헤더를 입력한다.
                 var i = 1;
                 if (dr.HasRows)
                 {
                     for (int j = 1; j <= dr.FieldCount; ++j)
                     {
-                        xlsWorksheet.Cells[i, j] = dr.GetName(j-1); // 211220 dr.GetName(j)의 j를 j-1로 변경할 것
+                        xlsWorksheet.Cells[i, j] = dr.GetName(j-1); 
                     }
                     ++i;
                 }
+
                 // DB 컬럼명에 해당하는 데이터 입력
                 while (dr.Read())
                 {
-                    for (int j = 1; j <= dr.FieldCount; ++j) // 211220 j < dr.FieldCount를 j <= dr.FieldCount로 변경할 것
+                    for (int j = 1; j <= dr.FieldCount; ++j)
                     {
-                        xlsWorksheet.Cells[i, j] = dr.GetValue(j-1); // 211220 dr.GetValue(j)의 j를 j-1로 변경할 것
+                        xlsWorksheet.Cells[i, j] = dr.GetValue(j - 1);
                     }
                     ++i;
                 }
@@ -336,16 +335,18 @@ namespace HadoFND
                 releaseObject(xlsWorksheet);
                 releaseObject(xlsWorkbook);
                 releaseObject(xlsApp);
+                Cursor.Current = Cursors.AppStarting;
             }
             catch (Exception ex)
             {
+                conn.Close();
                 MessageBox.Show(ex.ToString());
             }
             finally
             {
                 var text = "엑셀 추출이 완료 되었습니다.";
                 MessageBox.Show(text);
-                conn.Close();
+                dr.Close();
             }
         }
 
@@ -370,9 +371,12 @@ namespace HadoFND
             }
         }
 
+        //
+        // 닫기 버튼
+        //
         private void ExcelExportClose_Button_Click(object sender, EventArgs e)
         {
-            dr.Close();
+            conn.Close();
             this.Close();
         }
     }
