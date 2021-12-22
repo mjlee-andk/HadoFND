@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.IO.Ports;
 using RJCP.IO.Ports;
 
 namespace HadoFND
@@ -200,157 +192,164 @@ namespace HadoFND
         //
         private void Serial_Save_Button_Click(object sender, EventArgs e)
         {
-            // 인디케이터 설정값
-            var indicatorPort = Indicator_Port_ComboBox.Text;
-            var indicatorBaudrate = Indicator_BaudRate_ComboBox.Text;
-            var indicatorDatabits = Indicator_Databits_ComboBox.Text;
-            var indicatorParity = Indicator_Parity_ComboBox.Text;
-            var indicatorStopbits = Indicator_Stopbits_ComboBox.Text;
-
-            // 경광등 설정값
-            var ledPort = Led_Port_ComboBox.Text;
-            var ledBaudrate = Led_BaudRate_ComboBox.Text;
-            var ledDatabits = Led_Databits_ComboBox.Text;
-            var ledParity = Led_Parity_ComboBox.Text;
-            var ledStopbits = Led_Stopbits_ComboBox.Text;
-
-            if (indicatorPort.Equals(ledPort))
-            { 
-                var text = "동일한 포트는 사용할 수 없습니다.";
-                MessageBox.Show(text);
-                return;
-            }
-
-            if (indicatorPort.Equals("") || indicatorPort == null)
+            try
             {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                // 인디케이터 설정값
+                var indicatorPort = Indicator_Port_ComboBox.Text;
+                var indicatorBaudrate = Indicator_BaudRate_ComboBox.Text;
+                var indicatorDatabits = Indicator_Databits_ComboBox.Text;
+                var indicatorParity = Indicator_Parity_ComboBox.Text;
+                var indicatorStopbits = Indicator_Stopbits_ComboBox.Text;
 
-            if (indicatorBaudrate.Equals("") || indicatorBaudrate == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                // 경광등 설정값
+                var ledPort = Led_Port_ComboBox.Text;
+                var ledBaudrate = Led_BaudRate_ComboBox.Text;
+                var ledDatabits = Led_Databits_ComboBox.Text;
+                var ledParity = Led_Parity_ComboBox.Text;
+                var ledStopbits = Led_Stopbits_ComboBox.Text;
 
-            if (indicatorDatabits.Equals("") || indicatorDatabits == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorPort.Equals(ledPort))
+                {
+                    var text = "동일한 포트는 사용할 수 없습니다.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (indicatorParity.Equals("") || indicatorParity == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorPort.Equals("") || indicatorPort == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (indicatorStopbits.Equals("") || indicatorStopbits == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorBaudrate.Equals("") || indicatorBaudrate == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (ledPort.Equals("") || ledPort == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorDatabits.Equals("") || indicatorDatabits == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (ledBaudrate.Equals("") || ledBaudrate == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorParity.Equals("") || indicatorParity == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (ledDatabits.Equals("") || ledDatabits == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (indicatorStopbits.Equals("") || indicatorStopbits == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (ledParity.Equals("") || ledParity == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (ledPort.Equals("") || ledPort == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            if (ledStopbits.Equals("") || ledStopbits == null)
-            {
-                var text = "설정값을 입력해주세요.";
-                MessageBox.Show(text);
-                return;
-            }
+                if (ledBaudrate.Equals("") || ledBaudrate == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            // 인디케이터 통신 설정
-            _configFile.Comport = indicatorPort;
-            _configFile.BaudRate = Convert.ToInt32(indicatorBaudrate);
-            _configFile.DataBits = Convert.ToInt32(indicatorDatabits);
-            _configFile.Parity = Parity.None;
-            if (indicatorParity == "Even")
-            {
-                _configFile.Parity = Parity.Even;
-            }
-            if (indicatorParity == "Odd")
-            {
-                _configFile.Parity = Parity.Odd;
-            }
+                if (ledDatabits.Equals("") || ledDatabits == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
 
-            _configFile.StopBits = StopBits.One;
-            if (indicatorStopbits == "1")
-            {
+                if (ledParity.Equals("") || ledParity == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
+
+                if (ledStopbits.Equals("") || ledStopbits == null)
+                {
+                    var text = "설정값을 입력해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
+
+                // 인디케이터 통신 설정
+                _configFile.Comport = indicatorPort;
+                _configFile.BaudRate = Convert.ToInt32(indicatorBaudrate);
+                _configFile.DataBits = Convert.ToInt32(indicatorDatabits);
+                _configFile.Parity = Parity.None;
+                if (indicatorParity == "Even")
+                {
+                    _configFile.Parity = Parity.Even;
+                }
+                if (indicatorParity == "Odd")
+                {
+                    _configFile.Parity = Parity.Odd;
+                }
+
                 _configFile.StopBits = StopBits.One;
-            }
-            if (indicatorStopbits == "1.5")
-            {
-                _configFile.StopBits = StopBits.One5;
-            }
-            if (indicatorStopbits == "2")
-            {
-                _configFile.StopBits = StopBits.Two;
-            }
+                if (indicatorStopbits == "1")
+                {
+                    _configFile.StopBits = StopBits.One;
+                }
+                if (indicatorStopbits == "1.5")
+                {
+                    _configFile.StopBits = StopBits.One5;
+                }
+                if (indicatorStopbits == "2")
+                {
+                    _configFile.StopBits = StopBits.Two;
+                }
 
-            // 경광등 통신 설정
-            _configFile.Led_Comport = ledPort;
-            _configFile.Led_BaudRate = Convert.ToInt32(ledBaudrate);
-            _configFile.Led_DataBits = Convert.ToInt32(ledDatabits);
-            _configFile.Led_Parity = Parity.None;
-            if (ledParity == "Even")
-            {
-                _configFile.Led_Parity = Parity.Even;
-            }
-            if (ledParity == "Odd")
-            {
-                _configFile.Led_Parity = Parity.Odd;
-            }
+                // 경광등 통신 설정
+                _configFile.Led_Comport = ledPort;
+                _configFile.Led_BaudRate = Convert.ToInt32(ledBaudrate);
+                _configFile.Led_DataBits = Convert.ToInt32(ledDatabits);
+                _configFile.Led_Parity = Parity.None;
+                if (ledParity == "Even")
+                {
+                    _configFile.Led_Parity = Parity.Even;
+                }
+                if (ledParity == "Odd")
+                {
+                    _configFile.Led_Parity = Parity.Odd;
+                }
 
-            _configFile.Led_StopBits = StopBits.One;
-            if (ledStopbits == "1")
-            {
                 _configFile.Led_StopBits = StopBits.One;
-            }
-            if (ledStopbits == "1.5")
-            {
-                _configFile.Led_StopBits = StopBits.One5;
-            }
-            if (ledStopbits == "2")
-            {
-                _configFile.Led_StopBits = StopBits.Two;
-            }
+                if (ledStopbits == "1")
+                {
+                    _configFile.Led_StopBits = StopBits.One;
+                }
+                if (ledStopbits == "1.5")
+                {
+                    _configFile.Led_StopBits = StopBits.One5;
+                }
+                if (ledStopbits == "2")
+                {
+                    _configFile.Led_StopBits = StopBits.Two;
+                }
 
-            _configFile.Save();
-            MessageBox.Show("저장되었습니다.");
-            SerialSettingClosedEvent();
-            this.Close();
+                _configFile.Save();
+                MessageBox.Show("저장되었습니다.");
+                SerialSettingClosedEvent();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+            }            
         }
 
         //

@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using System.IO.Ports;
-using Excel = Microsoft.Office.Interop.Excel;
-//using System.IO;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
-using System.Threading;
 using RJCP.IO.Ports;
 
 namespace HadoFND
@@ -106,7 +102,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -238,7 +234,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -269,9 +265,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                var text = "시리얼 통신 연결 오류";
-                MessageBox.Show(text);
-                return;
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
         }
 
@@ -317,7 +311,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -334,7 +328,7 @@ namespace HadoFND
                 }
                 catch (Exception ex)
                 {
-
+                    Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
                 }
 
                 //
@@ -461,7 +455,7 @@ namespace HadoFND
                             }
                             catch (Exception ex)
                             {
-
+                                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
                             }
                             finally
                             {
@@ -493,7 +487,7 @@ namespace HadoFND
             }
             catch(Exception ex)
             {
-                
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
         }
                 
@@ -549,9 +543,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                var text = "시리얼 통신 연결 오류";
-                MessageBox.Show(text);
-                return;
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
         }
 
@@ -601,7 +593,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
         }
     }

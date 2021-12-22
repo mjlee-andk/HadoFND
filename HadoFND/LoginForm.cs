@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace HadoFND
@@ -86,7 +85,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {

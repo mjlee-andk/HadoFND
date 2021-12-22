@@ -1,12 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -85,7 +80,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -238,7 +233,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -289,6 +284,7 @@ namespace HadoFND
                 {
                     MessageBox.Show("Error removing old Excel report: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
                     return;
                 }
 
@@ -339,8 +335,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                conn.Close();
-                MessageBox.Show(ex.ToString());
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -362,8 +357,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                obj = null;
-                MessageBox.Show("Unable to release the Object " + ex.ToString());
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {

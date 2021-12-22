@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HadoFND
@@ -59,7 +53,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -124,7 +118,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -151,7 +145,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
@@ -229,8 +223,7 @@ namespace HadoFND
             }
             catch (Exception ex)
             {
-                var text = "DB 저장에 오류가 발생했습니다.";
-                MessageBox.Show(text);
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
             }
             finally
             {
