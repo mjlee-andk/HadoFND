@@ -425,6 +425,14 @@ namespace HadoFND
                             //
                             // 경광등으로 신호 전달
                             //
+                            if(currentAddWeight < selectedProductLoValue)
+                            {
+                                ledSerialPort.Write("Lo\r\n");
+                            }
+                            if (currentAddWeight > selectedProductHiValue)
+                            {
+                                ledSerialPort.Write("Hi\r\n");
+                            }
                         }
                         //
                         // 현재 추가 중량 및 총 중량 DB에 기록
@@ -567,7 +575,7 @@ namespace HadoFND
 
             try
             {
-                var receivedData = indicatorSerialPort.ReadLine(); // 시리얼 통신으로 받아온 데이터
+                var receivedData = ledSerialPort.ReadLine(); // 시리얼 통신으로 받아온 데이터
 
                 var header1 = ""; // 첫번째 헤더( ST: 안정 US: 불안정 OL: 오버플로우 )
                 var header2 = ""; // 두번째 헤더( GS: 총중량 NT: 순중량 TR: 용기 )
