@@ -36,25 +36,26 @@
             this.ExcelExportClose_Button = new MetroFramework.Controls.MetroButton();
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductList_Combobox = new MetroFramework.Controls.MetroComboBox();
-            this.DateStart_ComboBox = new MetroFramework.Controls.MetroComboBox();
             this.DateStart_Label = new MetroFramework.Controls.MetroLabel();
             this.DateEnd_Label = new MetroFramework.Controls.MetroLabel();
-            this.DateEnd_ComboBox = new MetroFramework.Controls.MetroComboBox();
             this.FilePath_TextBox = new MetroFramework.Controls.MetroTextBox();
             this.FilePath_Label = new MetroFramework.Controls.MetroLabel();
             this.FilePath_Button = new MetroFramework.Controls.MetroButton();
             this.Search_Button = new MetroFramework.Controls.MetroButton();
+            this.DateStart_DateTime = new MetroFramework.Controls.MetroDateTime();
+            this.DateEnd_DateTime = new MetroFramework.Controls.MetroDateTime();
+            this.AllSearch_Button = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.WorkRecordList_Datagridview)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductList_Label
             // 
             this.ProductList_Label.AutoSize = true;
-            this.ProductList_Label.Location = new System.Drawing.Point(23, 70);
+            this.ProductList_Label.Location = new System.Drawing.Point(249, 80);
             this.ProductList_Label.Name = "ProductList_Label";
-            this.ProductList_Label.Size = new System.Drawing.Size(69, 19);
+            this.ProductList_Label.Size = new System.Drawing.Size(37, 19);
             this.ProductList_Label.TabIndex = 9;
-            this.ProductList_Label.Text = "제품 목록";
+            this.ProductList_Label.Text = "제품";
             // 
             // WorkRecordList_Datagridview
             // 
@@ -86,7 +87,7 @@
             this.WorkRecordList_Datagridview.EnableHeadersVisualStyles = false;
             this.WorkRecordList_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.WorkRecordList_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WorkRecordList_Datagridview.Location = new System.Drawing.Point(23, 127);
+            this.WorkRecordList_Datagridview.Location = new System.Drawing.Point(23, 137);
             this.WorkRecordList_Datagridview.Name = "WorkRecordList_Datagridview";
             this.WorkRecordList_Datagridview.ReadOnly = true;
             this.WorkRecordList_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -101,53 +102,46 @@
             this.WorkRecordList_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.WorkRecordList_Datagridview.RowTemplate.Height = 23;
             this.WorkRecordList_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.WorkRecordList_Datagridview.Size = new System.Drawing.Size(440, 300);
+            this.WorkRecordList_Datagridview.Size = new System.Drawing.Size(762, 490);
             this.WorkRecordList_Datagridview.TabIndex = 11;
             // 
             // ExcelExportClose_Button
             // 
             this.ExcelExportClose_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ExcelExportClose_Button.Location = new System.Drawing.Point(496, 371);
+            this.ExcelExportClose_Button.Location = new System.Drawing.Point(802, 571);
             this.ExcelExportClose_Button.Name = "ExcelExportClose_Button";
-            this.ExcelExportClose_Button.Size = new System.Drawing.Size(256, 56);
+            this.ExcelExportClose_Button.Size = new System.Drawing.Size(186, 56);
             this.ExcelExportClose_Button.TabIndex = 13;
             this.ExcelExportClose_Button.Text = "닫기";
             this.ExcelExportClose_Button.UseSelectable = true;
+            this.ExcelExportClose_Button.Click += new System.EventHandler(this.ExcelExportClose_Button_Click);
             // 
             // ExcelExport_Button
             // 
             this.ExcelExport_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ExcelExport_Button.Location = new System.Drawing.Point(496, 310);
+            this.ExcelExport_Button.Location = new System.Drawing.Point(802, 510);
             this.ExcelExport_Button.Name = "ExcelExport_Button";
-            this.ExcelExport_Button.Size = new System.Drawing.Size(256, 55);
+            this.ExcelExport_Button.Size = new System.Drawing.Size(186, 55);
             this.ExcelExport_Button.TabIndex = 12;
             this.ExcelExport_Button.Text = "다운로드";
             this.ExcelExport_Button.UseSelectable = true;
+            this.ExcelExport_Button.Click += new System.EventHandler(this.ExcelExport_Button_Click);
             // 
             // ProductList_Combobox
             // 
             this.ProductList_Combobox.FormattingEnabled = true;
             this.ProductList_Combobox.ItemHeight = 23;
-            this.ProductList_Combobox.Location = new System.Drawing.Point(23, 92);
+            this.ProductList_Combobox.Location = new System.Drawing.Point(249, 102);
             this.ProductList_Combobox.Name = "ProductList_Combobox";
             this.ProductList_Combobox.Size = new System.Drawing.Size(154, 29);
             this.ProductList_Combobox.TabIndex = 17;
             this.ProductList_Combobox.UseSelectable = true;
-            // 
-            // DateStart_ComboBox
-            // 
-            this.DateStart_ComboBox.FormattingEnabled = true;
-            this.DateStart_ComboBox.ItemHeight = 23;
-            this.DateStart_ComboBox.Location = new System.Drawing.Point(183, 92);
-            this.DateStart_ComboBox.Name = "DateStart_ComboBox";
-            this.DateStart_ComboBox.Size = new System.Drawing.Size(91, 29);
-            this.DateStart_ComboBox.TabIndex = 18;
-            this.DateStart_ComboBox.UseSelectable = true;
+            this.ProductList_Combobox.SelectedIndexChanged += new System.EventHandler(this.ProductList_Combobox_SelectedIndexChanged);
             // 
             // DateStart_Label
             // 
             this.DateStart_Label.AutoSize = true;
-            this.DateStart_Label.Location = new System.Drawing.Point(183, 70);
+            this.DateStart_Label.Location = new System.Drawing.Point(23, 80);
             this.DateStart_Label.Name = "DateStart_Label";
             this.DateStart_Label.Size = new System.Drawing.Size(65, 19);
             this.DateStart_Label.TabIndex = 20;
@@ -156,21 +150,11 @@
             // DateEnd_Label
             // 
             this.DateEnd_Label.AutoSize = true;
-            this.DateEnd_Label.Location = new System.Drawing.Point(280, 70);
+            this.DateEnd_Label.Location = new System.Drawing.Point(136, 80);
             this.DateEnd_Label.Name = "DateEnd_Label";
             this.DateEnd_Label.Size = new System.Drawing.Size(65, 19);
             this.DateEnd_Label.TabIndex = 21;
             this.DateEnd_Label.Text = "종료날짜";
-            // 
-            // DateEnd_ComboBox
-            // 
-            this.DateEnd_ComboBox.FormattingEnabled = true;
-            this.DateEnd_ComboBox.ItemHeight = 23;
-            this.DateEnd_ComboBox.Location = new System.Drawing.Point(280, 92);
-            this.DateEnd_ComboBox.Name = "DateEnd_ComboBox";
-            this.DateEnd_ComboBox.Size = new System.Drawing.Size(91, 29);
-            this.DateEnd_ComboBox.TabIndex = 22;
-            this.DateEnd_ComboBox.UseSelectable = true;
             // 
             // FilePath_TextBox
             // 
@@ -178,16 +162,17 @@
             // 
             // 
             this.FilePath_TextBox.CustomButton.Image = null;
-            this.FilePath_TextBox.CustomButton.Location = new System.Drawing.Point(153, 1);
+            this.FilePath_TextBox.CustomButton.Location = new System.Drawing.Point(199, 1);
             this.FilePath_TextBox.CustomButton.Name = "";
-            this.FilePath_TextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.FilePath_TextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.FilePath_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.FilePath_TextBox.CustomButton.TabIndex = 1;
             this.FilePath_TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.FilePath_TextBox.CustomButton.UseSelectable = true;
             this.FilePath_TextBox.CustomButton.Visible = false;
+            this.FilePath_TextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.FilePath_TextBox.Lines = new string[0];
-            this.FilePath_TextBox.Location = new System.Drawing.Point(496, 98);
+            this.FilePath_TextBox.Location = new System.Drawing.Point(477, 102);
             this.FilePath_TextBox.MaxLength = 45;
             this.FilePath_TextBox.Name = "FilePath_TextBox";
             this.FilePath_TextBox.PasswordChar = '\0';
@@ -197,7 +182,7 @@
             this.FilePath_TextBox.SelectionLength = 0;
             this.FilePath_TextBox.SelectionStart = 0;
             this.FilePath_TextBox.ShortcutsEnabled = true;
-            this.FilePath_TextBox.Size = new System.Drawing.Size(175, 23);
+            this.FilePath_TextBox.Size = new System.Drawing.Size(227, 29);
             this.FilePath_TextBox.TabIndex = 24;
             this.FilePath_TextBox.UseSelectable = true;
             this.FilePath_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -206,7 +191,7 @@
             // FilePath_Label
             // 
             this.FilePath_Label.AutoSize = true;
-            this.FilePath_Label.Location = new System.Drawing.Point(496, 70);
+            this.FilePath_Label.Location = new System.Drawing.Point(477, 80);
             this.FilePath_Label.Name = "FilePath_Label";
             this.FilePath_Label.Size = new System.Drawing.Size(101, 19);
             this.FilePath_Label.TabIndex = 23;
@@ -214,9 +199,9 @@
             // 
             // FilePath_Button
             // 
-            this.FilePath_Button.Location = new System.Drawing.Point(677, 98);
+            this.FilePath_Button.Location = new System.Drawing.Point(710, 102);
             this.FilePath_Button.Name = "FilePath_Button";
-            this.FilePath_Button.Size = new System.Drawing.Size(75, 23);
+            this.FilePath_Button.Size = new System.Drawing.Size(75, 29);
             this.FilePath_Button.TabIndex = 25;
             this.FilePath_Button.Text = "경로선택";
             this.FilePath_Button.UseSelectable = true;
@@ -224,26 +209,56 @@
             // 
             // Search_Button
             // 
-            this.Search_Button.Location = new System.Drawing.Point(377, 92);
+            this.Search_Button.Location = new System.Drawing.Point(409, 102);
             this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(86, 29);
+            this.Search_Button.Size = new System.Drawing.Size(62, 29);
             this.Search_Button.TabIndex = 26;
-            this.Search_Button.Text = "검색";
+            this.Search_Button.Text = "제품 조회";
             this.Search_Button.UseSelectable = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
+            // 
+            // DateStart_DateTime
+            // 
+            this.DateStart_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateStart_DateTime.Location = new System.Drawing.Point(23, 102);
+            this.DateStart_DateTime.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateStart_DateTime.Name = "DateStart_DateTime";
+            this.DateStart_DateTime.Size = new System.Drawing.Size(107, 29);
+            this.DateStart_DateTime.TabIndex = 27;
+            // 
+            // DateEnd_DateTime
+            // 
+            this.DateEnd_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DateEnd_DateTime.Location = new System.Drawing.Point(136, 102);
+            this.DateEnd_DateTime.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateEnd_DateTime.Name = "DateEnd_DateTime";
+            this.DateEnd_DateTime.Size = new System.Drawing.Size(107, 29);
+            this.DateEnd_DateTime.TabIndex = 28;
+            // 
+            // AllSearch_Button
+            // 
+            this.AllSearch_Button.Location = new System.Drawing.Point(409, 67);
+            this.AllSearch_Button.Name = "AllSearch_Button";
+            this.AllSearch_Button.Size = new System.Drawing.Size(62, 29);
+            this.AllSearch_Button.TabIndex = 29;
+            this.AllSearch_Button.Text = "전체 조회";
+            this.AllSearch_Button.UseSelectable = true;
+            this.AllSearch_Button.Click += new System.EventHandler(this.AllSearch_Button_Click);
             // 
             // ExcelExportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.AllSearch_Button);
+            this.Controls.Add(this.DateEnd_DateTime);
+            this.Controls.Add(this.DateStart_DateTime);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.FilePath_Button);
             this.Controls.Add(this.FilePath_TextBox);
             this.Controls.Add(this.FilePath_Label);
-            this.Controls.Add(this.DateEnd_ComboBox);
             this.Controls.Add(this.DateEnd_Label);
             this.Controls.Add(this.DateStart_Label);
-            this.Controls.Add(this.DateStart_ComboBox);
             this.Controls.Add(this.ProductList_Combobox);
             this.Controls.Add(this.ExcelExportClose_Button);
             this.Controls.Add(this.ExcelExport_Button);
@@ -264,14 +279,15 @@
         private MetroFramework.Controls.MetroGrid WorkRecordList_Datagridview;
         private MetroFramework.Controls.MetroButton ExcelExportClose_Button;
         private MetroFramework.Controls.MetroButton ExcelExport_Button;
-        private MetroFramework.Controls.MetroComboBox ProductList_Combobox;
-        private MetroFramework.Controls.MetroComboBox DateStart_ComboBox;
         private MetroFramework.Controls.MetroLabel DateStart_Label;
         private MetroFramework.Controls.MetroLabel DateEnd_Label;
-        private MetroFramework.Controls.MetroComboBox DateEnd_ComboBox;
         private MetroFramework.Controls.MetroTextBox FilePath_TextBox;
         private MetroFramework.Controls.MetroLabel FilePath_Label;
         private MetroFramework.Controls.MetroButton FilePath_Button;
         private MetroFramework.Controls.MetroButton Search_Button;
+        private MetroFramework.Controls.MetroDateTime DateStart_DateTime;
+        private MetroFramework.Controls.MetroDateTime DateEnd_DateTime;
+        private MetroFramework.Controls.MetroButton AllSearch_Button;
+        private MetroFramework.Controls.MetroComboBox ProductList_Combobox;
     }
 }

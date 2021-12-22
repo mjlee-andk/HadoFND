@@ -153,76 +153,9 @@ namespace HadoFND
         {
             ExcelExportForm excelExportForm = new ExcelExportForm();
             excelExportForm.ShowDialog();
-
-    //        var fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + "ExcelReport.xlsx";
-    //        Excel.Application xlsApp;
-    //        Excel.Workbook xlsWorkbook;
-    //        Excel.Worksheet xlsWorksheet;
-    //        object misValue = System.Reflection.Missing.Value;
-
-    //        // 이전 엑셀 파일 삭제
-    //        try
-    //        {
-    //            System.IO.FileInfo oldFile = new System.IO.FileInfo(fileName);
-    //            if (oldFile.Exists)
-    //            {
-    //                System.IO.File.SetAttributes(oldFile.FullName, System.IO.FileAttributes.Normal);
-    //                oldFile.Delete();
-    //            }
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            MessageBox.Show("Error removing old Excel report: " + ex.Message, "Error",
-    //            MessageBoxButtons.OK, MessageBoxIcon.Stop);
-    //            return;
-    //        }
-
-    //        // 새로운 파일 생성
-    //        xlsApp = new Excel.Application();
-    //        xlsWorkbook = xlsApp.Workbooks.Add(misValue);
-    //        xlsWorksheet = (Excel.Worksheet)xlsWorkbook.Sheets[1];
-
-
-
-    //        var sqlselect = "SELECT * FROM scales;";
-    //        MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
-    //        MySqlDataReader dr = cmd.ExecuteReader();
-
-    //        //
-    //        // 엑셀의 row, column은 인덱스가 1부터 시작한다.
-    //        //
-
-    //        // DB 컬럼명 입력
-    //        var i = 1;
-    //        if (dr.HasRows)
-    //        {
-    //            for (int j = 1; j < dr.FieldCount; ++j)
-    //            {
-    //                xlsWorksheet.Cells[i, j] = dr.GetName(j); // 211220 dr.GetName(j)의 j를 j-1로 변경할 것
-    //            }
-    //            ++i;
-    //        }
-    //        // DB 컬럼명에 해당하는 데이터 입력
-    //        while (dr.Read())
-    //        {
-    //            for (int j = 1; j < dr.FieldCount; ++j) // 211220 j < dr.FieldCount를 j <= dr.FieldCount로 변경할 것
-    //            {
-    //                xlsWorksheet.Cells[i, j] = dr.GetValue(j); // 211220 dr.GetValue(j)의 j를 j-1로 변경할 것
-    //            }
-    //            ++i;
-    //        }
-
-    //        xlsWorkbook.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue,
-    //misValue, misValue,
-    //Excel.XlSaveAsAccessMode.xlExclusive, Excel.XlSaveConflictResolution.xlLocalSessionChanges,
-    //misValue, misValue, misValue, misValue);
-    //        xlsWorkbook.Close(true, misValue, misValue);
-    //        xlsApp.Quit();
-
-    //        releaseObject(xlsWorksheet);
-    //        releaseObject(xlsWorkbook);
-    //        releaseObject(xlsApp);
         }
+
+        
 
         //
         // 작업 시작 버튼 클릭
@@ -557,33 +490,15 @@ namespace HadoFND
 
         
 
-        //
-        // 엑셀 객체 생성 후 객체 해제를 위한 함수
-        //
-        private void releaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                MessageBox.Show("Unable to release the Object " + ex.ToString());
-            }
-            finally
-            {
-                GC.Collect();
-            }
-        }
+        
 
         //
         // 콤보박스에서 제품 선택 시 상한, 하한 값 표시
         //
         private void Product_Name_Combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(Product_Name_Combobox.SelectedIndex >= 0)
+            currentProductId = "";
+            if (Product_Name_Combobox.SelectedIndex >= 0)
             {
                 var selectedProduct = productList[Product_Name_Combobox.SelectedIndex];
 
@@ -594,7 +509,7 @@ namespace HadoFND
                 selectedProductLoValue = selectedProduct.unit_weight - _configFile.Lo_Value;
                 Hi_Textbox.Text = selectedProductHiValue.ToString();
                 Lo_Textbox.Text = selectedProductLoValue.ToString();
-            }            
+            }
         }
 
     }
