@@ -317,8 +317,19 @@ namespace HadoFND
                 UserManage_Button.Enabled = true;
                 ExcelExport_Button.Enabled = true;
                 WorkStart_Button.Enabled = true;
-                WorkEnd_Button.Enabled = false;
                 Product_Name_Combobox.Enabled = true;
+                WorkEnd_Button.Enabled = false;
+
+                currentWorkCount = 0; // 현재 작업수
+                currentTotalWeight = 0; // 현재 총중량
+                beforeTotalWeight = 0; // 이전 총중량
+                currentAddWeight = 0; // 현재 추가 중량
+
+                // 작업수 표시 초기화
+                WorkCount_Textbox.Text = currentWorkCount.ToString();
+                // 상한,하한 표시 초기화
+                Hi_Textbox.Text = "0";
+                Lo_Textbox.Text = "0";
             }
         }
 

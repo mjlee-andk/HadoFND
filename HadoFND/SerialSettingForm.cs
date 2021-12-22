@@ -346,9 +346,9 @@ namespace HadoFND
                 _configFile.Led_StopBits = StopBits.Two;
             }
 
-            _configFile.Save();            
-
+            _configFile.Save();
             MessageBox.Show("저장되었습니다.");
+            SerialSettingClosedEvent();
             this.Close();
         }
 
@@ -358,14 +358,6 @@ namespace HadoFND
         private void Serial_Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        //
-        // 폼 종료 후 이벤트
-        //
-        private void SerialSettingForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            SerialSettingClosedEvent();
         }
     }
 }

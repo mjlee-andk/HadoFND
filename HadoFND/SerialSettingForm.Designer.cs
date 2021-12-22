@@ -338,7 +338,6 @@
             this.Controls.Add(this.Indicator_Label);
             this.Name = "SerialSettingForm";
             this.Text = "통신설정";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SerialSettingForm_FormClosed);
             this.Load += new System.EventHandler(this.SerialSettingForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
