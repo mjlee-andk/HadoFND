@@ -50,6 +50,8 @@
             this.Weight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.TotalWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
+            this.ScaleValue_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +120,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.ScaleValue_Textbox);
+            this.metroPanel1.Controls.Add(this.ScaleValue_Label);
             this.metroPanel1.Controls.Add(this.Product_Name_Combobox);
             this.metroPanel1.Controls.Add(this.Lo_Textbox);
             this.metroPanel1.Controls.Add(this.Hi_Textbox);
@@ -336,7 +340,7 @@
             // Weight_Label
             // 
             this.Weight_Label.AutoSize = true;
-            this.Weight_Label.Location = new System.Drawing.Point(12, 60);
+            this.Weight_Label.Location = new System.Drawing.Point(12, 90);
             this.Weight_Label.Name = "Weight_Label";
             this.Weight_Label.Size = new System.Drawing.Size(69, 19);
             this.Weight_Label.TabIndex = 5;
@@ -347,9 +351,9 @@
             this.TotalWeight_Label.AutoSize = true;
             this.TotalWeight_Label.Location = new System.Drawing.Point(12, 23);
             this.TotalWeight_Label.Name = "TotalWeight_Label";
-            this.TotalWeight_Label.Size = new System.Drawing.Size(55, 19);
+            this.TotalWeight_Label.Size = new System.Drawing.Size(87, 19);
             this.TotalWeight_Label.TabIndex = 4;
-            this.TotalWeight_Label.Text = "총 중량";
+            this.TotalWeight_Label.Text = "총 작업 중량";
             // 
             // Weight_Textbox
             // 
@@ -367,7 +371,7 @@
             this.Weight_Textbox.CustomButton.Visible = false;
             this.Weight_Textbox.Lines = new string[] {
         "0"};
-            this.Weight_Textbox.Location = new System.Drawing.Point(141, 60);
+            this.Weight_Textbox.Location = new System.Drawing.Point(141, 90);
             this.Weight_Textbox.MaxLength = 32767;
             this.Weight_Textbox.Name = "Weight_Textbox";
             this.Weight_Textbox.PasswordChar = '\0';
@@ -432,6 +436,49 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // ScaleValue_Label
+            // 
+            this.ScaleValue_Label.AutoSize = true;
+            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 57);
+            this.ScaleValue_Label.Name = "ScaleValue_Label";
+            this.ScaleValue_Label.Size = new System.Drawing.Size(83, 19);
+            this.ScaleValue_Label.TabIndex = 17;
+            this.ScaleValue_Label.Text = "저울 계량값";
+            // 
+            // ScaleValue_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.ScaleValue_Textbox.CustomButton.Image = null;
+            this.ScaleValue_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.ScaleValue_Textbox.CustomButton.Name = "";
+            this.ScaleValue_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ScaleValue_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ScaleValue_Textbox.CustomButton.TabIndex = 1;
+            this.ScaleValue_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ScaleValue_Textbox.CustomButton.UseSelectable = true;
+            this.ScaleValue_Textbox.CustomButton.Visible = false;
+            this.ScaleValue_Textbox.Lines = new string[] {
+        "0"};
+            this.ScaleValue_Textbox.Location = new System.Drawing.Point(141, 57);
+            this.ScaleValue_Textbox.MaxLength = 32767;
+            this.ScaleValue_Textbox.Name = "ScaleValue_Textbox";
+            this.ScaleValue_Textbox.PasswordChar = '\0';
+            this.ScaleValue_Textbox.ReadOnly = true;
+            this.ScaleValue_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ScaleValue_Textbox.SelectedText = "";
+            this.ScaleValue_Textbox.SelectionLength = 0;
+            this.ScaleValue_Textbox.SelectionStart = 0;
+            this.ScaleValue_Textbox.ShortcutsEnabled = true;
+            this.ScaleValue_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.ScaleValue_Textbox.TabIndex = 18;
+            this.ScaleValue_Textbox.Text = "0";
+            this.ScaleValue_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ScaleValue_Textbox.UseSelectable = true;
+            this.ScaleValue_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ScaleValue_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -478,5 +525,7 @@
         private MetroFramework.Controls.MetroTextBox WorkCount_Textbox;
         private MetroFramework.Controls.MetroTextBox WorkDate_Textbox;
         private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
+        private MetroFramework.Controls.MetroTextBox ScaleValue_Textbox;
+        private MetroFramework.Controls.MetroLabel ScaleValue_Label;
     }
 }

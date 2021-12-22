@@ -24,7 +24,8 @@ namespace HadoFND
         string currentProductId = ""; // 현재 작업중인 제품 id
 
         int currentWorkCount = 0; // 현재 작업수
-        int currentTotalWeight = 0; // 현재 총중량
+        int currentTotalWeight = 0; // 현재 총 작업 중량
+        int currentScaleValue = 0; // 현재 저울 계량값
         int beforeTotalWeight = 0; // 이전 총중량
         int currentAddWeight = 0; // 현재 추가 중량
 
@@ -307,6 +308,19 @@ namespace HadoFND
             {
                 conn.Close();
                 MessageBox.Show("작업이 종료 되었습니다.");
+
+                //
+                // 시리얼 포트 닫기
+                //
+                try
+                {
+                    indicatorSerialPort.Close();
+                }
+                catch (Exception ex)
+                {
+
+                }
+
                 //
                 // 버튼 활성/비활성화
                 //
@@ -319,24 +333,22 @@ namespace HadoFND
                 WorkEnd_Button.Enabled = false;
 
                 currentWorkCount = 0; // 현재 작업수
-                currentTotalWeight = 0; // 현재 총중량
+                currentTotalWeight = 0; // 총 작업 중량
+                currentScaleValue = 0; // 저울 계량값
                 beforeTotalWeight = 0; // 이전 총중량
                 currentAddWeight = 0; // 현재 추가 중량
 
+                // 총 작업 중량 표시 초기화
+                TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                // 저울 계량값 표시 초기화
+                ScaleValue_Textbox.Text = currentScaleValue.ToString();
+                // 현재 추가 중량 표시 초기화
+                Weight_Textbox.Text = currentAddWeight.ToString();
                 // 작업수 표시 초기화
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
                 // 상한,하한 표시 초기화
                 Hi_Textbox.Text = "0";
-                Lo_Textbox.Text = "0";
-
-                try
-                {
-                    indicatorSerialPort.Close();
-                }
-                catch(Exception ex)
-                {
-
-                }
+                Lo_Textbox.Text = "0";                
             }
         }
 
@@ -375,13 +387,14 @@ namespace HadoFND
                     return;
                 }
 
-                // 시리얼 데이터에서 계량값(숫자만) 추출해서 현재 총 중량에 표시
-                currentTotalWeight = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
-                TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                // 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
+                currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
+                ScaleValue_Textbox.Text = currentScaleValue.ToString();
 
-                currentAddWeight = currentTotalWeight - beforeTotalWeight;
+                // 추가 중량 = 저울 계량값 - 이전 총 중량
+                currentAddWeight = currentScaleValue - beforeTotalWeight;
 
-                // 추가 중량에 현재 총중량 - 이전 총중량 값 표시
+                // 추가 중량 표시
                 Weight_Textbox.Text = currentAddWeight.ToString();
 
                 //
@@ -410,6 +423,8 @@ namespace HadoFND
                         {
                             // 작업수 +1
                             currentWorkCount++;
+                            // 총 작업 중량 = 총 작업 중량 + 추가 중량
+                            currentTotalWeight += currentAddWeight;
 
                             try
                             {
@@ -419,7 +434,7 @@ namespace HadoFND
                                 cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
                                 cmd.Parameters.AddWithValue("@user_id", currentUserId);
                                 cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
-                                cmd.Parameters.AddWithValue("@weight", currentTotalWeight - beforeTotalWeight);
+                                cmd.Parameters.AddWithValue("@weight", currentAddWeight);
                                 cmd.Parameters.AddWithValue("@total_weight", currentTotalWeight);
                                 cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
                                 cmd.Parameters.AddWithValue("@is_finish", false);
@@ -435,11 +450,24 @@ namespace HadoFND
                             finally
                             {
                                 conn.Close();
-                                // 이전 총 중량에 현재 총 중량 넣기
-                                beforeTotalWeight = currentTotalWeight;
+                                // 이전 총 중량 = 이전 총 중량 + 추가 중량
+                                beforeTotalWeight += currentAddWeight;
+                                TotalWeight_Textbox.Text = currentTotalWeight.ToString();
                                 // 작업 수 갱신
                                 WorkCount_Textbox.Text = currentWorkCount.ToString();
                             }
+                        }
+                    }
+                    //
+                    // 현재 추가 중량이 최소 무게보다 작으면 플랫폼의 물건을 내려뒀다는 것이고
+                    // 높이의 한계로 인해 물건을 내렸으므로 작업은 계속 이어져야 한다.
+                    //
+                    else
+                    {
+                        if(currentScaleValue <= 0)
+                        {
+                            // 이전 총 중량을 0으로 리셋
+                            beforeTotalWeight = 0;
                         }
                     }
                 }
