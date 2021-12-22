@@ -35,6 +35,8 @@
             this.WorkStart_Button = new MetroFramework.Controls.MetroButton();
             this.WorkEnd_Button = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.ScaleValue_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
             this.Product_Name_Combobox = new MetroFramework.Controls.MetroComboBox();
             this.Lo_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.Hi_Textbox = new MetroFramework.Controls.MetroTextBox();
@@ -50,8 +52,7 @@
             this.Weight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.TotalWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
-            this.ScaleValue_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.LedCheck_Button = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +147,49 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // ScaleValue_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.ScaleValue_Textbox.CustomButton.Image = null;
+            this.ScaleValue_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.ScaleValue_Textbox.CustomButton.Name = "";
+            this.ScaleValue_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.ScaleValue_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ScaleValue_Textbox.CustomButton.TabIndex = 1;
+            this.ScaleValue_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ScaleValue_Textbox.CustomButton.UseSelectable = true;
+            this.ScaleValue_Textbox.CustomButton.Visible = false;
+            this.ScaleValue_Textbox.Lines = new string[] {
+        "0"};
+            this.ScaleValue_Textbox.Location = new System.Drawing.Point(141, 57);
+            this.ScaleValue_Textbox.MaxLength = 32767;
+            this.ScaleValue_Textbox.Name = "ScaleValue_Textbox";
+            this.ScaleValue_Textbox.PasswordChar = '\0';
+            this.ScaleValue_Textbox.ReadOnly = true;
+            this.ScaleValue_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ScaleValue_Textbox.SelectedText = "";
+            this.ScaleValue_Textbox.SelectionLength = 0;
+            this.ScaleValue_Textbox.SelectionStart = 0;
+            this.ScaleValue_Textbox.ShortcutsEnabled = true;
+            this.ScaleValue_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.ScaleValue_Textbox.TabIndex = 18;
+            this.ScaleValue_Textbox.Text = "0";
+            this.ScaleValue_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ScaleValue_Textbox.UseSelectable = true;
+            this.ScaleValue_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ScaleValue_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // ScaleValue_Label
+            // 
+            this.ScaleValue_Label.AutoSize = true;
+            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 57);
+            this.ScaleValue_Label.Name = "ScaleValue_Label";
+            this.ScaleValue_Label.Size = new System.Drawing.Size(83, 19);
+            this.ScaleValue_Label.TabIndex = 17;
+            this.ScaleValue_Label.Text = "저울 계량값";
             // 
             // Product_Name_Combobox
             // 
@@ -436,54 +480,22 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // ScaleValue_Label
+            // LedCheck_Button
             // 
-            this.ScaleValue_Label.AutoSize = true;
-            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 57);
-            this.ScaleValue_Label.Name = "ScaleValue_Label";
-            this.ScaleValue_Label.Size = new System.Drawing.Size(83, 19);
-            this.ScaleValue_Label.TabIndex = 17;
-            this.ScaleValue_Label.Text = "저울 계량값";
-            // 
-            // ScaleValue_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.ScaleValue_Textbox.CustomButton.Image = null;
-            this.ScaleValue_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.ScaleValue_Textbox.CustomButton.Name = "";
-            this.ScaleValue_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.ScaleValue_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ScaleValue_Textbox.CustomButton.TabIndex = 1;
-            this.ScaleValue_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ScaleValue_Textbox.CustomButton.UseSelectable = true;
-            this.ScaleValue_Textbox.CustomButton.Visible = false;
-            this.ScaleValue_Textbox.Lines = new string[] {
-        "0"};
-            this.ScaleValue_Textbox.Location = new System.Drawing.Point(141, 57);
-            this.ScaleValue_Textbox.MaxLength = 32767;
-            this.ScaleValue_Textbox.Name = "ScaleValue_Textbox";
-            this.ScaleValue_Textbox.PasswordChar = '\0';
-            this.ScaleValue_Textbox.ReadOnly = true;
-            this.ScaleValue_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ScaleValue_Textbox.SelectedText = "";
-            this.ScaleValue_Textbox.SelectionLength = 0;
-            this.ScaleValue_Textbox.SelectionStart = 0;
-            this.ScaleValue_Textbox.ShortcutsEnabled = true;
-            this.ScaleValue_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.ScaleValue_Textbox.TabIndex = 18;
-            this.ScaleValue_Textbox.Text = "0";
-            this.ScaleValue_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScaleValue_Textbox.UseSelectable = true;
-            this.ScaleValue_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ScaleValue_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.LedCheck_Button.Location = new System.Drawing.Point(335, 11);
+            this.LedCheck_Button.Name = "LedCheck_Button";
+            this.LedCheck_Button.Size = new System.Drawing.Size(75, 23);
+            this.LedCheck_Button.TabIndex = 8;
+            this.LedCheck_Button.Text = "경광등확인";
+            this.LedCheck_Button.UseSelectable = true;
+            this.LedCheck_Button.Click += new System.EventHandler(this.LedCheck_Button_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.LedCheck_Button);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.WorkEnd_Button);
@@ -527,5 +539,6 @@
         private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
         private MetroFramework.Controls.MetroTextBox ScaleValue_Textbox;
         private MetroFramework.Controls.MetroLabel ScaleValue_Label;
+        private MetroFramework.Controls.MetroButton LedCheck_Button;
     }
 }

@@ -32,7 +32,8 @@ namespace HadoFND
         int selectedProductHiValue = 0; // 선택한 제품의 상한값
         int selectedProductLoValue = 0; // 선택한 제품의 하한값
 
-        SerialPortStream indicatorSerialPort;
+        SerialPortStream indicatorSerialPort;   // 인디케이터 시리얼 통신
+        SerialPortStream ledSerialPort;   // 경광등 시리얼 통신
 
         public MainForm()
         {
@@ -45,7 +46,7 @@ namespace HadoFND
 
         //
         // 환경설정 파일 다시 로드하는 함수
-        // 통신 관리에서 변동사항 있을 경우 실행된다.
+        // 통신 관리에서 저장 버튼 누르면 변경 사항을 적용하기 위해 실행된다.
         //
         private void RefreshConfigFile()
         {
@@ -249,10 +250,17 @@ namespace HadoFND
             //
             try
             {
+                // 인디케이터 시리얼 통신 연결
                 indicatorSerialPort = new SerialPortStream(_configFile.Comport, _configFile.BaudRate, _configFile.DataBits, _configFile.Parity, _configFile.StopBits);
 
                 indicatorSerialPort.DataReceived += indicatorSerialPort_DataReceived;
                 indicatorSerialPort.Open();
+
+                // 경광등 시리얼 통신 연결
+                ledSerialPort = new SerialPortStream(_configFile.Led_Comport, _configFile.Led_BaudRate, _configFile.Led_DataBits, _configFile.Led_Parity, _configFile.Led_StopBits);
+
+                ledSerialPort.DataReceived += ledSerialPort_DataReceived;
+                ledSerialPort.Open();
 
                 //
                 // 영점 잡기
@@ -322,6 +330,7 @@ namespace HadoFND
                 try
                 {
                     indicatorSerialPort.Close();
+                    ledSerialPort.Close();
                 }
                 catch (Exception ex)
                 {
@@ -360,7 +369,7 @@ namespace HadoFND
         }
 
         //
-        // 시리얼 수신 이벤트가 발생하면 아래 부분이 실행된다.
+        // 인디케이터 시리얼 수신 이벤트가 발생하면 아래 부분이 실행된다.
         //
         private void indicatorSerialPort_DataReceived(object sender, RJCP.IO.Ports.SerialDataReceivedEventArgs e)
         {
@@ -368,7 +377,7 @@ namespace HadoFND
         }
 
         //
-        // 시리얼 수신 데이터 처리
+        // 인디케이터 시리얼 수신 데이터 처리
         //
         private void IndicatorSerialReceived(object s, EventArgs e)
         {
@@ -421,7 +430,7 @@ namespace HadoFND
                         {
                             //
                             // 경광등으로 신호 전달
-                            //                            
+                            //
                         }
                         //
                         // 현재 추가 중량 및 총 중량 DB에 기록
@@ -485,13 +494,9 @@ namespace HadoFND
             catch(Exception ex)
             {
                 
-            }            
+            }
         }
-
-        
-
-        
-
+                
         //
         // 콤보박스에서 제품 선택 시 상한, 하한 값 표시
         //
@@ -512,5 +517,92 @@ namespace HadoFND
             }
         }
 
+        //
+        // 경광등 연결 확인 버튼
+        //
+        private void LedCheck_Button_Click(object sender, EventArgs e)
+        {            
+            //
+            // 경광등 시리얼 통신 연결 여부 확인
+            //
+            try
+            {
+                if(ledSerialPort == null)
+                {
+                    ledSerialPort = new SerialPortStream(_configFile.Led_Comport, _configFile.Led_BaudRate, _configFile.Led_DataBits, _configFile.Led_Parity, _configFile.Led_StopBits);
+
+                    ledSerialPort.DataReceived += ledSerialPort_DataReceived;
+                    ledSerialPort.Open();
+                }
+                else
+                {
+                    if(!ledSerialPort.IsOpen)
+                    {
+                        ledSerialPort.Open();
+                    }
+                }                
+
+                //
+                // Hi 신호 보내기
+                //
+                ledSerialPort.Write("Hi\r\n");
+            }
+            catch (Exception ex)
+            {
+                var text = "시리얼 통신 연결 오류";
+                MessageBox.Show(text);
+                return;
+            }
+        }
+
+        //
+        // 경광등 시리얼 수신 이벤트가 발생하면 아래 부분이 실행된다.
+        //
+        private void ledSerialPort_DataReceived(object sender, RJCP.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            this.Invoke(new EventHandler(LedSerialReceived)); // 메인 쓰레드와 수신 쓰레드의 충돌을 방지하기 위해 Invoke 사용. LedSerialReceived로 이동하여 추가 작업 실행.            
+        }
+
+        //
+        // 경광등 시리얼 수신 데이터 처리
+        //
+        private void LedSerialReceived(object s, EventArgs e)
+        {
+            //
+            // 통신 설정 다시 로드
+            //
+            RefreshConfigFile();
+
+            try
+            {
+                var receivedData = indicatorSerialPort.ReadLine(); // 시리얼 통신으로 받아온 데이터
+
+                var header1 = ""; // 첫번째 헤더( ST: 안정 US: 불안정 OL: 오버플로우 )
+                var header2 = ""; // 두번째 헤더( GS: 총중량 NT: 순중량 TR: 용기 )
+                var contents = ""; // 데이터( 극성, 소수점 포함 8자리 + 단위 2자리 )
+
+                var words = receivedData.Split(',');
+                if (words.Length < 3)
+                {
+                    return;
+                }
+                header1 = words[0];
+                header2 = words[1];
+                contents = words[2];
+
+                if (contents == null || contents.Equals(""))
+                {
+                    return;
+                }
+
+                //// 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
+                //currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }
