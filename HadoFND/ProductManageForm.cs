@@ -251,6 +251,7 @@ namespace HadoFND
                 e.Handled = true;
             }
         }
+
         //
         // 표준중량의 입력을 숫자로 제한
         //

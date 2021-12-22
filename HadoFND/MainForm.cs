@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
-using System.Data.SqlClient;
-using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 
@@ -42,6 +34,23 @@ namespace HadoFND
             InitializeComponent();
         }
         private void MainForm_Load(object sender, EventArgs e)
+        {
+            SetDefaultValue();            
+        }
+
+        //
+        // 환경설정 파일 다시 로드하는 함수
+        // 통신 관리에서 변동사항 있을 경우 실행된다.
+        //
+        private void RefreshConfigFile()
+        {
+            _configFile = _configFile.Load();
+        }
+
+        //
+        // 폼 로드시 가져오는 데이터
+        //
+        private void SetDefaultValue()
         {
             //
             // 환경설정 파일 로드
@@ -89,7 +98,7 @@ namespace HadoFND
 
                 dr.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
             }
@@ -101,7 +110,6 @@ namespace HadoFND
             //
             // 일일 현황 가져오기
             //
-
         }
 
         //
@@ -110,6 +118,7 @@ namespace HadoFND
         private void SerialSetting_Button_Click(object sender, EventArgs e)
         {
             SerialSettingForm serialSettingForm = new SerialSettingForm();
+            serialSettingForm.SerialSettingClosedEvent += new SerialSettingClosedEventHandler(this.RefreshConfigFile);
             serialSettingForm.ShowDialog();
         }
 

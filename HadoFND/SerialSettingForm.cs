@@ -11,15 +11,21 @@ using System.IO.Ports;
 
 namespace HadoFND
 {
+    public delegate void SerialSettingClosedEventHandler();
+
     public partial class SerialSettingForm : MetroFramework.Forms.MetroForm // 상속 클래스 변경
     {
         ConfigFile _configFile = new ConfigFile();
+        public SerialSettingClosedEventHandler SerialSettingClosedEvent;
 
         public SerialSettingForm()
         {
             InitializeComponent();
         }
 
+        //
+        // 폼 최초 실행
+        //
         private void SerialSettingForm_Load(object sender, EventArgs e)
         {
             SetDefaultValue();
@@ -188,6 +194,9 @@ namespace HadoFND
             }
         }
 
+        // 
+        // 저장 버튼
+        //
         private void Serial_Save_Button_Click(object sender, EventArgs e)
         {
             // 인디케이터 설정값
@@ -343,9 +352,20 @@ namespace HadoFND
             this.Close();
         }
 
+        //
+        // 종료 버튼
+        //
         private void Serial_Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //
+        // 폼 종료 후 이벤트
+        //
+        private void SerialSettingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SerialSettingClosedEvent();
         }
     }
 }
