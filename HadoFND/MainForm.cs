@@ -190,7 +190,11 @@ namespace HadoFND
                 WorkDate_Textbox.Text = DateTime.Now.ToString("yyyy.MM.dd");
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
 
-                // 미완료된 작업이 남아있는 경우
+                /*
+                 프로그램이 갑작스럽게 종료되거나 작업 종료를 누르지 못하고 끈 경우
+                플랫폼에 종료 전에 올려뒀던 물건을 그대로 둔 후 프로그램을 다시 시작하면
+                이전 작업에 이어서 작업을 진행할 수 있다.
+                 */
                 if (dr.HasRows)
                 {
                     dr.Read();
@@ -204,14 +208,12 @@ namespace HadoFND
                     // 해당 제품의 최신 기록의 is_finish 값이 false일 경우 작업이 완료되지 않았음을 의미
                     if (!workRecord.is_finish)
                     {
-                        // 현재 총중량, 이전 총중량을 DB에서 읽어온 값으로 설정
+                        // 총 작업 중량과 이전 총 중량을 DB에서 가져온 값으로 설정
                         currentTotalWeight = workRecord.total_weight;
                         beforeTotalWeight = workRecord.total_weight;
 
-                        // 총중량 표시
-                        TotalWeight_Textbox.Text = currentTotalWeight.ToString();
-                        // 추가 중량 표시
-                        Weight_Textbox.Text = (currentTotalWeight - beforeTotalWeight).ToString();
+                        // 총 작업 중량 표시
+                        TotalWeight_Textbox.Text = currentTotalWeight.ToString();                        
                         // 작업일자 표시
                         WorkDate_Textbox.Text = workRecord.created_at.ToString("yyyy.MM.dd");
                         // 작업수 DB에서 읽어온 값으로 설정 및 표시
@@ -229,13 +231,6 @@ namespace HadoFND
             {
                 conn.Close();
             }
-
-            //
-            // 시리얼 포트 설정
-            //
-
-            
-
 
             //
             // 시리얼 통신 연결 여부 확인
