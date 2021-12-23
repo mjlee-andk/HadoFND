@@ -72,7 +72,7 @@ namespace HadoFND
             }
         }
 
-        int _led_set_baudrate = 2400;
+        int _led_set_baudrate = 9600;
         public int Led_BaudRate
         {
             get { return _led_set_baudrate; }
@@ -86,7 +86,7 @@ namespace HadoFND
             set { _led_set_parity = value; }
         }
 
-        int _led_set_databits = 8;
+        int _led_set_databits = 7;
         public int Led_DataBits
         {
             get { return _led_set_databits; }
