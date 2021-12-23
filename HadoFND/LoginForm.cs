@@ -12,7 +12,7 @@ namespace HadoFND
 
         public LoginForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,6 +24,11 @@ namespace HadoFND
 
             string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
             conn = new MySqlConnection(connectString);
+            
+            // 로그인 폼으로 포커싱 주고 아이디 입력창에 포커싱
+            this.Activate();
+            this.ActiveControl = LoginAccount_TextBox;
+            LoginAccount_TextBox.Focus();
         }
         
 
@@ -47,13 +52,14 @@ namespace HadoFND
                 return;
             }
 
+            var user_id = "";
             // DB에 등록된 계정인지 확인
             try
             {
                 conn.Open();
 
                 var sqlSelect = "SELECT * FROM user WHERE account = @account;";
-                var user_id = "";
+                
 
                 MySqlCommand cmd = new MySqlCommand(sqlSelect, conn);
                 cmd.Parameters.AddWithValue("@account", user_account);
@@ -77,19 +83,21 @@ namespace HadoFND
                     MessageBox.Show(text);
                     return;
                 }
+                conn.Close();
+
+                /*
+                로그인 성공 시 로그인 폼 숨겨두고
+                메인 폼 띄운다. 메인 폼 종료 시 로그인 폼의 this.Close()가 실행된다.
+                 */
+                this.Hide();
                 MainForm.currentUserId = user_id;
                 MainForm mainForm = new MainForm();
                 mainForm.ShowDialog();
-
-                dr.Close();
+                this.Close();
             }
             catch (Exception ex)
             {
                 Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 

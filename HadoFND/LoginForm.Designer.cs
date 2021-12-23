@@ -103,7 +103,7 @@
             this.LoginAccount_TextBox.SelectionStart = 0;
             this.LoginAccount_TextBox.ShortcutsEnabled = true;
             this.LoginAccount_TextBox.Size = new System.Drawing.Size(167, 23);
-            this.LoginAccount_TextBox.TabIndex = 4;
+            this.LoginAccount_TextBox.TabIndex = 0;
             this.LoginAccount_TextBox.UseSelectable = true;
             this.LoginAccount_TextBox.WaterMark = "아이디";
             this.LoginAccount_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
