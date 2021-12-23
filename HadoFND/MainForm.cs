@@ -475,11 +475,8 @@ namespace HadoFND
                         else
                         {
                             // 이상없을 경우 경광등 OK 신호 보내기
-                            // 녹색등
-                            if (currentAddWeight > selectedProductHiValue)
-                            {
-                                ledSerialPort.Write("O\r\n");
-                            }
+                            // OK 녹색등
+                            ledSerialPort.Write("O\r\n");
 
                             // 작업수 +1
                             currentWorkCount++;
