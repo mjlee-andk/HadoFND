@@ -31,7 +31,6 @@ namespace HadoFND
             LoginAccount_TextBox.Focus();
         }
         
-
         private void login_button_click(object sender, EventArgs e)
         {
             var user_account = LoginAccount_TextBox.Text;   // 사용자 아이디

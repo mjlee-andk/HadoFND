@@ -103,7 +103,7 @@
             this.LoginAccount_TextBox.SelectionStart = 0;
             this.LoginAccount_TextBox.ShortcutsEnabled = true;
             this.LoginAccount_TextBox.Size = new System.Drawing.Size(167, 23);
-            this.LoginAccount_TextBox.TabIndex = 0;
+            this.LoginAccount_TextBox.TabIndex = 4;
             this.LoginAccount_TextBox.UseSelectable = true;
             this.LoginAccount_TextBox.WaterMark = "아이디";
             this.LoginAccount_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -135,7 +135,7 @@
             this.LoginPassword_TextBox.SelectionStart = 0;
             this.LoginPassword_TextBox.ShortcutsEnabled = true;
             this.LoginPassword_TextBox.Size = new System.Drawing.Size(167, 23);
-            this.LoginPassword_TextBox.TabIndex = 6;
+            this.LoginPassword_TextBox.TabIndex = 5;
             this.LoginPassword_TextBox.UseSelectable = true;
             this.LoginPassword_TextBox.WaterMark = "비밀번호";
             this.LoginPassword_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

@@ -41,10 +41,6 @@ namespace HadoFND
             _configFile = _configFile.Load();
 
             //
-            // 환경설정 파일에 저장된 값으로 변경하기
-            //
-
-            //
             // 인디케이터
             //
 

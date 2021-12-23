@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using RJCP.IO.Ports;
+using System.Data;
 
 namespace HadoFND
 {
@@ -35,9 +36,10 @@ namespace HadoFND
         {
             InitializeComponent();
         }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetDefaultValue();            
+            SetDefaultValue();
         }
 
         //
@@ -47,6 +49,38 @@ namespace HadoFND
         private void RefreshConfigFile()
         {
             _configFile = _configFile.Load();
+        }
+
+        //
+        // 일일 작업 현황 조회
+        //
+        private void GetTodayWorkRecords()
+        {
+            var sqlselect = "";
+            var startDate = DateTime.Today;
+            var endDate = DateTime.Today.AddDays(1);
+
+            //
+            // 오늘 작업 완료된 데이터만 조회
+            //
+            sqlselect =
+                "SELECT p.name AS Name, " +
+                "w.total_weight AS TotalWeight, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                "FROM workrecord w " +
+                "LEFT JOIN product p " +
+                "ON w.product_id = p.id " +
+                "WHERE w.is_finish = TRUE AND DATE(w.created_at) BETWEEN @startDate AND @endDate " +
+                "ORDER BY w.created_at ASC, w.work_count ASC";
+
+            MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
+            cmd.Parameters.AddWithValue("@startDate", startDate);
+            cmd.Parameters.AddWithValue("@endDate", endDate);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            TodayWorkRecords_Datagridview.DataSource = dt;
         }
 
         //
@@ -106,12 +140,13 @@ namespace HadoFND
             }
             finally
             {
-                conn.Close();
+                //conn.Close();
             }
 
             //
             // 일일 현황 가져오기
             //
+            GetTodayWorkRecords();
         }
 
         //
@@ -150,9 +185,7 @@ namespace HadoFND
         {
             ExcelExportForm excelExportForm = new ExcelExportForm();
             excelExportForm.ShowDialog();
-        }
-
-        
+        }        
 
         //
         // 작업 시작 버튼 클릭
@@ -272,7 +305,6 @@ namespace HadoFND
         //
         // 작업 종료 버튼 클릭
         //
-
         private void WorkEnd_Button_Click(object sender, EventArgs e)
         {
             try
@@ -315,9 +347,9 @@ namespace HadoFND
             }
             finally
             {
-                conn.Close();
                 MessageBox.Show("작업이 종료 되었습니다.");
-
+                GetTodayWorkRecords();
+                conn.Close();
                 //
                 // 시리얼 포트 닫기
                 //
