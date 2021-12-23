@@ -581,12 +581,13 @@ namespace HadoFND
                     {
                         ledSerialPort.Open();
                     }
-                }                
+                }
 
                 //
                 // Hi 신호 보내기
                 //
-                ledSerialPort.Write("Hi\r\n");
+                //ledSerialPort.Write("H\r\n");
+                ledSerialPort.Write("H".ToCharArray(), 0, "H".ToCharArray().Length);
             }
             catch (Exception ex)
             {
