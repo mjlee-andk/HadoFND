@@ -163,9 +163,9 @@
             this.ProductWeight_Label.AutoSize = true;
             this.ProductWeight_Label.Location = new System.Drawing.Point(486, 186);
             this.ProductWeight_Label.Name = "ProductWeight_Label";
-            this.ProductWeight_Label.Size = new System.Drawing.Size(65, 19);
+            this.ProductWeight_Label.Size = new System.Drawing.Size(81, 19);
             this.ProductWeight_Label.TabIndex = 5;
-            this.ProductWeight_Label.Text = "표준중량";
+            this.ProductWeight_Label.Text = "표준중량(g)";
             // 
             // ProductAdd_Button
             // 

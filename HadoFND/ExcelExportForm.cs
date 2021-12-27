@@ -189,8 +189,8 @@ namespace HadoFND
                 if (currentProductId.Equals("") || currentProductId == null)
                 {
                     sqlselect =
-                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight, " +
-                    "w.weight AS AddWeight, w.total_weight AS TotalWeight, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight_g, " +
+                    "w.weight AS AddWeight_g, w.total_weight AS TotalWeight_kg, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +
@@ -201,8 +201,8 @@ namespace HadoFND
                 else
                 {
                     sqlselect =
-                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight, " +
-                    "w.weight AS AddWeight, w.total_weight AS TotalWeight, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight_g, " +
+                    "w.weight AS AddWeight_g, w.total_weight AS TotalWeight_kg, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +

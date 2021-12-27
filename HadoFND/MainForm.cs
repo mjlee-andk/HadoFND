@@ -21,10 +21,11 @@ namespace HadoFND
         string currentProductId = ""; // 현재 작업중인 제품 id
 
         int currentWorkCount = 0; // 현재 작업수
-        int currentTotalWeight = 0; // 현재 총 작업 중량
-        int currentScaleValue = 0; // 현재 저울 계량값
-        int beforeTotalWeight = 0; // 이전 총중량
-        int currentAddWeight = 0; // 현재 추가 중량
+        float currentTotalWeight = 0; // 현재 총 작업 중량
+        float currentScaleValue = 0; // 현재 저울 계량값
+        float beforeTotalWeight = 0; // 이전 총중량
+        float currentAddWeight = 0; // 현재 추가 중량(kg)
+        int currentAddWeightG = 0; // 현재 추가 중량(g)
 
         int selectedProductHiValue = 0; // 선택한 제품의 상한값
         int selectedProductLoValue = 0; // 선택한 제품의 하한값
@@ -65,7 +66,7 @@ namespace HadoFND
             //
             sqlselect =
                 "SELECT p.name AS Name, " +
-                "w.total_weight AS TotalWeight, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                "w.total_weight AS Total_kg, w.work_count AS Count, w.created_at AS CreatedAt " +
                 "FROM workrecord w " +
                 "LEFT JOIN product p " +
                 "ON w.product_id = p.id " +
@@ -377,17 +378,18 @@ namespace HadoFND
                 currentTotalWeight = 0; // 총 작업 중량
                 currentScaleValue = 0; // 저울 계량값
                 beforeTotalWeight = 0; // 이전 총중량
-                currentAddWeight = 0; // 현재 추가 중량
+                currentAddWeight = 0; // 현재 추가 중량(kg)
+                currentAddWeightG = 0; // 현재 추가 중량(g)
 
                 // 총 작업 중량 표시 초기화
                 TotalWeight_Textbox.Text = currentTotalWeight.ToString();
                 // 저울 계량값 표시 초기화
                 ScaleValue_Textbox.Text = currentScaleValue.ToString();
                 // 현재 추가 중량 표시 초기화
-                Weight_Textbox.Text = currentAddWeight.ToString();
+                Weight_Textbox.Text = currentAddWeightG.ToString();
                 // 작업수 표시 초기화
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
-                // 상한,하한 표시 초기화
+                //// 상한,하한 표시 초기화
                 //Hi_Textbox.Text = "0";
                 //Lo_Textbox.Text = "0";
             }
@@ -410,9 +412,9 @@ namespace HadoFND
             {
                 var receivedData = indicatorSerialPort.ReadLine(); // 시리얼 통신으로 받아온 데이터
 
-                var header1 = ""; // 첫번째 헤더( ST: 안정 US: 불안정 OL: 오버플로우 )
-                var header2 = ""; // 두번째 헤더( GS: 총중량 NT: 순중량 TR: 용기 )
-                var contents = ""; // 데이터( 극성, 소수점 포함 8자리 + 단위 2자리 )
+                var header1 = ""; // 첫번째 헤더( ST: 안정 / US: 불안정 / OL: 오버플로우 )
+                var header2 = ""; // 두번째 헤더( GS: 총중량 / NT: 순중량 / TR: 용기 )
+                var contents = ""; // 데이터( 극성, 소수점 포함 8자리 + 단위 2자리 = 총 10자리 )
 
                 var words = receivedData.Split(',');
                 if (words.Length < 3)
@@ -428,15 +430,21 @@ namespace HadoFND
                     return;
                 }
 
+                var onlyNumber = contents.Substring(0, 8);
+
                 // 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
-                currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
+                currentScaleValue = float.Parse(onlyNumber);
+                //currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
                 ScaleValue_Textbox.Text = currentScaleValue.ToString();
 
                 // 추가 중량 = 저울 계량값 - 이전 총 중량
                 currentAddWeight = currentScaleValue - beforeTotalWeight;
 
+                // 추가 중량 g단위
+                currentAddWeightG = (int)(currentAddWeight * 1000);
+
                 // 추가 중량 표시
-                Weight_Textbox.Text = currentAddWeight.ToString();
+                Weight_Textbox.Text = currentAddWeightG.ToString();
 
                 //
                 // 계량값 안정(ST)일때만 처리
@@ -452,24 +460,24 @@ namespace HadoFND
                         //
                         // 현재 추가 중량이 최소 무게보다 클 경우에 작업으로 기록
                         //
-                        if (currentAddWeight > _configFile.Min_Weight)
+                        if (currentAddWeightG > _configFile.Min_Weight)
                         {
                             //
                             // 현재 추가 중량이 상한 또는 하한 값 범위를 벗어나면 경광등으로 신호 전달
                             //
-                            if (currentAddWeight < selectedProductLoValue || currentAddWeight > selectedProductHiValue)
+                            if (currentAddWeightG < selectedProductLoValue || currentAddWeightG > selectedProductHiValue)
                             {
                                 //
                                 // 경광등으로 신호 전달
                                 //
 
                                 // LO 적색등
-                                if (currentAddWeight < selectedProductLoValue)
+                                if (currentAddWeightG < selectedProductLoValue)
                                 {
                                     ledSerialPort.Write("L\r\n");
                                 }
                                 // HI 황색등
-                                if (currentAddWeight > selectedProductHiValue)
+                                if (currentAddWeightG > selectedProductHiValue)
                                 {
                                     ledSerialPort.Write("H\r\n");
                                 }
@@ -497,7 +505,7 @@ namespace HadoFND
                                     cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
                                     cmd.Parameters.AddWithValue("@user_id", currentUserId);
                                     cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
-                                    cmd.Parameters.AddWithValue("@weight", currentAddWeight);
+                                    cmd.Parameters.AddWithValue("@weight", currentAddWeightG);
                                     cmd.Parameters.AddWithValue("@total_weight", currentTotalWeight);
                                     cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
                                     cmd.Parameters.AddWithValue("@is_finish", false);
@@ -530,7 +538,7 @@ namespace HadoFND
                          */
                         else
                         {
-                            if (currentScaleValue < _configFile.Min_Weight)
+                            if ((int)(currentScaleValue * 1000) < _configFile.Min_Weight)
                             {
                                 // 이전 총 중량을 0으로 리셋
                                 beforeTotalWeight = 0;

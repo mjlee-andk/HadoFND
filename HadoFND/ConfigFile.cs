@@ -156,7 +156,7 @@ namespace HadoFND
             set { _lo_Value = value; }
         }
 
-        // 최소 무게
+        // 최소 무게(g)
         // 프로그램이 인식할 수 있는 최소 무게를 설정한다. 최소 무게 이하일 경우 작업 기록이 되지 않는다.
         int _min_weight = 50;
 
