@@ -219,7 +219,6 @@ namespace HadoFND
             var selectedProductId = Product_Name_Combobox.SelectedValue;
             try
             {
-                conn.Open();
                 var sqlselect = "SELECT * FROM workrecord WHERE product_id = @product_id ORDER BY created_at DESC LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
                 cmd.Parameters.AddWithValue("@product_id", selectedProductId);
@@ -389,8 +388,8 @@ namespace HadoFND
                 // 작업수 표시 초기화
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
                 // 상한,하한 표시 초기화
-                Hi_Textbox.Text = "0";
-                Lo_Textbox.Text = "0";                
+                //Hi_Textbox.Text = "0";
+                //Lo_Textbox.Text = "0";
             }
         }
 
