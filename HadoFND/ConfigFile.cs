@@ -86,7 +86,7 @@ namespace HadoFND
             set { _led_set_parity = value; }
         }
 
-        int _led_set_databits = 7;
+        int _led_set_databits = 8;
         public int Led_DataBits
         {
             get { return _led_set_databits; }
