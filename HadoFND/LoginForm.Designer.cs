@@ -53,7 +53,7 @@
             this.metroTextBox1.CustomButton.Image = null;
             this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(53, 1);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 17);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -83,16 +83,17 @@
             // 
             // 
             this.LoginAccount_TextBox.CustomButton.Image = null;
-            this.LoginAccount_TextBox.CustomButton.Location = new System.Drawing.Point(145, 1);
+            this.LoginAccount_TextBox.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.LoginAccount_TextBox.CustomButton.Name = "";
-            this.LoginAccount_TextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.LoginAccount_TextBox.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.LoginAccount_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LoginAccount_TextBox.CustomButton.TabIndex = 1;
             this.LoginAccount_TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.LoginAccount_TextBox.CustomButton.UseSelectable = true;
             this.LoginAccount_TextBox.CustomButton.Visible = false;
+            this.LoginAccount_TextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.LoginAccount_TextBox.Lines = new string[0];
-            this.LoginAccount_TextBox.Location = new System.Drawing.Point(59, 168);
+            this.LoginAccount_TextBox.Location = new System.Drawing.Point(59, 144);
             this.LoginAccount_TextBox.MaxLength = 32767;
             this.LoginAccount_TextBox.Name = "LoginAccount_TextBox";
             this.LoginAccount_TextBox.PasswordChar = '\0';
@@ -102,12 +103,12 @@
             this.LoginAccount_TextBox.SelectionLength = 0;
             this.LoginAccount_TextBox.SelectionStart = 0;
             this.LoginAccount_TextBox.ShortcutsEnabled = true;
-            this.LoginAccount_TextBox.Size = new System.Drawing.Size(167, 23);
+            this.LoginAccount_TextBox.Size = new System.Drawing.Size(167, 33);
             this.LoginAccount_TextBox.TabIndex = 4;
             this.LoginAccount_TextBox.UseSelectable = true;
             this.LoginAccount_TextBox.WaterMark = "아이디";
             this.LoginAccount_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.LoginAccount_TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginAccount_TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // LoginPassword_TextBox
             // 
@@ -115,16 +116,17 @@
             // 
             // 
             this.LoginPassword_TextBox.CustomButton.Image = null;
-            this.LoginPassword_TextBox.CustomButton.Location = new System.Drawing.Point(145, 1);
+            this.LoginPassword_TextBox.CustomButton.Location = new System.Drawing.Point(135, 1);
             this.LoginPassword_TextBox.CustomButton.Name = "";
-            this.LoginPassword_TextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.LoginPassword_TextBox.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.LoginPassword_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.LoginPassword_TextBox.CustomButton.TabIndex = 1;
             this.LoginPassword_TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.LoginPassword_TextBox.CustomButton.UseSelectable = true;
             this.LoginPassword_TextBox.CustomButton.Visible = false;
+            this.LoginPassword_TextBox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.LoginPassword_TextBox.Lines = new string[0];
-            this.LoginPassword_TextBox.Location = new System.Drawing.Point(59, 197);
+            this.LoginPassword_TextBox.Location = new System.Drawing.Point(59, 183);
             this.LoginPassword_TextBox.MaxLength = 32767;
             this.LoginPassword_TextBox.Name = "LoginPassword_TextBox";
             this.LoginPassword_TextBox.PasswordChar = '*';
@@ -134,18 +136,19 @@
             this.LoginPassword_TextBox.SelectionLength = 0;
             this.LoginPassword_TextBox.SelectionStart = 0;
             this.LoginPassword_TextBox.ShortcutsEnabled = true;
-            this.LoginPassword_TextBox.Size = new System.Drawing.Size(167, 23);
+            this.LoginPassword_TextBox.Size = new System.Drawing.Size(167, 33);
             this.LoginPassword_TextBox.TabIndex = 5;
             this.LoginPassword_TextBox.UseSelectable = true;
             this.LoginPassword_TextBox.WaterMark = "비밀번호";
             this.LoginPassword_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.LoginPassword_TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginPassword_TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // LoginOk_Button
             // 
-            this.LoginOk_Button.Location = new System.Drawing.Point(59, 304);
+            this.LoginOk_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.LoginOk_Button.Location = new System.Drawing.Point(59, 294);
             this.LoginOk_Button.Name = "LoginOk_Button";
-            this.LoginOk_Button.Size = new System.Drawing.Size(167, 23);
+            this.LoginOk_Button.Size = new System.Drawing.Size(167, 33);
             this.LoginOk_Button.TabIndex = 7;
             this.LoginOk_Button.Text = "로그인";
             this.LoginOk_Button.UseSelectable = true;
@@ -153,9 +156,10 @@
             // 
             // LoginClose_Button
             // 
+            this.LoginClose_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.LoginClose_Button.Location = new System.Drawing.Point(59, 333);
             this.LoginClose_Button.Name = "LoginClose_Button";
-            this.LoginClose_Button.Size = new System.Drawing.Size(167, 23);
+            this.LoginClose_Button.Size = new System.Drawing.Size(167, 33);
             this.LoginClose_Button.TabIndex = 8;
             this.LoginClose_Button.Text = "종료";
             this.LoginClose_Button.UseSelectable = true;
@@ -174,6 +178,7 @@
             this.Controls.Add(this.LoginAccount_TextBox);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroButton1);
+            this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "LoginForm";
             this.Resizable = false;
             this.Text = "하도FND";

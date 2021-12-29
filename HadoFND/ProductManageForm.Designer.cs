@@ -47,7 +47,7 @@
             // ProductCodeNumber_Label
             // 
             this.ProductCodeNumber_Label.AutoSize = true;
-            this.ProductCodeNumber_Label.Location = new System.Drawing.Point(486, 75);
+            this.ProductCodeNumber_Label.Location = new System.Drawing.Point(486, 138);
             this.ProductCodeNumber_Label.Name = "ProductCodeNumber_Label";
             this.ProductCodeNumber_Label.Size = new System.Drawing.Size(37, 19);
             this.ProductCodeNumber_Label.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.ProductCodeNumber_TextBox.CustomButton.UseSelectable = true;
             this.ProductCodeNumber_TextBox.CustomButton.Visible = false;
             this.ProductCodeNumber_TextBox.Lines = new string[0];
-            this.ProductCodeNumber_TextBox.Location = new System.Drawing.Point(602, 70);
+            this.ProductCodeNumber_TextBox.Location = new System.Drawing.Point(602, 133);
             this.ProductCodeNumber_TextBox.MaxLength = 11;
             this.ProductCodeNumber_TextBox.Name = "ProductCodeNumber_TextBox";
             this.ProductCodeNumber_TextBox.PasswordChar = '\0';
@@ -101,7 +101,7 @@
             this.ProductName_TextBox.CustomButton.UseSelectable = true;
             this.ProductName_TextBox.CustomButton.Visible = false;
             this.ProductName_TextBox.Lines = new string[0];
-            this.ProductName_TextBox.Location = new System.Drawing.Point(602, 126);
+            this.ProductName_TextBox.Location = new System.Drawing.Point(602, 189);
             this.ProductName_TextBox.MaxLength = 45;
             this.ProductName_TextBox.Name = "ProductName_TextBox";
             this.ProductName_TextBox.PasswordChar = '\0';
@@ -119,7 +119,7 @@
             // ProductName_Label
             // 
             this.ProductName_Label.AutoSize = true;
-            this.ProductName_Label.Location = new System.Drawing.Point(486, 131);
+            this.ProductName_Label.Location = new System.Drawing.Point(486, 194);
             this.ProductName_Label.Name = "ProductName_Label";
             this.ProductName_Label.Size = new System.Drawing.Size(51, 19);
             this.ProductName_Label.TabIndex = 3;
@@ -140,7 +140,7 @@
             this.ProductWeight_TextBox.CustomButton.UseSelectable = true;
             this.ProductWeight_TextBox.CustomButton.Visible = false;
             this.ProductWeight_TextBox.Lines = new string[0];
-            this.ProductWeight_TextBox.Location = new System.Drawing.Point(602, 181);
+            this.ProductWeight_TextBox.Location = new System.Drawing.Point(602, 244);
             this.ProductWeight_TextBox.MaxLength = 11;
             this.ProductWeight_TextBox.Name = "ProductWeight_TextBox";
             this.ProductWeight_TextBox.PasswordChar = '\0';
@@ -161,7 +161,7 @@
             // ProductWeight_Label
             // 
             this.ProductWeight_Label.AutoSize = true;
-            this.ProductWeight_Label.Location = new System.Drawing.Point(486, 186);
+            this.ProductWeight_Label.Location = new System.Drawing.Point(486, 249);
             this.ProductWeight_Label.Name = "ProductWeight_Label";
             this.ProductWeight_Label.Size = new System.Drawing.Size(81, 19);
             this.ProductWeight_Label.TabIndex = 5;
@@ -170,7 +170,7 @@
             // ProductAdd_Button
             // 
             this.ProductAdd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ProductAdd_Button.Location = new System.Drawing.Point(486, 258);
+            this.ProductAdd_Button.Location = new System.Drawing.Point(486, 300);
             this.ProductAdd_Button.Name = "ProductAdd_Button";
             this.ProductAdd_Button.Size = new System.Drawing.Size(256, 55);
             this.ProductAdd_Button.TabIndex = 7;
@@ -190,7 +190,7 @@
             // ProductDelete_Button
             // 
             this.ProductDelete_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ProductDelete_Button.Location = new System.Drawing.Point(486, 330);
+            this.ProductDelete_Button.Location = new System.Drawing.Point(486, 370);
             this.ProductDelete_Button.Name = "ProductDelete_Button";
             this.ProductDelete_Button.Size = new System.Drawing.Size(256, 56);
             this.ProductDelete_Button.TabIndex = 9;
