@@ -28,37 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SerialSetting_Button = new MetroFramework.Controls.MetroButton();
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductManage_Button = new MetroFramework.Controls.MetroButton();
             this.UserManage_Button = new MetroFramework.Controls.MetroButton();
             this.WorkStart_Button = new MetroFramework.Controls.MetroButton();
             this.WorkEnd_Button = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.ScaleValue_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
-            this.Product_Name_Combobox = new MetroFramework.Controls.MetroComboBox();
-            this.Lo_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.Hi_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.WorkCount_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.WorkDate_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.Hi_Label = new MetroFramework.Controls.MetroLabel();
-            this.Lo_Label = new MetroFramework.Controls.MetroLabel();
-            this.ProductName_Label = new MetroFramework.Controls.MetroLabel();
-            this.WorkCount_Label = new MetroFramework.Controls.MetroLabel();
-            this.WorkDate_Label = new MetroFramework.Controls.MetroLabel();
-            this.Weight_Label = new MetroFramework.Controls.MetroLabel();
-            this.TotalWeight_Label = new MetroFramework.Controls.MetroLabel();
-            this.Weight_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.TotalWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.LedCheck_Button = new MetroFramework.Controls.MetroButton();
             this.TodayWorkRecords_Datagridview = new MetroFramework.Controls.MetroGrid();
-            this.metroPanel1.SuspendLayout();
+            this.TotalWeight_Label = new MetroFramework.Controls.MetroLabel();
+            this.Weight_Label = new MetroFramework.Controls.MetroLabel();
+            this.WorkDate_Label = new MetroFramework.Controls.MetroLabel();
+            this.WorkCount_Label = new MetroFramework.Controls.MetroLabel();
+            this.ProductName_Label = new MetroFramework.Controls.MetroLabel();
+            this.Lo_Label = new MetroFramework.Controls.MetroLabel();
+            this.Hi_Label = new MetroFramework.Controls.MetroLabel();
+            this.WorkDate_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.WorkCount_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.Hi_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.Lo_Textbox = new MetroFramework.Controls.MetroTextBox();
+            this.Product_Name_Combobox = new MetroFramework.Controls.MetroComboBox();
+            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.TotalWeight_HtmlLabel = new MetroFramework.Drawing.Html.HtmlLabel();
+            this.ScaleValue_HtmlLabel = new MetroFramework.Drawing.Html.HtmlLabel();
+            this.Weight_HtmlLabel = new MetroFramework.Drawing.Html.HtmlLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SerialSetting_Button
@@ -104,9 +107,9 @@
             // WorkStart_Button
             // 
             this.WorkStart_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkStart_Button.Location = new System.Drawing.Point(727, 39);
+            this.WorkStart_Button.Location = new System.Drawing.Point(633, 40);
             this.WorkStart_Button.Name = "WorkStart_Button";
-            this.WorkStart_Button.Size = new System.Drawing.Size(100, 50);
+            this.WorkStart_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkStart_Button.TabIndex = 4;
             this.WorkStart_Button.Text = "작업시작";
             this.WorkStart_Button.UseSelectable = true;
@@ -116,374 +119,13 @@
             // 
             this.WorkEnd_Button.Enabled = false;
             this.WorkEnd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkEnd_Button.Location = new System.Drawing.Point(877, 39);
+            this.WorkEnd_Button.Location = new System.Drawing.Point(804, 40);
             this.WorkEnd_Button.Name = "WorkEnd_Button";
-            this.WorkEnd_Button.Size = new System.Drawing.Size(100, 50);
+            this.WorkEnd_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkEnd_Button.TabIndex = 5;
             this.WorkEnd_Button.Text = "작업종료";
             this.WorkEnd_Button.UseSelectable = true;
             this.WorkEnd_Button.Click += new System.EventHandler(this.WorkEnd_Button_Click);
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Controls.Add(this.ScaleValue_Textbox);
-            this.metroPanel1.Controls.Add(this.ScaleValue_Label);
-            this.metroPanel1.Controls.Add(this.Product_Name_Combobox);
-            this.metroPanel1.Controls.Add(this.Lo_Textbox);
-            this.metroPanel1.Controls.Add(this.Hi_Textbox);
-            this.metroPanel1.Controls.Add(this.WorkCount_Textbox);
-            this.metroPanel1.Controls.Add(this.WorkDate_Textbox);
-            this.metroPanel1.Controls.Add(this.Hi_Label);
-            this.metroPanel1.Controls.Add(this.Lo_Label);
-            this.metroPanel1.Controls.Add(this.ProductName_Label);
-            this.metroPanel1.Controls.Add(this.WorkCount_Label);
-            this.metroPanel1.Controls.Add(this.WorkDate_Label);
-            this.metroPanel1.Controls.Add(this.Weight_Label);
-            this.metroPanel1.Controls.Add(this.TotalWeight_Label);
-            this.metroPanel1.Controls.Add(this.Weight_Textbox);
-            this.metroPanel1.Controls.Add(this.TotalWeight_Textbox);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(11, 40);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(689, 421);
-            this.metroPanel1.TabIndex = 6;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // ScaleValue_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.ScaleValue_Textbox.CustomButton.Image = null;
-            this.ScaleValue_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.ScaleValue_Textbox.CustomButton.Name = "";
-            this.ScaleValue_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.ScaleValue_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ScaleValue_Textbox.CustomButton.TabIndex = 1;
-            this.ScaleValue_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ScaleValue_Textbox.CustomButton.UseSelectable = true;
-            this.ScaleValue_Textbox.CustomButton.Visible = false;
-            this.ScaleValue_Textbox.Lines = new string[] {
-        "0"};
-            this.ScaleValue_Textbox.Location = new System.Drawing.Point(141, 57);
-            this.ScaleValue_Textbox.MaxLength = 32767;
-            this.ScaleValue_Textbox.Name = "ScaleValue_Textbox";
-            this.ScaleValue_Textbox.PasswordChar = '\0';
-            this.ScaleValue_Textbox.ReadOnly = true;
-            this.ScaleValue_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ScaleValue_Textbox.SelectedText = "";
-            this.ScaleValue_Textbox.SelectionLength = 0;
-            this.ScaleValue_Textbox.SelectionStart = 0;
-            this.ScaleValue_Textbox.ShortcutsEnabled = true;
-            this.ScaleValue_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.ScaleValue_Textbox.TabIndex = 18;
-            this.ScaleValue_Textbox.Text = "0";
-            this.ScaleValue_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScaleValue_Textbox.UseSelectable = true;
-            this.ScaleValue_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ScaleValue_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // ScaleValue_Label
-            // 
-            this.ScaleValue_Label.AutoSize = true;
-            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 57);
-            this.ScaleValue_Label.Name = "ScaleValue_Label";
-            this.ScaleValue_Label.Size = new System.Drawing.Size(105, 19);
-            this.ScaleValue_Label.TabIndex = 17;
-            this.ScaleValue_Label.Text = "저울 계량값(kg)";
-            // 
-            // Product_Name_Combobox
-            // 
-            this.Product_Name_Combobox.FormattingEnabled = true;
-            this.Product_Name_Combobox.ItemHeight = 23;
-            this.Product_Name_Combobox.Location = new System.Drawing.Point(141, 199);
-            this.Product_Name_Combobox.Name = "Product_Name_Combobox";
-            this.Product_Name_Combobox.Size = new System.Drawing.Size(143, 29);
-            this.Product_Name_Combobox.TabIndex = 16;
-            this.Product_Name_Combobox.UseSelectable = true;
-            this.Product_Name_Combobox.SelectedIndexChanged += new System.EventHandler(this.Product_Name_Combobox_SelectedIndexChanged);
-            // 
-            // Lo_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.Lo_Textbox.CustomButton.Image = null;
-            this.Lo_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.Lo_Textbox.CustomButton.Name = "";
-            this.Lo_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.Lo_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Lo_Textbox.CustomButton.TabIndex = 1;
-            this.Lo_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Lo_Textbox.CustomButton.UseSelectable = true;
-            this.Lo_Textbox.CustomButton.Visible = false;
-            this.Lo_Textbox.Lines = new string[] {
-        "0"};
-            this.Lo_Textbox.Location = new System.Drawing.Point(141, 270);
-            this.Lo_Textbox.MaxLength = 32767;
-            this.Lo_Textbox.Name = "Lo_Textbox";
-            this.Lo_Textbox.PasswordChar = '\0';
-            this.Lo_Textbox.ReadOnly = true;
-            this.Lo_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Lo_Textbox.SelectedText = "";
-            this.Lo_Textbox.SelectionLength = 0;
-            this.Lo_Textbox.SelectionStart = 0;
-            this.Lo_Textbox.ShortcutsEnabled = true;
-            this.Lo_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.Lo_Textbox.TabIndex = 15;
-            this.Lo_Textbox.Text = "0";
-            this.Lo_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Lo_Textbox.UseSelectable = true;
-            this.Lo_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Lo_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // Hi_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.Hi_Textbox.CustomButton.Image = null;
-            this.Hi_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.Hi_Textbox.CustomButton.Name = "";
-            this.Hi_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.Hi_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Hi_Textbox.CustomButton.TabIndex = 1;
-            this.Hi_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Hi_Textbox.CustomButton.UseSelectable = true;
-            this.Hi_Textbox.CustomButton.Visible = false;
-            this.Hi_Textbox.Lines = new string[] {
-        "0"};
-            this.Hi_Textbox.Location = new System.Drawing.Point(141, 235);
-            this.Hi_Textbox.MaxLength = 32767;
-            this.Hi_Textbox.Name = "Hi_Textbox";
-            this.Hi_Textbox.PasswordChar = '\0';
-            this.Hi_Textbox.ReadOnly = true;
-            this.Hi_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Hi_Textbox.SelectedText = "";
-            this.Hi_Textbox.SelectionLength = 0;
-            this.Hi_Textbox.SelectionStart = 0;
-            this.Hi_Textbox.ShortcutsEnabled = true;
-            this.Hi_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.Hi_Textbox.TabIndex = 14;
-            this.Hi_Textbox.Text = "0";
-            this.Hi_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Hi_Textbox.UseSelectable = true;
-            this.Hi_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Hi_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // WorkCount_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.WorkCount_Textbox.CustomButton.Image = null;
-            this.WorkCount_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.WorkCount_Textbox.CustomButton.Name = "";
-            this.WorkCount_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.WorkCount_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.WorkCount_Textbox.CustomButton.TabIndex = 1;
-            this.WorkCount_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.WorkCount_Textbox.CustomButton.UseSelectable = true;
-            this.WorkCount_Textbox.CustomButton.Visible = false;
-            this.WorkCount_Textbox.Lines = new string[] {
-        "0"};
-            this.WorkCount_Textbox.Location = new System.Drawing.Point(141, 170);
-            this.WorkCount_Textbox.MaxLength = 32767;
-            this.WorkCount_Textbox.Name = "WorkCount_Textbox";
-            this.WorkCount_Textbox.PasswordChar = '\0';
-            this.WorkCount_Textbox.ReadOnly = true;
-            this.WorkCount_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.WorkCount_Textbox.SelectedText = "";
-            this.WorkCount_Textbox.SelectionLength = 0;
-            this.WorkCount_Textbox.SelectionStart = 0;
-            this.WorkCount_Textbox.ShortcutsEnabled = true;
-            this.WorkCount_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.WorkCount_Textbox.TabIndex = 12;
-            this.WorkCount_Textbox.Text = "0";
-            this.WorkCount_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WorkCount_Textbox.UseSelectable = true;
-            this.WorkCount_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.WorkCount_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // WorkDate_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.WorkDate_Textbox.CustomButton.Image = null;
-            this.WorkDate_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.WorkDate_Textbox.CustomButton.Name = "";
-            this.WorkDate_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.WorkDate_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.WorkDate_Textbox.CustomButton.TabIndex = 1;
-            this.WorkDate_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.WorkDate_Textbox.CustomButton.UseSelectable = true;
-            this.WorkDate_Textbox.CustomButton.Visible = false;
-            this.WorkDate_Textbox.Lines = new string[0];
-            this.WorkDate_Textbox.Location = new System.Drawing.Point(141, 134);
-            this.WorkDate_Textbox.MaxLength = 32767;
-            this.WorkDate_Textbox.Name = "WorkDate_Textbox";
-            this.WorkDate_Textbox.PasswordChar = '\0';
-            this.WorkDate_Textbox.ReadOnly = true;
-            this.WorkDate_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.WorkDate_Textbox.SelectedText = "";
-            this.WorkDate_Textbox.SelectionLength = 0;
-            this.WorkDate_Textbox.SelectionStart = 0;
-            this.WorkDate_Textbox.ShortcutsEnabled = true;
-            this.WorkDate_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.WorkDate_Textbox.TabIndex = 11;
-            this.WorkDate_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.WorkDate_Textbox.UseSelectable = true;
-            this.WorkDate_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.WorkDate_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // Hi_Label
-            // 
-            this.Hi_Label.AutoSize = true;
-            this.Hi_Label.Location = new System.Drawing.Point(12, 235);
-            this.Hi_Label.Name = "Hi_Label";
-            this.Hi_Label.Size = new System.Drawing.Size(53, 19);
-            this.Hi_Label.TabIndex = 10;
-            this.Hi_Label.Text = "상한(g)";
-            // 
-            // Lo_Label
-            // 
-            this.Lo_Label.AutoSize = true;
-            this.Lo_Label.Location = new System.Drawing.Point(12, 270);
-            this.Lo_Label.Name = "Lo_Label";
-            this.Lo_Label.Size = new System.Drawing.Size(53, 19);
-            this.Lo_Label.TabIndex = 9;
-            this.Lo_Label.Text = "하한(g)";
-            // 
-            // ProductName_Label
-            // 
-            this.ProductName_Label.AutoSize = true;
-            this.ProductName_Label.Location = new System.Drawing.Point(12, 203);
-            this.ProductName_Label.Name = "ProductName_Label";
-            this.ProductName_Label.Size = new System.Drawing.Size(51, 19);
-            this.ProductName_Label.TabIndex = 8;
-            this.ProductName_Label.Text = "제품명";
-            // 
-            // WorkCount_Label
-            // 
-            this.WorkCount_Label.AutoSize = true;
-            this.WorkCount_Label.Location = new System.Drawing.Point(12, 170);
-            this.WorkCount_Label.Name = "WorkCount_Label";
-            this.WorkCount_Label.Size = new System.Drawing.Size(51, 19);
-            this.WorkCount_Label.TabIndex = 7;
-            this.WorkCount_Label.Text = "작업수";
-            // 
-            // WorkDate_Label
-            // 
-            this.WorkDate_Label.AutoSize = true;
-            this.WorkDate_Label.Location = new System.Drawing.Point(12, 138);
-            this.WorkDate_Label.Name = "WorkDate_Label";
-            this.WorkDate_Label.Size = new System.Drawing.Size(65, 19);
-            this.WorkDate_Label.TabIndex = 6;
-            this.WorkDate_Label.Text = "작업일자";
-            // 
-            // Weight_Label
-            // 
-            this.Weight_Label.AutoSize = true;
-            this.Weight_Label.Location = new System.Drawing.Point(12, 90);
-            this.Weight_Label.Name = "Weight_Label";
-            this.Weight_Label.Size = new System.Drawing.Size(85, 19);
-            this.Weight_Label.TabIndex = 5;
-            this.Weight_Label.Text = "추가 중량(g)";
-            // 
-            // TotalWeight_Label
-            // 
-            this.TotalWeight_Label.AutoSize = true;
-            this.TotalWeight_Label.Location = new System.Drawing.Point(12, 23);
-            this.TotalWeight_Label.Name = "TotalWeight_Label";
-            this.TotalWeight_Label.Size = new System.Drawing.Size(109, 19);
-            this.TotalWeight_Label.TabIndex = 4;
-            this.TotalWeight_Label.Text = "총 작업 중량(kg)";
-            // 
-            // Weight_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.Weight_Textbox.CustomButton.Image = null;
-            this.Weight_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.Weight_Textbox.CustomButton.Name = "";
-            this.Weight_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.Weight_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Weight_Textbox.CustomButton.TabIndex = 1;
-            this.Weight_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Weight_Textbox.CustomButton.UseSelectable = true;
-            this.Weight_Textbox.CustomButton.Visible = false;
-            this.Weight_Textbox.Lines = new string[] {
-        "0"};
-            this.Weight_Textbox.Location = new System.Drawing.Point(141, 90);
-            this.Weight_Textbox.MaxLength = 32767;
-            this.Weight_Textbox.Name = "Weight_Textbox";
-            this.Weight_Textbox.PasswordChar = '\0';
-            this.Weight_Textbox.ReadOnly = true;
-            this.Weight_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Weight_Textbox.SelectedText = "";
-            this.Weight_Textbox.SelectionLength = 0;
-            this.Weight_Textbox.SelectionStart = 0;
-            this.Weight_Textbox.ShortcutsEnabled = true;
-            this.Weight_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.Weight_Textbox.TabIndex = 3;
-            this.Weight_Textbox.Text = "0";
-            this.Weight_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Weight_Textbox.UseSelectable = true;
-            this.Weight_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Weight_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // TotalWeight_Textbox
-            // 
-            // 
-            // 
-            // 
-            this.TotalWeight_Textbox.CustomButton.Image = null;
-            this.TotalWeight_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.TotalWeight_Textbox.CustomButton.Name = "";
-            this.TotalWeight_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TotalWeight_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TotalWeight_Textbox.CustomButton.TabIndex = 1;
-            this.TotalWeight_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TotalWeight_Textbox.CustomButton.UseSelectable = true;
-            this.TotalWeight_Textbox.CustomButton.Visible = false;
-            this.TotalWeight_Textbox.Lines = new string[] {
-        "0"};
-            this.TotalWeight_Textbox.Location = new System.Drawing.Point(141, 23);
-            this.TotalWeight_Textbox.MaxLength = 32767;
-            this.TotalWeight_Textbox.Name = "TotalWeight_Textbox";
-            this.TotalWeight_Textbox.PasswordChar = '\0';
-            this.TotalWeight_Textbox.ReadOnly = true;
-            this.TotalWeight_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TotalWeight_Textbox.SelectedText = "";
-            this.TotalWeight_Textbox.SelectionLength = 0;
-            this.TotalWeight_Textbox.SelectionStart = 0;
-            this.TotalWeight_Textbox.ShortcutsEnabled = true;
-            this.TotalWeight_Textbox.Size = new System.Drawing.Size(143, 23);
-            this.TotalWeight_Textbox.TabIndex = 2;
-            this.TotalWeight_Textbox.Text = "0";
-            this.TotalWeight_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TotalWeight_Textbox.UseSelectable = true;
-            this.TotalWeight_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TotalWeight_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(727, 120);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(250, 493);
-            this.metroPanel2.TabIndex = 7;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
             // 
             // LedCheck_Button
             // 
@@ -506,52 +148,406 @@
             this.TodayWorkRecords_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TodayWorkRecords_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TodayWorkRecords_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.TodayWorkRecords_Datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle11;
             this.TodayWorkRecords_Datagridview.EnableHeadersVisualStyles = false;
             this.TodayWorkRecords_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TodayWorkRecords_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(730, 123);
+            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(613, 170);
             this.TodayWorkRecords_Datagridview.Name = "TodayWorkRecords_Datagridview";
             this.TodayWorkRecords_Datagridview.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.TodayWorkRecords_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.TodayWorkRecords_Datagridview.RowTemplate.Height = 23;
             this.TodayWorkRecords_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(244, 487);
+            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(361, 437);
             this.TodayWorkRecords_Datagridview.TabIndex = 12;
+            // 
+            // TotalWeight_Label
+            // 
+            this.TotalWeight_Label.AutoSize = true;
+            this.TotalWeight_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.TotalWeight_Label.Location = new System.Drawing.Point(12, 55);
+            this.TotalWeight_Label.Name = "TotalWeight_Label";
+            this.TotalWeight_Label.Size = new System.Drawing.Size(140, 25);
+            this.TotalWeight_Label.TabIndex = 4;
+            this.TotalWeight_Label.Text = "총 작업 중량(kg)";
+            this.TotalWeight_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Weight_Label
+            // 
+            this.Weight_Label.AutoSize = true;
+            this.Weight_Label.BackColor = System.Drawing.Color.Black;
+            this.Weight_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Weight_Label.ForeColor = System.Drawing.Color.Red;
+            this.Weight_Label.Location = new System.Drawing.Point(12, 277);
+            this.Weight_Label.Name = "Weight_Label";
+            this.Weight_Label.Size = new System.Drawing.Size(109, 25);
+            this.Weight_Label.TabIndex = 5;
+            this.Weight_Label.Text = "추가 중량(g)";
+            this.Weight_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WorkDate_Label
+            // 
+            this.WorkDate_Label.AutoSize = true;
+            this.WorkDate_Label.Location = new System.Drawing.Point(12, 410);
+            this.WorkDate_Label.Name = "WorkDate_Label";
+            this.WorkDate_Label.Size = new System.Drawing.Size(65, 19);
+            this.WorkDate_Label.TabIndex = 6;
+            this.WorkDate_Label.Text = "작업일자";
+            this.WorkDate_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WorkCount_Label
+            // 
+            this.WorkCount_Label.AutoSize = true;
+            this.WorkCount_Label.Location = new System.Drawing.Point(12, 442);
+            this.WorkCount_Label.Name = "WorkCount_Label";
+            this.WorkCount_Label.Size = new System.Drawing.Size(51, 19);
+            this.WorkCount_Label.TabIndex = 7;
+            this.WorkCount_Label.Text = "작업수";
+            this.WorkCount_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProductName_Label
+            // 
+            this.ProductName_Label.AutoSize = true;
+            this.ProductName_Label.Location = new System.Drawing.Point(12, 380);
+            this.ProductName_Label.Name = "ProductName_Label";
+            this.ProductName_Label.Size = new System.Drawing.Size(51, 19);
+            this.ProductName_Label.TabIndex = 8;
+            this.ProductName_Label.Text = "제품명";
+            this.ProductName_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lo_Label
+            // 
+            this.Lo_Label.AutoSize = true;
+            this.Lo_Label.Location = new System.Drawing.Point(12, 508);
+            this.Lo_Label.Name = "Lo_Label";
+            this.Lo_Label.Size = new System.Drawing.Size(53, 19);
+            this.Lo_Label.TabIndex = 9;
+            this.Lo_Label.Text = "하한(g)";
+            this.Lo_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Hi_Label
+            // 
+            this.Hi_Label.AutoSize = true;
+            this.Hi_Label.Location = new System.Drawing.Point(12, 473);
+            this.Hi_Label.Name = "Hi_Label";
+            this.Hi_Label.Size = new System.Drawing.Size(53, 19);
+            this.Hi_Label.TabIndex = 10;
+            this.Hi_Label.Text = "상한(g)";
+            this.Hi_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // WorkDate_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.WorkDate_Textbox.CustomButton.Image = null;
+            this.WorkDate_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.WorkDate_Textbox.CustomButton.Name = "";
+            this.WorkDate_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.WorkDate_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.WorkDate_Textbox.CustomButton.TabIndex = 1;
+            this.WorkDate_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.WorkDate_Textbox.CustomButton.UseSelectable = true;
+            this.WorkDate_Textbox.CustomButton.Visible = false;
+            this.WorkDate_Textbox.Lines = new string[0];
+            this.WorkDate_Textbox.Location = new System.Drawing.Point(162, 410);
+            this.WorkDate_Textbox.MaxLength = 32767;
+            this.WorkDate_Textbox.Name = "WorkDate_Textbox";
+            this.WorkDate_Textbox.PasswordChar = '\0';
+            this.WorkDate_Textbox.ReadOnly = true;
+            this.WorkDate_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.WorkDate_Textbox.SelectedText = "";
+            this.WorkDate_Textbox.SelectionLength = 0;
+            this.WorkDate_Textbox.SelectionStart = 0;
+            this.WorkDate_Textbox.ShortcutsEnabled = true;
+            this.WorkDate_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.WorkDate_Textbox.TabIndex = 11;
+            this.WorkDate_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WorkDate_Textbox.UseSelectable = true;
+            this.WorkDate_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.WorkDate_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // WorkCount_Textbox
+            // 
+            this.WorkCount_Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.WorkCount_Textbox.CustomButton.Image = null;
+            this.WorkCount_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.WorkCount_Textbox.CustomButton.Name = "";
+            this.WorkCount_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.WorkCount_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.WorkCount_Textbox.CustomButton.TabIndex = 1;
+            this.WorkCount_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.WorkCount_Textbox.CustomButton.UseSelectable = true;
+            this.WorkCount_Textbox.CustomButton.Visible = false;
+            this.WorkCount_Textbox.Lines = new string[] {
+        "0"};
+            this.WorkCount_Textbox.Location = new System.Drawing.Point(162, 442);
+            this.WorkCount_Textbox.MaxLength = 32767;
+            this.WorkCount_Textbox.Name = "WorkCount_Textbox";
+            this.WorkCount_Textbox.PasswordChar = '\0';
+            this.WorkCount_Textbox.ReadOnly = true;
+            this.WorkCount_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.WorkCount_Textbox.SelectedText = "";
+            this.WorkCount_Textbox.SelectionLength = 0;
+            this.WorkCount_Textbox.SelectionStart = 0;
+            this.WorkCount_Textbox.ShortcutsEnabled = true;
+            this.WorkCount_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.WorkCount_Textbox.TabIndex = 12;
+            this.WorkCount_Textbox.Text = "0";
+            this.WorkCount_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WorkCount_Textbox.UseSelectable = true;
+            this.WorkCount_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.WorkCount_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // Hi_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.Hi_Textbox.CustomButton.Image = null;
+            this.Hi_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.Hi_Textbox.CustomButton.Name = "";
+            this.Hi_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.Hi_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Hi_Textbox.CustomButton.TabIndex = 1;
+            this.Hi_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Hi_Textbox.CustomButton.UseSelectable = true;
+            this.Hi_Textbox.CustomButton.Visible = false;
+            this.Hi_Textbox.Lines = new string[] {
+        "0"};
+            this.Hi_Textbox.Location = new System.Drawing.Point(162, 473);
+            this.Hi_Textbox.MaxLength = 32767;
+            this.Hi_Textbox.Name = "Hi_Textbox";
+            this.Hi_Textbox.PasswordChar = '\0';
+            this.Hi_Textbox.ReadOnly = true;
+            this.Hi_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Hi_Textbox.SelectedText = "";
+            this.Hi_Textbox.SelectionLength = 0;
+            this.Hi_Textbox.SelectionStart = 0;
+            this.Hi_Textbox.ShortcutsEnabled = true;
+            this.Hi_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.Hi_Textbox.TabIndex = 14;
+            this.Hi_Textbox.Text = "0";
+            this.Hi_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Hi_Textbox.UseSelectable = true;
+            this.Hi_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.Hi_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // Lo_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.Lo_Textbox.CustomButton.Image = null;
+            this.Lo_Textbox.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.Lo_Textbox.CustomButton.Name = "";
+            this.Lo_Textbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.Lo_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Lo_Textbox.CustomButton.TabIndex = 1;
+            this.Lo_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Lo_Textbox.CustomButton.UseSelectable = true;
+            this.Lo_Textbox.CustomButton.Visible = false;
+            this.Lo_Textbox.Lines = new string[] {
+        "0"};
+            this.Lo_Textbox.Location = new System.Drawing.Point(162, 508);
+            this.Lo_Textbox.MaxLength = 32767;
+            this.Lo_Textbox.Name = "Lo_Textbox";
+            this.Lo_Textbox.PasswordChar = '\0';
+            this.Lo_Textbox.ReadOnly = true;
+            this.Lo_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Lo_Textbox.SelectedText = "";
+            this.Lo_Textbox.SelectionLength = 0;
+            this.Lo_Textbox.SelectionStart = 0;
+            this.Lo_Textbox.ShortcutsEnabled = true;
+            this.Lo_Textbox.Size = new System.Drawing.Size(143, 23);
+            this.Lo_Textbox.TabIndex = 15;
+            this.Lo_Textbox.Text = "0";
+            this.Lo_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Lo_Textbox.UseSelectable = true;
+            this.Lo_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.Lo_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // Product_Name_Combobox
+            // 
+            this.Product_Name_Combobox.FormattingEnabled = true;
+            this.Product_Name_Combobox.ItemHeight = 23;
+            this.Product_Name_Combobox.Location = new System.Drawing.Point(162, 375);
+            this.Product_Name_Combobox.Name = "Product_Name_Combobox";
+            this.Product_Name_Combobox.Size = new System.Drawing.Size(143, 29);
+            this.Product_Name_Combobox.TabIndex = 16;
+            this.Product_Name_Combobox.UseSelectable = true;
+            this.Product_Name_Combobox.SelectedIndexChanged += new System.EventHandler(this.Product_Name_Combobox_SelectedIndexChanged);
+            // 
+            // ScaleValue_Label
+            // 
+            this.ScaleValue_Label.AutoSize = true;
+            this.ScaleValue_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 171);
+            this.ScaleValue_Label.Name = "ScaleValue_Label";
+            this.ScaleValue_Label.Size = new System.Drawing.Size(135, 25);
+            this.ScaleValue_Label.TabIndex = 17;
+            this.ScaleValue_Label.Text = "저울 계량값(kg)";
+            this.ScaleValue_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.metroLabel3);
+            this.metroPanel1.Controls.Add(this.metroLabel2);
+            this.metroPanel1.Controls.Add(this.metroLabel1);
+            this.metroPanel1.Controls.Add(this.TotalWeight_HtmlLabel);
+            this.metroPanel1.Controls.Add(this.ScaleValue_HtmlLabel);
+            this.metroPanel1.Controls.Add(this.Weight_HtmlLabel);
+            this.metroPanel1.Controls.Add(this.ScaleValue_Label);
+            this.metroPanel1.Controls.Add(this.Product_Name_Combobox);
+            this.metroPanel1.Controls.Add(this.Lo_Textbox);
+            this.metroPanel1.Controls.Add(this.Hi_Textbox);
+            this.metroPanel1.Controls.Add(this.WorkCount_Textbox);
+            this.metroPanel1.Controls.Add(this.WorkDate_Textbox);
+            this.metroPanel1.Controls.Add(this.Hi_Label);
+            this.metroPanel1.Controls.Add(this.Lo_Label);
+            this.metroPanel1.Controls.Add(this.ProductName_Label);
+            this.metroPanel1.Controls.Add(this.WorkCount_Label);
+            this.metroPanel1.Controls.Add(this.WorkDate_Label);
+            this.metroPanel1.Controls.Add(this.Weight_Label);
+            this.metroPanel1.Controls.Add(this.TotalWeight_Label);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(11, 40);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(596, 567);
+            this.metroPanel1.TabIndex = 6;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.Location = new System.Drawing.Point(434, 277);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(22, 25);
+            this.metroLabel3.TabIndex = 20;
+            this.metroLabel3.Text = "g";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(434, 171);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(30, 25);
+            this.metroLabel2.TabIndex = 19;
+            this.metroLabel2.Text = "kg";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(434, 55);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(30, 25);
+            this.metroLabel1.TabIndex = 18;
+            this.metroLabel1.Text = "kg";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalWeight_HtmlLabel
+            // 
+            this.TotalWeight_HtmlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalWeight_HtmlLabel.AutoScroll = true;
+            this.TotalWeight_HtmlLabel.AutoScrollMinSize = new System.Drawing.Size(10, 0);
+            this.TotalWeight_HtmlLabel.AutoSize = false;
+            this.TotalWeight_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
+            this.TotalWeight_HtmlLabel.Font = new System.Drawing.Font("돋움", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TotalWeight_HtmlLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.TotalWeight_HtmlLabel.Location = new System.Drawing.Point(162, 18);
+            this.TotalWeight_HtmlLabel.Name = "TotalWeight_HtmlLabel";
+            this.TotalWeight_HtmlLabel.Size = new System.Drawing.Size(266, 106);
+            this.TotalWeight_HtmlLabel.TabIndex = 15;
+            // 
+            // ScaleValue_HtmlLabel
+            // 
+            this.ScaleValue_HtmlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ScaleValue_HtmlLabel.AutoScroll = true;
+            this.ScaleValue_HtmlLabel.AutoScrollMinSize = new System.Drawing.Size(10, 0);
+            this.ScaleValue_HtmlLabel.AutoSize = false;
+            this.ScaleValue_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
+            this.ScaleValue_HtmlLabel.Font = new System.Drawing.Font("돋움", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ScaleValue_HtmlLabel.ForeColor = System.Drawing.Color.Red;
+            this.ScaleValue_HtmlLabel.Location = new System.Drawing.Point(162, 130);
+            this.ScaleValue_HtmlLabel.Name = "ScaleValue_HtmlLabel";
+            this.ScaleValue_HtmlLabel.Size = new System.Drawing.Size(266, 106);
+            this.ScaleValue_HtmlLabel.TabIndex = 14;
+            // 
+            // Weight_HtmlLabel
+            // 
+            this.Weight_HtmlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Weight_HtmlLabel.AutoScroll = true;
+            this.Weight_HtmlLabel.AutoScrollMinSize = new System.Drawing.Size(10, 0);
+            this.Weight_HtmlLabel.AutoSize = false;
+            this.Weight_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
+            this.Weight_HtmlLabel.Font = new System.Drawing.Font("돋움", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Weight_HtmlLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Weight_HtmlLabel.Location = new System.Drawing.Point(162, 242);
+            this.Weight_HtmlLabel.Name = "Weight_HtmlLabel";
+            this.Weight_HtmlLabel.Size = new System.Drawing.Size(266, 106);
+            this.Weight_HtmlLabel.TabIndex = 13;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel4.Location = new System.Drawing.Point(733, 126);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(130, 25);
+            this.metroLabel4.TabIndex = 21;
+            this.metroLabel4.Text = "일일 계량 현황";
+            this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.TodayWorkRecords_Datagridview);
             this.Controls.Add(this.LedCheck_Button);
-            this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.WorkEnd_Button);
             this.Controls.Add(this.WorkStart_Button);
@@ -562,10 +558,11 @@
             this.Name = "MainForm";
             this.Resizable = false;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -577,25 +574,28 @@
         private MetroFramework.Controls.MetroButton UserManage_Button;
         private MetroFramework.Controls.MetroButton WorkStart_Button;
         private MetroFramework.Controls.MetroButton WorkEnd_Button;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel ProductName_Label;
-        private MetroFramework.Controls.MetroLabel WorkCount_Label;
-        private MetroFramework.Controls.MetroLabel WorkDate_Label;
-        private MetroFramework.Controls.MetroLabel Weight_Label;
-        private MetroFramework.Controls.MetroLabel TotalWeight_Label;
-        private MetroFramework.Controls.MetroTextBox Weight_Textbox;
-        private MetroFramework.Controls.MetroTextBox TotalWeight_Textbox;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroLabel Hi_Label;
-        private MetroFramework.Controls.MetroLabel Lo_Label;
-        private MetroFramework.Controls.MetroTextBox Lo_Textbox;
-        private MetroFramework.Controls.MetroTextBox Hi_Textbox;
-        private MetroFramework.Controls.MetroTextBox WorkCount_Textbox;
-        private MetroFramework.Controls.MetroTextBox WorkDate_Textbox;
-        private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
-        private MetroFramework.Controls.MetroTextBox ScaleValue_Textbox;
-        private MetroFramework.Controls.MetroLabel ScaleValue_Label;
         private MetroFramework.Controls.MetroButton LedCheck_Button;
         private MetroFramework.Controls.MetroGrid TodayWorkRecords_Datagridview;
+        private MetroFramework.Controls.MetroLabel TotalWeight_Label;
+        private MetroFramework.Controls.MetroLabel Weight_Label;
+        private MetroFramework.Controls.MetroLabel WorkDate_Label;
+        private MetroFramework.Controls.MetroLabel WorkCount_Label;
+        private MetroFramework.Controls.MetroLabel ProductName_Label;
+        private MetroFramework.Controls.MetroLabel Lo_Label;
+        private MetroFramework.Controls.MetroLabel Hi_Label;
+        private MetroFramework.Controls.MetroTextBox WorkDate_Textbox;
+        private MetroFramework.Controls.MetroTextBox WorkCount_Textbox;
+        private MetroFramework.Controls.MetroTextBox Hi_Textbox;
+        private MetroFramework.Controls.MetroTextBox Lo_Textbox;
+        private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
+        private MetroFramework.Controls.MetroLabel ScaleValue_Label;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Drawing.Html.HtmlLabel Weight_HtmlLabel;
+        private MetroFramework.Drawing.Html.HtmlLabel ScaleValue_HtmlLabel;
+        private MetroFramework.Drawing.Html.HtmlLabel TotalWeight_HtmlLabel;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }

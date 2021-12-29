@@ -255,7 +255,8 @@ namespace HadoFND
                         beforeTotalWeight = workRecord.total_weight;
 
                         // 총 작업 중량 표시
-                        TotalWeight_Textbox.Text = currentTotalWeight.ToString();                        
+                        //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                        TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
                         // 작업일자 표시
                         WorkDate_Textbox.Text = workRecord.created_at.ToString("yyyy.MM.dd");
                         // 작업수 DB에서 읽어온 값으로 설정 및 표시
@@ -382,11 +383,12 @@ namespace HadoFND
                 currentAddWeightG = 0; // 현재 추가 중량(g)
 
                 // 총 작업 중량 표시 초기화
-                TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
                 // 저울 계량값 표시 초기화
-                ScaleValue_Textbox.Text = currentScaleValue.ToString();
+                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString();
                 // 현재 추가 중량 표시 초기화
-                Weight_Textbox.Text = currentAddWeightG.ToString();
+                Weight_HtmlLabel.Text = currentAddWeightG.ToString();
                 // 작업수 표시 초기화
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
                 //// 상한,하한 표시 초기화
@@ -435,7 +437,7 @@ namespace HadoFND
                 // 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
                 currentScaleValue = float.Parse(onlyNumber);
                 //currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
-                ScaleValue_Textbox.Text = currentScaleValue.ToString();
+                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString();
 
                 // 추가 중량 = 저울 계량값 - 이전 총 중량
                 currentAddWeight = currentScaleValue - beforeTotalWeight;
@@ -444,7 +446,7 @@ namespace HadoFND
                 currentAddWeightG = (int)(currentAddWeight * 1000);
 
                 // 추가 중량 표시
-                Weight_Textbox.Text = currentAddWeightG.ToString();
+                Weight_HtmlLabel.Text = currentAddWeightG.ToString();
 
                 //
                 // 계량값 안정(ST)일때만 처리
@@ -523,7 +525,8 @@ namespace HadoFND
                                     conn.Close();
                                     // 이전 총 중량 = 이전 총 중량 + 추가 중량
                                     beforeTotalWeight += currentAddWeight;
-                                    TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                                    //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
+                                    TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
                                     // 작업 수 갱신
                                     WorkCount_Textbox.Text = currentWorkCount.ToString();
                                 }
