@@ -356,6 +356,9 @@ namespace HadoFND
                 //
                 try
                 {
+                    // 경광등 모두 종료
+                    ledSerialPort.Write("C\r\n");
+
                     indicatorSerialPort.Close();
                     ledSerialPort.Close();
                 }
@@ -491,7 +494,6 @@ namespace HadoFND
                             {
                                 // 이상없을 경우 경광등의 등 모두 끄고 OK 신호 보내기
                                 // OK 녹색등
-                                ledSerialPort.Write("C\r\n");
                                 ledSerialPort.Write("O\r\n");
 
                                 // 작업수 +1
@@ -567,7 +569,7 @@ namespace HadoFND
                 var selectedProduct = productList[Product_Name_Combobox.SelectedIndex];
 
                 // 선택한 제품의 id값
-                currentProductId = selectedProduct.id;
+                currentProductId = selectedProduct.id;                
 
                 selectedProductHiValue = selectedProduct.unit_weight + _configFile.Hi_Value;
                 selectedProductLoValue = selectedProduct.unit_weight - _configFile.Lo_Value;
@@ -604,8 +606,7 @@ namespace HadoFND
                 //
                 // Hi 신호 보내기
                 //
-                //ledSerialPort.Write("H\r\n");
-                ledSerialPort.Write("H".ToCharArray(), 0, "H".ToCharArray().Length);
+                ledSerialPort.Write("H\r\n");
             }
             catch (Exception ex)
             {
