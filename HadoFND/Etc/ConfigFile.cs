@@ -167,7 +167,7 @@ namespace HadoFND
         }
 
         // 엑셀 파일 저장 경로
-        string _file_path = "";
+        string _file_path = "C:\\";
 
         public string File_Path
         {
@@ -175,6 +175,59 @@ namespace HadoFND
             set { _file_path = value; }
         }
 
+        // 제조사
+        string _made_by = "한국에이.엔.디";
+
+        public string Made_By
+        {
+            get { return _made_by; }
+            set { _made_by = value; }
+        }
+
+        // 사이트
+        string _website_url = "http://www.andk.co.kr";
+
+        public string Website_Url
+        {
+            get { return _website_url; }
+            set { _website_url = value; }
+        }
+
+        // 판매처
+        string _store_name = "카스 포천점";
+
+        public string Store_Name
+        {
+            get { return _store_name; }
+            set { _store_name = value; }
+        }
+
+        // 판매처 대표명
+        string _store_leader_name = "대표이사 홍재문";
+
+        public string Store_Leader_Name
+        {
+            get { return _store_leader_name; }
+            set { _store_leader_name = value; }
+        }
+
+        // 판매처 연락처
+        string _store_phone = "031-541-6116";
+
+        public string Store_Phone
+        {
+            get { return _store_phone; }
+            set { _store_phone = value; }
+        }
+
+        // 주소
+        string _store_address = "경기도 포천시 소흘읍 송우1리 110-28";
+
+        public string Store_Address
+        {
+            get { return _store_address; }
+            set { _store_address = value; }
+        }
 
         string filename = "config.dat";
 

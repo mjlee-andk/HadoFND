@@ -66,6 +66,12 @@
             this.SalePlace_Label = new MetroFramework.Controls.MetroLabel();
             this.Address_Label = new MetroFramework.Controls.MetroLabel();
             this.MadeBy_Label = new MetroFramework.Controls.MetroLabel();
+            this.MadeByText_Label = new MetroFramework.Controls.MetroLabel();
+            this.WebsiteUrlText_Label = new MetroFramework.Controls.MetroLabel();
+            this.SalePlaceStoreName_Label = new MetroFramework.Controls.MetroLabel();
+            this.SalePlaceStorePhone_Label = new MetroFramework.Controls.MetroLabel();
+            this.SalePlaceStoreLeaderName_Label = new MetroFramework.Controls.MetroLabel();
+            this.AddressText_Label = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -598,9 +604,9 @@
             this.WebsiteUrl_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.WebsiteUrl_Label.Location = new System.Drawing.Point(280, 591);
             this.WebsiteUrl_Label.Name = "WebsiteUrl_Label";
-            this.WebsiteUrl_Label.Size = new System.Drawing.Size(244, 25);
+            this.WebsiteUrl_Label.Size = new System.Drawing.Size(75, 25);
             this.WebsiteUrl_Label.TabIndex = 24;
-            this.WebsiteUrl_Label.Text = "사이트 : http://www.andk.co.kr";
+            this.WebsiteUrl_Label.Text = "사이트 :";
             // 
             // SalePlace_Label
             // 
@@ -608,19 +614,19 @@
             this.SalePlace_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.SalePlace_Label.Location = new System.Drawing.Point(280, 616);
             this.SalePlace_Label.Name = "SalePlace_Label";
-            this.SalePlace_Label.Size = new System.Drawing.Size(433, 25);
+            this.SalePlace_Label.Size = new System.Drawing.Size(75, 25);
             this.SalePlace_Label.TabIndex = 25;
-            this.SalePlace_Label.Text = "판매처 : 카스 포천점 / 대표이사 홍재문 / 031-541-6116";
+            this.SalePlace_Label.Text = "판매처 :";
             // 
             // Address_Label
             // 
             this.Address_Label.AutoSize = true;
             this.Address_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Address_Label.Location = new System.Drawing.Point(280, 641);
+            this.Address_Label.Location = new System.Drawing.Point(280, 668);
             this.Address_Label.Name = "Address_Label";
-            this.Address_Label.Size = new System.Drawing.Size(370, 25);
+            this.Address_Label.Size = new System.Drawing.Size(77, 25);
             this.Address_Label.TabIndex = 26;
-            this.Address_Label.Text = "주    소 : 경기도 포천시 소흘읍 송우1리 110-28";
+            this.Address_Label.Text = "주    소 :";
             // 
             // MadeBy_Label
             // 
@@ -628,15 +634,81 @@
             this.MadeBy_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.MadeBy_Label.Location = new System.Drawing.Point(280, 566);
             this.MadeBy_Label.Name = "MadeBy_Label";
-            this.MadeBy_Label.Size = new System.Drawing.Size(196, 25);
+            this.MadeBy_Label.Size = new System.Drawing.Size(75, 25);
             this.MadeBy_Label.TabIndex = 27;
-            this.MadeBy_Label.Text = "제조사 : 한국에이.엔.디";
+            this.MadeBy_Label.Text = "제조사 :";
+            // 
+            // MadeByText_Label
+            // 
+            this.MadeByText_Label.AutoSize = true;
+            this.MadeByText_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.MadeByText_Label.Location = new System.Drawing.Point(361, 566);
+            this.MadeByText_Label.Name = "MadeByText_Label";
+            this.MadeByText_Label.Size = new System.Drawing.Size(128, 25);
+            this.MadeByText_Label.TabIndex = 28;
+            this.MadeByText_Label.Text = "한국에이.엔.디";
+            // 
+            // WebsiteUrlText_Label
+            // 
+            this.WebsiteUrlText_Label.AutoSize = true;
+            this.WebsiteUrlText_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.WebsiteUrlText_Label.Location = new System.Drawing.Point(361, 591);
+            this.WebsiteUrlText_Label.Name = "WebsiteUrlText_Label";
+            this.WebsiteUrlText_Label.Size = new System.Drawing.Size(176, 25);
+            this.WebsiteUrlText_Label.TabIndex = 29;
+            this.WebsiteUrlText_Label.Text = "http://www.andk.co.kr";
+            // 
+            // SalePlaceStoreName_Label
+            // 
+            this.SalePlaceStoreName_Label.AutoSize = true;
+            this.SalePlaceStoreName_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.SalePlaceStoreName_Label.Location = new System.Drawing.Point(361, 616);
+            this.SalePlaceStoreName_Label.Name = "SalePlaceStoreName_Label";
+            this.SalePlaceStoreName_Label.Size = new System.Drawing.Size(107, 25);
+            this.SalePlaceStoreName_Label.TabIndex = 30;
+            this.SalePlaceStoreName_Label.Text = "카스 포천점";
+            // 
+            // SalePlaceStorePhone_Label
+            // 
+            this.SalePlaceStorePhone_Label.AutoSize = true;
+            this.SalePlaceStorePhone_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.SalePlaceStorePhone_Label.Location = new System.Drawing.Point(474, 616);
+            this.SalePlaceStorePhone_Label.Name = "SalePlaceStorePhone_Label";
+            this.SalePlaceStorePhone_Label.Size = new System.Drawing.Size(105, 25);
+            this.SalePlaceStorePhone_Label.TabIndex = 31;
+            this.SalePlaceStorePhone_Label.Text = "031-541-6116";
+            // 
+            // SalePlaceStoreLeaderName_Label
+            // 
+            this.SalePlaceStoreLeaderName_Label.AutoSize = true;
+            this.SalePlaceStoreLeaderName_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.SalePlaceStoreLeaderName_Label.Location = new System.Drawing.Point(361, 643);
+            this.SalePlaceStoreLeaderName_Label.Name = "SalePlaceStoreLeaderName_Label";
+            this.SalePlaceStoreLeaderName_Label.Size = new System.Drawing.Size(143, 25);
+            this.SalePlaceStoreLeaderName_Label.TabIndex = 31;
+            this.SalePlaceStoreLeaderName_Label.Text = "대표이사 홍재문";
+            // 
+            // AddressText_Label
+            // 
+            this.AddressText_Label.AutoSize = true;
+            this.AddressText_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.AddressText_Label.Location = new System.Drawing.Point(361, 668);
+            this.AddressText_Label.Name = "AddressText_Label";
+            this.AddressText_Label.Size = new System.Drawing.Size(300, 25);
+            this.AddressText_Label.TabIndex = 32;
+            this.AddressText_Label.Text = "경기도 포천시 소흘읍 송우1리 110-28";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 732);
+            this.Controls.Add(this.AddressText_Label);
+            this.Controls.Add(this.SalePlaceStoreLeaderName_Label);
+            this.Controls.Add(this.SalePlaceStoreName_Label);
+            this.Controls.Add(this.SalePlaceStorePhone_Label);
+            this.Controls.Add(this.WebsiteUrlText_Label);
+            this.Controls.Add(this.MadeByText_Label);
             this.Controls.Add(this.MadeBy_Label);
             this.Controls.Add(this.Address_Label);
             this.Controls.Add(this.SalePlace_Label);
@@ -702,5 +774,11 @@
         private MetroFramework.Controls.MetroLabel SalePlace_Label;
         private MetroFramework.Controls.MetroLabel Address_Label;
         private MetroFramework.Controls.MetroLabel MadeBy_Label;
+        private MetroFramework.Controls.MetroLabel MadeByText_Label;
+        private MetroFramework.Controls.MetroLabel SalePlaceStoreLeaderName_Label;
+        private MetroFramework.Controls.MetroLabel WebsiteUrlText_Label;
+        private MetroFramework.Controls.MetroLabel SalePlaceStoreName_Label;
+        private MetroFramework.Controls.MetroLabel SalePlaceStorePhone_Label;
+        private MetroFramework.Controls.MetroLabel AddressText_Label;
     }
 }

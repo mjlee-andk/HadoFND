@@ -93,7 +93,14 @@ namespace HadoFND
             //
             // 환경설정 파일 로드
             //
-            _configFile = _configFile.Load();            
+            _configFile = _configFile.Load();
+
+            MadeByText_Label.Text = _configFile.Made_By;
+            WebsiteUrlText_Label.Text = _configFile.Website_Url;
+            SalePlaceStoreName_Label.Text = _configFile.Store_Name;
+            SalePlaceStorePhone_Label.Text = _configFile.Store_Phone;
+            SalePlaceStoreLeaderName_Label.Text = _configFile.Store_Leader_Name;
+            AddressText_Label.Text = _configFile.Store_Address;
 
             //
             // DB에 등록된 제품 로드
