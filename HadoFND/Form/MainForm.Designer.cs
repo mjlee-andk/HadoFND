@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SerialSetting_Button = new MetroFramework.Controls.MetroButton();
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductManage_Button = new MetroFramework.Controls.MetroButton();
@@ -61,8 +61,14 @@
             this.Weight_HtmlLabel = new MetroFramework.Drawing.Html.HtmlLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.LedOff_Button = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.WebsiteUrl_Label = new MetroFramework.Controls.MetroLabel();
+            this.SalePlace_Label = new MetroFramework.Controls.MetroLabel();
+            this.Address_Label = new MetroFramework.Controls.MetroLabel();
+            this.MadeBy_Label = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SerialSetting_Button
@@ -108,7 +114,7 @@
             // WorkStart_Button
             // 
             this.WorkStart_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkStart_Button.Location = new System.Drawing.Point(638, 40);
+            this.WorkStart_Button.Location = new System.Drawing.Point(748, 40);
             this.WorkStart_Button.Name = "WorkStart_Button";
             this.WorkStart_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkStart_Button.TabIndex = 4;
@@ -120,7 +126,7 @@
             // 
             this.WorkEnd_Button.Enabled = false;
             this.WorkEnd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkEnd_Button.Location = new System.Drawing.Point(820, 40);
+            this.WorkEnd_Button.Location = new System.Drawing.Point(933, 40);
             this.WorkEnd_Button.Name = "WorkEnd_Button";
             this.WorkEnd_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkEnd_Button.TabIndex = 5;
@@ -149,49 +155,49 @@
             this.TodayWorkRecords_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TodayWorkRecords_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TodayWorkRecords_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TodayWorkRecords_Datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle2;
             this.TodayWorkRecords_Datagridview.EnableHeadersVisualStyles = false;
             this.TodayWorkRecords_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TodayWorkRecords_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(625, 170);
+            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(719, 170);
             this.TodayWorkRecords_Datagridview.Name = "TodayWorkRecords_Datagridview";
             this.TodayWorkRecords_Datagridview.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.TodayWorkRecords_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.TodayWorkRecords_Datagridview.RowTemplate.Height = 23;
             this.TodayWorkRecords_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(361, 437);
+            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(392, 519);
             this.TodayWorkRecords_Datagridview.TabIndex = 12;
             // 
             // TotalWeight_Label
             // 
             this.TotalWeight_Label.AutoSize = true;
             this.TotalWeight_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.TotalWeight_Label.Location = new System.Drawing.Point(12, 66);
+            this.TotalWeight_Label.Location = new System.Drawing.Point(12, 36);
             this.TotalWeight_Label.Name = "TotalWeight_Label";
             this.TotalWeight_Label.Size = new System.Drawing.Size(112, 25);
             this.TotalWeight_Label.TabIndex = 4;
@@ -204,7 +210,7 @@
             this.Weight_Label.BackColor = System.Drawing.Color.Black;
             this.Weight_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Weight_Label.ForeColor = System.Drawing.Color.Black;
-            this.Weight_Label.Location = new System.Drawing.Point(12, 155);
+            this.Weight_Label.Location = new System.Drawing.Point(12, 130);
             this.Weight_Label.Name = "Weight_Label";
             this.Weight_Label.Size = new System.Drawing.Size(89, 25);
             this.Weight_Label.TabIndex = 5;
@@ -215,7 +221,7 @@
             // 
             this.WorkDate_Label.AutoSize = true;
             this.WorkDate_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.WorkDate_Label.Location = new System.Drawing.Point(12, 440);
+            this.WorkDate_Label.Location = new System.Drawing.Point(12, 359);
             this.WorkDate_Label.Name = "WorkDate_Label";
             this.WorkDate_Label.Size = new System.Drawing.Size(84, 25);
             this.WorkDate_Label.TabIndex = 6;
@@ -226,7 +232,7 @@
             // 
             this.WorkCount_Label.AutoSize = true;
             this.WorkCount_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.WorkCount_Label.Location = new System.Drawing.Point(12, 498);
+            this.WorkCount_Label.Location = new System.Drawing.Point(12, 417);
             this.WorkCount_Label.Name = "WorkCount_Label";
             this.WorkCount_Label.Size = new System.Drawing.Size(66, 25);
             this.WorkCount_Label.TabIndex = 7;
@@ -237,7 +243,7 @@
             // 
             this.ProductName_Label.AutoSize = true;
             this.ProductName_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ProductName_Label.Location = new System.Drawing.Point(12, 380);
+            this.ProductName_Label.Location = new System.Drawing.Point(12, 299);
             this.ProductName_Label.Name = "ProductName_Label";
             this.ProductName_Label.Size = new System.Drawing.Size(66, 25);
             this.ProductName_Label.TabIndex = 8;
@@ -248,7 +254,7 @@
             // 
             this.Lo_Label.AutoSize = true;
             this.Lo_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Lo_Label.Location = new System.Drawing.Point(324, 440);
+            this.Lo_Label.Location = new System.Drawing.Point(324, 359);
             this.Lo_Label.Name = "Lo_Label";
             this.Lo_Label.Size = new System.Drawing.Size(68, 25);
             this.Lo_Label.TabIndex = 9;
@@ -259,7 +265,7 @@
             // 
             this.Hi_Label.AutoSize = true;
             this.Hi_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Hi_Label.Location = new System.Drawing.Point(324, 380);
+            this.Hi_Label.Location = new System.Drawing.Point(324, 299);
             this.Hi_Label.Name = "Hi_Label";
             this.Hi_Label.Size = new System.Drawing.Size(68, 25);
             this.Hi_Label.TabIndex = 10;
@@ -282,7 +288,7 @@
             this.WorkDate_Textbox.CustomButton.Visible = false;
             this.WorkDate_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.WorkDate_Textbox.Lines = new string[0];
-            this.WorkDate_Textbox.Location = new System.Drawing.Point(162, 438);
+            this.WorkDate_Textbox.Location = new System.Drawing.Point(162, 357);
             this.WorkDate_Textbox.MaxLength = 32767;
             this.WorkDate_Textbox.Name = "WorkDate_Textbox";
             this.WorkDate_Textbox.PasswordChar = '\0';
@@ -319,7 +325,7 @@
             this.WorkCount_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.WorkCount_Textbox.Lines = new string[] {
         "0"};
-            this.WorkCount_Textbox.Location = new System.Drawing.Point(162, 497);
+            this.WorkCount_Textbox.Location = new System.Drawing.Point(162, 416);
             this.WorkCount_Textbox.MaxLength = 32767;
             this.WorkCount_Textbox.Name = "WorkCount_Textbox";
             this.WorkCount_Textbox.PasswordChar = '\0';
@@ -354,7 +360,7 @@
             this.Hi_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Hi_Textbox.Lines = new string[] {
         "0"};
-            this.Hi_Textbox.Location = new System.Drawing.Point(416, 377);
+            this.Hi_Textbox.Location = new System.Drawing.Point(416, 296);
             this.Hi_Textbox.MaxLength = 32767;
             this.Hi_Textbox.Name = "Hi_Textbox";
             this.Hi_Textbox.PasswordChar = '\0';
@@ -389,7 +395,7 @@
             this.Lo_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Lo_Textbox.Lines = new string[] {
         "0"};
-            this.Lo_Textbox.Location = new System.Drawing.Point(416, 438);
+            this.Lo_Textbox.Location = new System.Drawing.Point(416, 357);
             this.Lo_Textbox.MaxLength = 32767;
             this.Lo_Textbox.Name = "Lo_Textbox";
             this.Lo_Textbox.PasswordChar = '\0';
@@ -412,7 +418,7 @@
             this.Product_Name_Combobox.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.Product_Name_Combobox.FormattingEnabled = true;
             this.Product_Name_Combobox.ItemHeight = 29;
-            this.Product_Name_Combobox.Location = new System.Drawing.Point(162, 375);
+            this.Product_Name_Combobox.Location = new System.Drawing.Point(162, 294);
             this.Product_Name_Combobox.Name = "Product_Name_Combobox";
             this.Product_Name_Combobox.Size = new System.Drawing.Size(143, 35);
             this.Product_Name_Combobox.TabIndex = 16;
@@ -423,7 +429,7 @@
             // 
             this.ScaleValue_Label.AutoSize = true;
             this.ScaleValue_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 246);
+            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 222);
             this.ScaleValue_Label.Name = "ScaleValue_Label";
             this.ScaleValue_Label.Size = new System.Drawing.Size(89, 25);
             this.ScaleValue_Label.TabIndex = 17;
@@ -456,7 +462,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(11, 40);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(596, 567);
+            this.metroPanel1.Size = new System.Drawing.Size(596, 506);
             this.metroPanel1.TabIndex = 6;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -472,7 +478,7 @@
             this.htmlLabel3.BackColor = System.Drawing.Color.White;
             this.htmlLabel3.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel3.Location = new System.Drawing.Point(434, 131);
+            this.htmlLabel3.Location = new System.Drawing.Point(434, 100);
             this.htmlLabel3.Name = "htmlLabel3";
             this.htmlLabel3.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel3.TabIndex = 17;
@@ -488,7 +494,7 @@
             this.htmlLabel2.BackColor = System.Drawing.Color.White;
             this.htmlLabel2.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel2.Location = new System.Drawing.Point(434, 225);
+            this.htmlLabel2.Location = new System.Drawing.Point(434, 195);
             this.htmlLabel2.Name = "htmlLabel2";
             this.htmlLabel2.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel2.TabIndex = 17;
@@ -504,7 +510,7 @@
             this.htmlLabel1.BackColor = System.Drawing.Color.White;
             this.htmlLabel1.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel1.Location = new System.Drawing.Point(434, 39);
+            this.htmlLabel1.Location = new System.Drawing.Point(434, 9);
             this.htmlLabel1.Name = "htmlLabel1";
             this.htmlLabel1.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel1.TabIndex = 16;
@@ -520,7 +526,7 @@
             this.TotalWeight_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
             this.TotalWeight_HtmlLabel.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TotalWeight_HtmlLabel.ForeColor = System.Drawing.Color.Black;
-            this.TotalWeight_HtmlLabel.Location = new System.Drawing.Point(162, 39);
+            this.TotalWeight_HtmlLabel.Location = new System.Drawing.Point(162, 9);
             this.TotalWeight_HtmlLabel.Name = "TotalWeight_HtmlLabel";
             this.TotalWeight_HtmlLabel.Size = new System.Drawing.Size(266, 76);
             this.TotalWeight_HtmlLabel.TabIndex = 15;
@@ -535,7 +541,7 @@
             this.ScaleValue_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
             this.ScaleValue_HtmlLabel.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ScaleValue_HtmlLabel.ForeColor = System.Drawing.Color.Black;
-            this.ScaleValue_HtmlLabel.Location = new System.Drawing.Point(162, 225);
+            this.ScaleValue_HtmlLabel.Location = new System.Drawing.Point(162, 195);
             this.ScaleValue_HtmlLabel.Name = "ScaleValue_HtmlLabel";
             this.ScaleValue_HtmlLabel.Size = new System.Drawing.Size(266, 76);
             this.ScaleValue_HtmlLabel.TabIndex = 14;
@@ -550,7 +556,7 @@
             this.Weight_HtmlLabel.BackColor = System.Drawing.Color.LightGray;
             this.Weight_HtmlLabel.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Weight_HtmlLabel.ForeColor = System.Drawing.Color.Black;
-            this.Weight_HtmlLabel.Location = new System.Drawing.Point(162, 131);
+            this.Weight_HtmlLabel.Location = new System.Drawing.Point(162, 100);
             this.Weight_HtmlLabel.Name = "Weight_HtmlLabel";
             this.Weight_HtmlLabel.Size = new System.Drawing.Size(266, 76);
             this.Weight_HtmlLabel.TabIndex = 13;
@@ -559,7 +565,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.Location = new System.Drawing.Point(746, 130);
+            this.metroLabel4.Location = new System.Drawing.Point(850, 140);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(130, 25);
             this.metroLabel4.TabIndex = 21;
@@ -576,11 +582,66 @@
             this.LedOff_Button.UseSelectable = true;
             this.LedOff_Button.Click += new System.EventHandler(this.LedOff_Button_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HadoFND.Properties.Resources.andfont;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 566);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(248, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // WebsiteUrl_Label
+            // 
+            this.WebsiteUrl_Label.AutoSize = true;
+            this.WebsiteUrl_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.WebsiteUrl_Label.Location = new System.Drawing.Point(280, 591);
+            this.WebsiteUrl_Label.Name = "WebsiteUrl_Label";
+            this.WebsiteUrl_Label.Size = new System.Drawing.Size(244, 25);
+            this.WebsiteUrl_Label.TabIndex = 24;
+            this.WebsiteUrl_Label.Text = "사이트 : http://www.andk.co.kr";
+            // 
+            // SalePlace_Label
+            // 
+            this.SalePlace_Label.AutoSize = true;
+            this.SalePlace_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.SalePlace_Label.Location = new System.Drawing.Point(280, 616);
+            this.SalePlace_Label.Name = "SalePlace_Label";
+            this.SalePlace_Label.Size = new System.Drawing.Size(433, 25);
+            this.SalePlace_Label.TabIndex = 25;
+            this.SalePlace_Label.Text = "판매처 : 카스 포천점 / 대표이사 홍재문 / 031-541-6116";
+            // 
+            // Address_Label
+            // 
+            this.Address_Label.AutoSize = true;
+            this.Address_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Address_Label.Location = new System.Drawing.Point(280, 641);
+            this.Address_Label.Name = "Address_Label";
+            this.Address_Label.Size = new System.Drawing.Size(370, 25);
+            this.Address_Label.TabIndex = 26;
+            this.Address_Label.Text = "주    소 : 경기도 포천시 소흘읍 송우1리 110-28";
+            // 
+            // MadeBy_Label
+            // 
+            this.MadeBy_Label.AutoSize = true;
+            this.MadeBy_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.MadeBy_Label.Location = new System.Drawing.Point(280, 566);
+            this.MadeBy_Label.Name = "MadeBy_Label";
+            this.MadeBy_Label.Size = new System.Drawing.Size(196, 25);
+            this.MadeBy_Label.TabIndex = 27;
+            this.MadeBy_Label.Text = "제조사 : 한국에이.엔.디";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.ClientSize = new System.Drawing.Size(1125, 732);
+            this.Controls.Add(this.MadeBy_Label);
+            this.Controls.Add(this.Address_Label);
+            this.Controls.Add(this.SalePlace_Label);
+            this.Controls.Add(this.WebsiteUrl_Label);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LedOff_Button);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.TodayWorkRecords_Datagridview);
@@ -598,6 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,5 +697,10 @@
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel2;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel1;
         private MetroFramework.Controls.MetroButton LedOff_Button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroLabel WebsiteUrl_Label;
+        private MetroFramework.Controls.MetroLabel SalePlace_Label;
+        private MetroFramework.Controls.MetroLabel Address_Label;
+        private MetroFramework.Controls.MetroLabel MadeBy_Label;
     }
 }

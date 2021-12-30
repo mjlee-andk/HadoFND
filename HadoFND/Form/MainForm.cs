@@ -597,7 +597,7 @@ namespace HadoFND
                 {
                     if (!ledSerialPort.IsOpen)
                     {
-                        ledSerialPort.Open();
+                        ledSerialPort.Open();   
                     }
                 }
                 
