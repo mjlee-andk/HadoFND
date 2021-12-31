@@ -84,7 +84,7 @@ namespace HadoFND
             }
             finally
             {
-                conn.Close();
+                
             }
         }
 
@@ -183,14 +183,14 @@ namespace HadoFND
             var sqlselect = "";
             try
             {
-                conn.Open();                
+                             
                 
                 // 전체 조회
                 if (currentProductId.Equals("") || currentProductId == null)
                 {
                     sqlselect =
-                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight_g, " +
-                    "w.weight AS AddWeight_g, w.total_weight AS TotalWeight_kg, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                    "SELECT p.code_number AS 품번, p.name AS 제품명, p.unit_weight AS 단위중량_g, " +
+                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +
@@ -201,8 +201,8 @@ namespace HadoFND
                 else
                 {
                     sqlselect =
-                    "SELECT p.code_number AS Code, p.name AS Name, p.unit_weight AS UnitWeight_g, " +
-                    "w.weight AS AddWeight_g, w.total_weight AS TotalWeight_kg, w.work_count AS WorkCount, w.created_at AS CreatedAt " +
+                    "SELECT p.code_number AS 품번, p.name AS 제품명, p.unit_weight AS 단위중량_g, " +
+                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +

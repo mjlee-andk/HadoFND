@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Text.RegularExpressions;
 using RJCP.IO.Ports;
 using System.Data;
 using System.Threading;
@@ -100,7 +99,7 @@ namespace HadoFND
             SalePlaceStoreName_Label.Text = _configFile.Store_Name;
             SalePlaceStorePhone_Label.Text = _configFile.Store_Phone;
             SalePlaceStoreLeaderName_Label.Text = _configFile.Store_Leader_Name;
-            AddressText_Label.Text = _configFile.Store_Address;
+            AddressText_Label.Text = _configFile.Store_Address;           
 
             //
             // DB에 등록된 제품 로드
@@ -264,7 +263,7 @@ namespace HadoFND
 
                         // 총 작업 중량 표시
                         //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
-                        TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
+                        TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString("F2");
                         // 작업일자 표시
                         WorkDate_Textbox.Text = workRecord.created_at.ToString("yyyy.MM.dd");
                         // 작업수 DB에서 읽어온 값으로 설정 및 표시
@@ -394,9 +393,9 @@ namespace HadoFND
 
                 // 총 작업 중량 표시 초기화
                 //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
-                TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
+                TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString("F2");
                 // 저울 계량값 표시 초기화
-                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString();
+                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString("F2");
                 // 현재 추가 중량 표시 초기화
                 Weight_HtmlLabel.Text = currentAddWeightG.ToString();
                 // 작업수 표시 초기화
@@ -447,7 +446,7 @@ namespace HadoFND
                 // 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
                 currentScaleValue = float.Parse(onlyNumber);
                 //currentScaleValue = Convert.ToInt32(Regex.Replace(contents, @"\D", ""));
-                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString();
+                ScaleValue_HtmlLabel.Text = currentScaleValue.ToString("F2");
 
                 // 추가 중량 = 저울 계량값 - 이전 총 중량
                 currentAddWeight = currentScaleValue - beforeTotalWeight;
@@ -535,7 +534,7 @@ namespace HadoFND
                                     // 이전 총 중량 = 이전 총 중량 + 추가 중량
                                     beforeTotalWeight += currentAddWeight;
                                     //TotalWeight_Textbox.Text = currentTotalWeight.ToString();
-                                    TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString();
+                                    TotalWeight_HtmlLabel.Text = currentTotalWeight.ToString("F2");
                                     // 작업 수 갱신
                                     WorkCount_Textbox.Text = currentWorkCount.ToString();
                                 }
