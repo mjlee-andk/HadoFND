@@ -148,7 +148,7 @@ namespace HadoFND
                 return;
             }
 
-            selectWorkRecord(startDate, endDate);
+            selectWorkRecord(startDate, endDate, false);
         }
 
         //
@@ -175,18 +175,16 @@ namespace HadoFND
                 return;
             }
 
-            selectWorkRecord(startDate, endDate);
+            selectWorkRecord(startDate, endDate, true);
         }
 
-        private void selectWorkRecord(DateTime startDate, DateTime endDate)
+        private void selectWorkRecord(DateTime startDate, DateTime endDate, Boolean isAll)
         {
             var sqlselect = "";
             try
-            {
-                             
-                
+            {   
                 // 전체 조회
-                if (currentProductId.Equals("") || currentProductId == null)
+                if (isAll)
                 {
                     sqlselect =
                     "SELECT p.code_number AS 품번, p.name AS 제품명, p.unit_weight AS 단위중량_g, " +
@@ -214,9 +212,12 @@ namespace HadoFND
                 cmd = new MySqlCommand(sqlselect, conn);
                 cmd.Parameters.AddWithValue("@startDate", startDate);
                 cmd.Parameters.AddWithValue("@endDate", endDate);
-                if (!currentProductId.Equals("") && currentProductId != null)
+                if(!isAll)
                 {
-                    cmd.Parameters.AddWithValue("@product_id", currentProductId);
+                    if (!currentProductId.Equals("") && currentProductId != null)
+                    {
+                        cmd.Parameters.AddWithValue("@product_id", currentProductId);
+                    }
                 }
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -224,7 +225,8 @@ namespace HadoFND
                 da.Fill(dt);
 
                 WorkRecordList_Datagridview.DataSource = dt;
-                if (WorkRecordList_Datagridview.RowCount == 0)
+                // 데이터가 없을 경우 rowcount가 1로 나온다.
+                if (WorkRecordList_Datagridview.RowCount == 1)
                 {
                     var text = "해당 조건으로 조회되는 데이터가 없습니다.";
                     MessageBox.Show(text);
