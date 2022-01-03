@@ -38,7 +38,7 @@ namespace HadoFND
                 conn = new MySqlConnection(connectString);
                 conn.Open();
 
-                var sqlselect = "SELECT id, account, name FROM user WHERE deleted_at is null ORDER BY name ASC;";
+                var sqlselect = "SELECT account AS 계정, name AS 이름 FROM user WHERE deleted_at is null ORDER BY name ASC;";
                 MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 

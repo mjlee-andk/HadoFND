@@ -65,8 +65,8 @@ namespace HadoFND
             // 오늘 작업 완료된 데이터만 조회
             //
             sqlselect =
-                "SELECT p.name AS Name, " +
-                "w.total_weight AS Total_kg, w.work_count AS Count, w.created_at AS CreatedAt " +
+                "SELECT p.name AS 제품명, " +
+                "w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +
                 "FROM workrecord w " +
                 "LEFT JOIN product p " +
                 "ON w.product_id = p.id " +

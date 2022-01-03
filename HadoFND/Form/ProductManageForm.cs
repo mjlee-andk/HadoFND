@@ -38,7 +38,7 @@ namespace HadoFND
                 conn = new MySqlConnection(connectString);
                 conn.Open();
 
-                var sqlselect = "SELECT name, unit_weight, code_number FROM product WHERE deleted_at is null ORDER BY code_number ASC;";
+                var sqlselect = "SELECT name AS 제품명, unit_weight AS 단위중량_g, code_number AS 품번 FROM product WHERE deleted_at is null ORDER BY code_number ASC;";
                 MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
