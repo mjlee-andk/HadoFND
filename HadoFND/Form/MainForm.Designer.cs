@@ -55,6 +55,9 @@
             this.Product_Name_Combobox = new MetroFramework.Controls.MetroComboBox();
             this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.TotalWeightText_Label = new System.Windows.Forms.Label();
+            this.WeightText_Label = new System.Windows.Forms.Label();
+            this.ScaleValueText_Label = new System.Windows.Forms.Label();
             this.htmlLabel3 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.htmlLabel2 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
@@ -71,9 +74,6 @@
             this.SalePlaceStorePhone_Label = new MetroFramework.Controls.MetroLabel();
             this.SalePlaceStoreLeaderName_Label = new MetroFramework.Controls.MetroLabel();
             this.AddressText_Label = new MetroFramework.Controls.MetroLabel();
-            this.ScaleValueText_Label = new System.Windows.Forms.Label();
-            this.WeightText_Label = new System.Windows.Forms.Label();
-            this.TotalWeightText_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -122,7 +122,7 @@
             // WorkStart_Button
             // 
             this.WorkStart_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkStart_Button.Location = new System.Drawing.Point(748, 40);
+            this.WorkStart_Button.Location = new System.Drawing.Point(724, 40);
             this.WorkStart_Button.Name = "WorkStart_Button";
             this.WorkStart_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkStart_Button.TabIndex = 4;
@@ -134,7 +134,7 @@
             // 
             this.WorkEnd_Button.Enabled = false;
             this.WorkEnd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkEnd_Button.Location = new System.Drawing.Point(933, 40);
+            this.WorkEnd_Button.Location = new System.Drawing.Point(918, 40);
             this.WorkEnd_Button.Name = "WorkEnd_Button";
             this.WorkEnd_Button.Size = new System.Drawing.Size(148, 61);
             this.WorkEnd_Button.TabIndex = 5;
@@ -166,11 +166,12 @@
             this.TodayWorkRecords_Datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.TodayWorkRecords_Datagridview.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.TodayWorkRecords_Datagridview.BackgroundColor = System.Drawing.Color.Silver;
+            this.TodayWorkRecords_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TodayWorkRecords_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TodayWorkRecords_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
@@ -189,7 +190,7 @@
             this.TodayWorkRecords_Datagridview.EnableHeadersVisualStyles = false;
             this.TodayWorkRecords_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TodayWorkRecords_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(719, 170);
+            this.TodayWorkRecords_Datagridview.Location = new System.Drawing.Point(678, 170);
             this.TodayWorkRecords_Datagridview.Name = "TodayWorkRecords_Datagridview";
             this.TodayWorkRecords_Datagridview.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -201,16 +202,17 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.TodayWorkRecords_Datagridview.RowHeadersWidth = 40;
+            this.TodayWorkRecords_Datagridview.RowHeadersWidth = 10;
             this.TodayWorkRecords_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
             this.TodayWorkRecords_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.TodayWorkRecords_Datagridview.RowTemplate.Height = 23;
             this.TodayWorkRecords_Datagridview.RowTemplate.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TodayWorkRecords_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(392, 519);
+            this.TodayWorkRecords_Datagridview.Size = new System.Drawing.Size(433, 519);
             this.TodayWorkRecords_Datagridview.TabIndex = 12;
             // 
             // TotalWeight_Label
@@ -488,6 +490,36 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // TotalWeightText_Label
+            // 
+            this.TotalWeightText_Label.BackColor = System.Drawing.Color.LightGray;
+            this.TotalWeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.TotalWeightText_Label.Location = new System.Drawing.Point(162, 9);
+            this.TotalWeightText_Label.Name = "TotalWeightText_Label";
+            this.TotalWeightText_Label.Size = new System.Drawing.Size(266, 76);
+            this.TotalWeightText_Label.TabIndex = 20;
+            this.TotalWeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // WeightText_Label
+            // 
+            this.WeightText_Label.BackColor = System.Drawing.Color.LightGray;
+            this.WeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.WeightText_Label.Location = new System.Drawing.Point(162, 100);
+            this.WeightText_Label.Name = "WeightText_Label";
+            this.WeightText_Label.Size = new System.Drawing.Size(266, 76);
+            this.WeightText_Label.TabIndex = 19;
+            this.WeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ScaleValueText_Label
+            // 
+            this.ScaleValueText_Label.BackColor = System.Drawing.Color.LightGray;
+            this.ScaleValueText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ScaleValueText_Label.Location = new System.Drawing.Point(162, 195);
+            this.ScaleValueText_Label.Name = "ScaleValueText_Label";
+            this.ScaleValueText_Label.Size = new System.Drawing.Size(266, 76);
+            this.ScaleValueText_Label.TabIndex = 18;
+            this.ScaleValueText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // htmlLabel3
             // 
             this.htmlLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -540,7 +572,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.Location = new System.Drawing.Point(850, 140);
+            this.metroLabel4.Location = new System.Drawing.Point(833, 131);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(130, 25);
             this.metroLabel4.TabIndex = 21;
@@ -666,36 +698,6 @@
             this.AddressText_Label.Size = new System.Drawing.Size(300, 25);
             this.AddressText_Label.TabIndex = 32;
             this.AddressText_Label.Text = "경기도 포천시 소흘읍 송우1리 110-28";
-            // 
-            // ScaleValueText_Label
-            // 
-            this.ScaleValueText_Label.BackColor = System.Drawing.Color.LightGray;
-            this.ScaleValueText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ScaleValueText_Label.Location = new System.Drawing.Point(162, 195);
-            this.ScaleValueText_Label.Name = "ScaleValueText_Label";
-            this.ScaleValueText_Label.Size = new System.Drawing.Size(266, 76);
-            this.ScaleValueText_Label.TabIndex = 18;
-            this.ScaleValueText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // WeightText_Label
-            // 
-            this.WeightText_Label.BackColor = System.Drawing.Color.LightGray;
-            this.WeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.WeightText_Label.Location = new System.Drawing.Point(162, 100);
-            this.WeightText_Label.Name = "WeightText_Label";
-            this.WeightText_Label.Size = new System.Drawing.Size(266, 76);
-            this.WeightText_Label.TabIndex = 19;
-            this.WeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TotalWeightText_Label
-            // 
-            this.TotalWeightText_Label.BackColor = System.Drawing.Color.LightGray;
-            this.TotalWeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TotalWeightText_Label.Location = new System.Drawing.Point(162, 9);
-            this.TotalWeightText_Label.Name = "TotalWeightText_Label";
-            this.TotalWeightText_Label.Size = new System.Drawing.Size(266, 76);
-            this.TotalWeightText_Label.TabIndex = 20;
-            this.TotalWeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainForm
             // 
