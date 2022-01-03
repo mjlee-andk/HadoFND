@@ -38,7 +38,7 @@ namespace HadoFND
                 conn = new MySqlConnection(connectString);
                 conn.Open();
 
-                var sqlselect = "SELECT account AS 계정, name AS 이름 FROM user WHERE deleted_at is null ORDER BY name ASC;";
+                var sqlselect = "SELECT account AS 계정, name AS 이름, id AS 계정uuid FROM user WHERE deleted_at is null ORDER BY name ASC;";
                 MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
@@ -247,19 +247,19 @@ namespace HadoFND
             //
             // 선택한 셀의 id로 이벤트 처리
             //
-            if (UserList_Datagridview.SelectedCells[0] == null)
+            if (UserList_Datagridview.SelectedCells[2] == null)
             {
                 selectedUserId = "";
                 return;
             }
 
-            if (UserList_Datagridview.SelectedCells[0].Value.ToString().Equals("") || UserList_Datagridview.SelectedCells[0].Value.ToString() == null)
+            if (UserList_Datagridview.SelectedCells[2].Value.ToString().Equals("") || UserList_Datagridview.SelectedCells[2].Value.ToString() == null)
             {
                 selectedUserId = "";
                 return;
             }
 
-            selectedUserId = UserList_Datagridview.SelectedCells[0].Value.ToString();
+            selectedUserId = UserList_Datagridview.SelectedCells[2].Value.ToString();
         }
     }
 }
