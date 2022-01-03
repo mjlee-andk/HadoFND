@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductList_Label = new MetroFramework.Controls.MetroLabel();
             this.WorkRecordList_Datagridview = new MetroFramework.Controls.MetroGrid();
             this.ExcelExportClose_Button = new MetroFramework.Controls.MetroButton();
@@ -53,11 +53,13 @@
             // ProductList_Label
             // 
             this.ProductList_Label.AutoSize = true;
-            this.ProductList_Label.Location = new System.Drawing.Point(249, 80);
+            this.ProductList_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ProductList_Label.Location = new System.Drawing.Point(249, 67);
             this.ProductList_Label.Name = "ProductList_Label";
-            this.ProductList_Label.Size = new System.Drawing.Size(37, 19);
+            this.ProductList_Label.Size = new System.Drawing.Size(48, 25);
             this.ProductList_Label.TabIndex = 9;
             this.ProductList_Label.Text = "제품";
+            this.ProductList_Label.UseMnemonic = false;
             // 
             // WorkRecordList_Datagridview
             // 
@@ -65,8 +67,8 @@
             this.WorkRecordList_Datagridview.AllowUserToDeleteRows = false;
             this.WorkRecordList_Datagridview.AllowUserToResizeColumns = false;
             this.WorkRecordList_Datagridview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WorkRecordList_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WorkRecordList_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.WorkRecordList_Datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -75,24 +77,24 @@
             this.WorkRecordList_Datagridview.BackgroundColor = System.Drawing.Color.Silver;
             this.WorkRecordList_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.WorkRecordList_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.WorkRecordList_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.WorkRecordList_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.WorkRecordList_Datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WorkRecordList_Datagridview.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WorkRecordList_Datagridview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WorkRecordList_Datagridview.DefaultCellStyle = dataGridViewCellStyle18;
             this.WorkRecordList_Datagridview.EnableHeadersVisualStyles = false;
             this.WorkRecordList_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.WorkRecordList_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -100,18 +102,18 @@
             this.WorkRecordList_Datagridview.Name = "WorkRecordList_Datagridview";
             this.WorkRecordList_Datagridview.ReadOnly = true;
             this.WorkRecordList_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.WorkRecordList_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.WorkRecordList_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.WorkRecordList_Datagridview.RowHeadersWidth = 40;
             this.WorkRecordList_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            this.WorkRecordList_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(3);
+            this.WorkRecordList_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.WorkRecordList_Datagridview.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.WorkRecordList_Datagridview.RowTemplate.Height = 23;
             this.WorkRecordList_Datagridview.RowTemplate.ReadOnly = true;
@@ -148,7 +150,7 @@
             this.ProductList_Combobox.ItemHeight = 23;
             this.ProductList_Combobox.Location = new System.Drawing.Point(249, 102);
             this.ProductList_Combobox.Name = "ProductList_Combobox";
-            this.ProductList_Combobox.Size = new System.Drawing.Size(154, 29);
+            this.ProductList_Combobox.Size = new System.Drawing.Size(141, 29);
             this.ProductList_Combobox.TabIndex = 17;
             this.ProductList_Combobox.UseSelectable = true;
             this.ProductList_Combobox.SelectedIndexChanged += new System.EventHandler(this.ProductList_Combobox_SelectedIndexChanged);
@@ -156,18 +158,20 @@
             // DateStart_Label
             // 
             this.DateStart_Label.AutoSize = true;
-            this.DateStart_Label.Location = new System.Drawing.Point(23, 80);
+            this.DateStart_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DateStart_Label.Location = new System.Drawing.Point(23, 67);
             this.DateStart_Label.Name = "DateStart_Label";
-            this.DateStart_Label.Size = new System.Drawing.Size(65, 19);
+            this.DateStart_Label.Size = new System.Drawing.Size(84, 25);
             this.DateStart_Label.TabIndex = 20;
             this.DateStart_Label.Text = "시작날짜";
             // 
             // DateEnd_Label
             // 
             this.DateEnd_Label.AutoSize = true;
-            this.DateEnd_Label.Location = new System.Drawing.Point(136, 80);
+            this.DateEnd_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.DateEnd_Label.Location = new System.Drawing.Point(136, 67);
             this.DateEnd_Label.Name = "DateEnd_Label";
-            this.DateEnd_Label.Size = new System.Drawing.Size(65, 19);
+            this.DateEnd_Label.Size = new System.Drawing.Size(84, 25);
             this.DateEnd_Label.TabIndex = 21;
             this.DateEnd_Label.Text = "종료날짜";
             // 
@@ -206,14 +210,16 @@
             // FilePath_Label
             // 
             this.FilePath_Label.AutoSize = true;
-            this.FilePath_Label.Location = new System.Drawing.Point(477, 80);
+            this.FilePath_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.FilePath_Label.Location = new System.Drawing.Point(477, 67);
             this.FilePath_Label.Name = "FilePath_Label";
-            this.FilePath_Label.Size = new System.Drawing.Size(101, 19);
+            this.FilePath_Label.Size = new System.Drawing.Size(130, 25);
             this.FilePath_Label.TabIndex = 23;
             this.FilePath_Label.Text = "파일 저장 위치";
             // 
             // FilePath_Button
             // 
+            this.FilePath_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.FilePath_Button.Location = new System.Drawing.Point(710, 102);
             this.FilePath_Button.Name = "FilePath_Button";
             this.FilePath_Button.Size = new System.Drawing.Size(75, 29);
@@ -224,11 +230,12 @@
             // 
             // Search_Button
             // 
-            this.Search_Button.Location = new System.Drawing.Point(409, 102);
+            this.Search_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Search_Button.Location = new System.Drawing.Point(396, 102);
             this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(62, 29);
+            this.Search_Button.Size = new System.Drawing.Size(75, 29);
             this.Search_Button.TabIndex = 26;
-            this.Search_Button.Text = "제품 조회";
+            this.Search_Button.Text = "제품조회";
             this.Search_Button.UseSelectable = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
@@ -252,11 +259,12 @@
             // 
             // AllSearch_Button
             // 
-            this.AllSearch_Button.Location = new System.Drawing.Point(409, 67);
+            this.AllSearch_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.AllSearch_Button.Location = new System.Drawing.Point(396, 67);
             this.AllSearch_Button.Name = "AllSearch_Button";
-            this.AllSearch_Button.Size = new System.Drawing.Size(62, 29);
+            this.AllSearch_Button.Size = new System.Drawing.Size(75, 29);
             this.AllSearch_Button.TabIndex = 29;
-            this.AllSearch_Button.Text = "전체 조회";
+            this.AllSearch_Button.Text = "전체조회";
             this.AllSearch_Button.UseSelectable = true;
             this.AllSearch_Button.Click += new System.EventHandler(this.AllSearch_Button_Click);
             // 
@@ -265,6 +273,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.ControlBox = false;
             this.Controls.Add(this.AllSearch_Button);
             this.Controls.Add(this.DateEnd_DateTime);
             this.Controls.Add(this.DateStart_DateTime);

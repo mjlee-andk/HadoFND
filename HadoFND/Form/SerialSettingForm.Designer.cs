@@ -52,18 +52,20 @@
             // Indicator_Label
             // 
             this.Indicator_Label.AutoSize = true;
-            this.Indicator_Label.Location = new System.Drawing.Point(23, 147);
+            this.Indicator_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Indicator_Label.Location = new System.Drawing.Point(6, 137);
             this.Indicator_Label.Name = "Indicator_Label";
-            this.Indicator_Label.Size = new System.Drawing.Size(79, 19);
+            this.Indicator_Label.Size = new System.Drawing.Size(102, 25);
             this.Indicator_Label.TabIndex = 1;
             this.Indicator_Label.Text = "인디케이터";
             // 
             // Led_Label
             // 
             this.Led_Label.AutoSize = true;
-            this.Led_Label.Location = new System.Drawing.Point(24, 203);
+            this.Led_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Led_Label.Location = new System.Drawing.Point(6, 193);
             this.Led_Label.Name = "Led_Label";
-            this.Led_Label.Size = new System.Drawing.Size(51, 19);
+            this.Led_Label.Size = new System.Drawing.Size(66, 25);
             this.Led_Label.TabIndex = 2;
             this.Led_Label.Text = "경광등";
             // 
@@ -250,53 +252,59 @@
             // Port_Label
             // 
             this.Port_Label.AutoSize = true;
+            this.Port_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Port_Label.Location = new System.Drawing.Point(120, 100);
             this.Port_Label.Name = "Port_Label";
-            this.Port_Label.Size = new System.Drawing.Size(34, 19);
+            this.Port_Label.Size = new System.Drawing.Size(43, 25);
             this.Port_Label.TabIndex = 13;
             this.Port_Label.Text = "Port";
             // 
             // BaudRate_Label
             // 
             this.BaudRate_Label.AutoSize = true;
+            this.BaudRate_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.BaudRate_Label.Location = new System.Drawing.Point(213, 100);
             this.BaudRate_Label.Name = "BaudRate_Label";
-            this.BaudRate_Label.Size = new System.Drawing.Size(65, 19);
+            this.BaudRate_Label.Size = new System.Drawing.Size(84, 25);
             this.BaudRate_Label.TabIndex = 14;
             this.BaudRate_Label.Text = "BaudRate";
             // 
             // Databits_Label
             // 
             this.Databits_Label.AutoSize = true;
+            this.Databits_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Databits_Label.Location = new System.Drawing.Point(306, 100);
             this.Databits_Label.Name = "Databits_Label";
-            this.Databits_Label.Size = new System.Drawing.Size(56, 19);
+            this.Databits_Label.Size = new System.Drawing.Size(73, 25);
             this.Databits_Label.TabIndex = 15;
             this.Databits_Label.Text = "DataBits";
             // 
             // Parity_Label
             // 
             this.Parity_Label.AutoSize = true;
+            this.Parity_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Parity_Label.Location = new System.Drawing.Point(399, 100);
             this.Parity_Label.Name = "Parity_Label";
-            this.Parity_Label.Size = new System.Drawing.Size(41, 19);
+            this.Parity_Label.Size = new System.Drawing.Size(53, 25);
             this.Parity_Label.TabIndex = 16;
             this.Parity_Label.Text = "Parity";
             // 
             // Stopbits_Label
             // 
             this.Stopbits_Label.AutoSize = true;
+            this.Stopbits_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Stopbits_Label.Location = new System.Drawing.Point(492, 100);
             this.Stopbits_Label.Name = "Stopbits_Label";
-            this.Stopbits_Label.Size = new System.Drawing.Size(56, 19);
+            this.Stopbits_Label.Size = new System.Drawing.Size(72, 25);
             this.Stopbits_Label.TabIndex = 17;
             this.Stopbits_Label.Text = "StopBits";
             // 
             // Serial_Save_Button
             // 
-            this.Serial_Save_Button.Location = new System.Drawing.Point(411, 304);
+            this.Serial_Save_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Serial_Save_Button.Location = new System.Drawing.Point(278, 287);
             this.Serial_Save_Button.Name = "Serial_Save_Button";
-            this.Serial_Save_Button.Size = new System.Drawing.Size(75, 23);
+            this.Serial_Save_Button.Size = new System.Drawing.Size(147, 40);
             this.Serial_Save_Button.TabIndex = 18;
             this.Serial_Save_Button.Text = "저장";
             this.Serial_Save_Button.UseSelectable = true;
@@ -304,9 +312,10 @@
             // 
             // Serial_Close_Button
             // 
-            this.Serial_Close_Button.Location = new System.Drawing.Point(502, 304);
+            this.Serial_Close_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Serial_Close_Button.Location = new System.Drawing.Point(432, 287);
             this.Serial_Close_Button.Name = "Serial_Close_Button";
-            this.Serial_Close_Button.Size = new System.Drawing.Size(75, 23);
+            this.Serial_Close_Button.Size = new System.Drawing.Size(147, 40);
             this.Serial_Close_Button.TabIndex = 19;
             this.Serial_Close_Button.Text = "닫기";
             this.Serial_Close_Button.UseSelectable = true;
@@ -317,6 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 350);
+            this.ControlBox = false;
             this.Controls.Add(this.Serial_Close_Button);
             this.Controls.Add(this.Serial_Save_Button);
             this.Controls.Add(this.Stopbits_Label);
