@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SerialSetting_Button = new MetroFramework.Controls.MetroButton();
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductManage_Button = new MetroFramework.Controls.MetroButton();
@@ -74,6 +74,8 @@
             this.SalePlaceStorePhone_Label = new MetroFramework.Controls.MetroLabel();
             this.SalePlaceStoreLeaderName_Label = new MetroFramework.Controls.MetroLabel();
             this.AddressText_Label = new MetroFramework.Controls.MetroLabel();
+            this.ProductUnitWeight_Label = new MetroFramework.Controls.MetroLabel();
+            this.ProductUnitWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -158,8 +160,8 @@
             this.TodayWorkRecords_Datagridview.AllowUserToDeleteRows = false;
             this.TodayWorkRecords_Datagridview.AllowUserToResizeColumns = false;
             this.TodayWorkRecords_Datagridview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TodayWorkRecords_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TodayWorkRecords_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.TodayWorkRecords_Datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -169,24 +171,24 @@
             this.TodayWorkRecords_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TodayWorkRecords_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.TodayWorkRecords_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.TodayWorkRecords_Datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TodayWorkRecords_Datagridview.DefaultCellStyle = dataGridViewCellStyle23;
             this.TodayWorkRecords_Datagridview.EnableHeadersVisualStyles = false;
             this.TodayWorkRecords_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TodayWorkRecords_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -194,20 +196,20 @@
             this.TodayWorkRecords_Datagridview.Name = "TodayWorkRecords_Datagridview";
             this.TodayWorkRecords_Datagridview.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TodayWorkRecords_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.TodayWorkRecords_Datagridview.RowHeadersWidth = 10;
             this.TodayWorkRecords_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            this.TodayWorkRecords_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(3);
+            this.TodayWorkRecords_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.TodayWorkRecords_Datagridview.RowTemplate.Height = 23;
             this.TodayWorkRecords_Datagridview.RowTemplate.ReadOnly = true;
             this.TodayWorkRecords_Datagridview.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -276,7 +278,7 @@
             // 
             this.Lo_Label.AutoSize = true;
             this.Lo_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Lo_Label.Location = new System.Drawing.Point(324, 359);
+            this.Lo_Label.Location = new System.Drawing.Point(304, 419);
             this.Lo_Label.Name = "Lo_Label";
             this.Lo_Label.Size = new System.Drawing.Size(68, 25);
             this.Lo_Label.TabIndex = 9;
@@ -287,7 +289,7 @@
             // 
             this.Hi_Label.AutoSize = true;
             this.Hi_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Hi_Label.Location = new System.Drawing.Point(324, 299);
+            this.Hi_Label.Location = new System.Drawing.Point(304, 359);
             this.Hi_Label.Name = "Hi_Label";
             this.Hi_Label.Size = new System.Drawing.Size(68, 25);
             this.Hi_Label.TabIndex = 10;
@@ -310,7 +312,7 @@
             this.WorkDate_Textbox.CustomButton.Visible = false;
             this.WorkDate_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.WorkDate_Textbox.Lines = new string[0];
-            this.WorkDate_Textbox.Location = new System.Drawing.Point(162, 357);
+            this.WorkDate_Textbox.Location = new System.Drawing.Point(141, 362);
             this.WorkDate_Textbox.MaxLength = 32767;
             this.WorkDate_Textbox.Name = "WorkDate_Textbox";
             this.WorkDate_Textbox.PasswordChar = '\0';
@@ -347,7 +349,7 @@
             this.WorkCount_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.WorkCount_Textbox.Lines = new string[] {
         "0"};
-            this.WorkCount_Textbox.Location = new System.Drawing.Point(162, 416);
+            this.WorkCount_Textbox.Location = new System.Drawing.Point(141, 421);
             this.WorkCount_Textbox.MaxLength = 32767;
             this.WorkCount_Textbox.Name = "WorkCount_Textbox";
             this.WorkCount_Textbox.PasswordChar = '\0';
@@ -382,11 +384,10 @@
             this.Hi_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Hi_Textbox.Lines = new string[] {
         "0"};
-            this.Hi_Textbox.Location = new System.Drawing.Point(416, 296);
-            this.Hi_Textbox.MaxLength = 32767;
+            this.Hi_Textbox.Location = new System.Drawing.Point(416, 356);
+            this.Hi_Textbox.MaxLength = 10;
             this.Hi_Textbox.Name = "Hi_Textbox";
             this.Hi_Textbox.PasswordChar = '\0';
-            this.Hi_Textbox.ReadOnly = true;
             this.Hi_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Hi_Textbox.SelectedText = "";
             this.Hi_Textbox.SelectionLength = 0;
@@ -399,6 +400,7 @@
             this.Hi_Textbox.UseSelectable = true;
             this.Hi_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Hi_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.Hi_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Hi_Textbox_KeyPress);
             // 
             // Lo_Textbox
             // 
@@ -417,11 +419,10 @@
             this.Lo_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Lo_Textbox.Lines = new string[] {
         "0"};
-            this.Lo_Textbox.Location = new System.Drawing.Point(416, 357);
-            this.Lo_Textbox.MaxLength = 32767;
+            this.Lo_Textbox.Location = new System.Drawing.Point(416, 417);
+            this.Lo_Textbox.MaxLength = 10;
             this.Lo_Textbox.Name = "Lo_Textbox";
             this.Lo_Textbox.PasswordChar = '\0';
-            this.Lo_Textbox.ReadOnly = true;
             this.Lo_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Lo_Textbox.SelectedText = "";
             this.Lo_Textbox.SelectionLength = 0;
@@ -434,13 +435,14 @@
             this.Lo_Textbox.UseSelectable = true;
             this.Lo_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Lo_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.Lo_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Lo_Textbox_KeyPress);
             // 
             // Product_Name_Combobox
             // 
             this.Product_Name_Combobox.FontSize = MetroFramework.MetroComboBoxSize.Tall;
             this.Product_Name_Combobox.FormattingEnabled = true;
             this.Product_Name_Combobox.ItemHeight = 29;
-            this.Product_Name_Combobox.Location = new System.Drawing.Point(162, 294);
+            this.Product_Name_Combobox.Location = new System.Drawing.Point(141, 299);
             this.Product_Name_Combobox.Name = "Product_Name_Combobox";
             this.Product_Name_Combobox.Size = new System.Drawing.Size(143, 35);
             this.Product_Name_Combobox.TabIndex = 16;
@@ -460,6 +462,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.ProductUnitWeight_Textbox);
+            this.metroPanel1.Controls.Add(this.ProductUnitWeight_Label);
             this.metroPanel1.Controls.Add(this.TotalWeightText_Label);
             this.metroPanel1.Controls.Add(this.WeightText_Label);
             this.metroPanel1.Controls.Add(this.ScaleValueText_Label);
@@ -494,7 +498,7 @@
             // 
             this.TotalWeightText_Label.BackColor = System.Drawing.Color.LightGray;
             this.TotalWeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.TotalWeightText_Label.Location = new System.Drawing.Point(162, 9);
+            this.TotalWeightText_Label.Location = new System.Drawing.Point(142, 9);
             this.TotalWeightText_Label.Name = "TotalWeightText_Label";
             this.TotalWeightText_Label.Size = new System.Drawing.Size(266, 76);
             this.TotalWeightText_Label.TabIndex = 20;
@@ -504,7 +508,7 @@
             // 
             this.WeightText_Label.BackColor = System.Drawing.Color.LightGray;
             this.WeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.WeightText_Label.Location = new System.Drawing.Point(162, 100);
+            this.WeightText_Label.Location = new System.Drawing.Point(142, 100);
             this.WeightText_Label.Name = "WeightText_Label";
             this.WeightText_Label.Size = new System.Drawing.Size(266, 76);
             this.WeightText_Label.TabIndex = 19;
@@ -514,7 +518,7 @@
             // 
             this.ScaleValueText_Label.BackColor = System.Drawing.Color.LightGray;
             this.ScaleValueText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ScaleValueText_Label.Location = new System.Drawing.Point(162, 195);
+            this.ScaleValueText_Label.Location = new System.Drawing.Point(142, 195);
             this.ScaleValueText_Label.Name = "ScaleValueText_Label";
             this.ScaleValueText_Label.Size = new System.Drawing.Size(266, 76);
             this.ScaleValueText_Label.TabIndex = 18;
@@ -699,6 +703,52 @@
             this.AddressText_Label.TabIndex = 32;
             this.AddressText_Label.Text = "경기도 포천시 소흘읍 송우1리 110-28";
             // 
+            // ProductUnitWeight_Label
+            // 
+            this.ProductUnitWeight_Label.AutoSize = true;
+            this.ProductUnitWeight_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ProductUnitWeight_Label.Location = new System.Drawing.Point(304, 299);
+            this.ProductUnitWeight_Label.Name = "ProductUnitWeight_Label";
+            this.ProductUnitWeight_Label.Size = new System.Drawing.Size(104, 25);
+            this.ProductUnitWeight_Label.TabIndex = 21;
+            this.ProductUnitWeight_Label.Text = "단위중량(g)";
+            this.ProductUnitWeight_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProductUnitWeight_Textbox
+            // 
+            // 
+            // 
+            // 
+            this.ProductUnitWeight_Textbox.CustomButton.Image = null;
+            this.ProductUnitWeight_Textbox.CustomButton.Location = new System.Drawing.Point(111, 1);
+            this.ProductUnitWeight_Textbox.CustomButton.Name = "";
+            this.ProductUnitWeight_Textbox.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.ProductUnitWeight_Textbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.ProductUnitWeight_Textbox.CustomButton.TabIndex = 1;
+            this.ProductUnitWeight_Textbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ProductUnitWeight_Textbox.CustomButton.UseSelectable = true;
+            this.ProductUnitWeight_Textbox.CustomButton.Visible = false;
+            this.ProductUnitWeight_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.ProductUnitWeight_Textbox.Lines = new string[] {
+        "0"};
+            this.ProductUnitWeight_Textbox.Location = new System.Drawing.Point(414, 299);
+            this.ProductUnitWeight_Textbox.MaxLength = 32767;
+            this.ProductUnitWeight_Textbox.Name = "ProductUnitWeight_Textbox";
+            this.ProductUnitWeight_Textbox.PasswordChar = '\0';
+            this.ProductUnitWeight_Textbox.ReadOnly = true;
+            this.ProductUnitWeight_Textbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.ProductUnitWeight_Textbox.SelectedText = "";
+            this.ProductUnitWeight_Textbox.SelectionLength = 0;
+            this.ProductUnitWeight_Textbox.SelectionStart = 0;
+            this.ProductUnitWeight_Textbox.ShortcutsEnabled = true;
+            this.ProductUnitWeight_Textbox.Size = new System.Drawing.Size(143, 33);
+            this.ProductUnitWeight_Textbox.TabIndex = 22;
+            this.ProductUnitWeight_Textbox.Text = "0";
+            this.ProductUnitWeight_Textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ProductUnitWeight_Textbox.UseSelectable = true;
+            this.ProductUnitWeight_Textbox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ProductUnitWeight_Textbox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -781,5 +831,7 @@
         private System.Windows.Forms.Label ScaleValueText_Label;
         private System.Windows.Forms.Label WeightText_Label;
         private System.Windows.Forms.Label TotalWeightText_Label;
+        private MetroFramework.Controls.MetroTextBox ProductUnitWeight_Textbox;
+        private MetroFramework.Controls.MetroLabel ProductUnitWeight_Label;
     }
 }

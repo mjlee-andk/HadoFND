@@ -27,6 +27,7 @@ namespace HadoFND
         float currentAddWeight = 0; // 현재 추가 중량(kg)
         int currentAddWeightG = 0; // 현재 추가 중량(g)
 
+        int selectedProductUnitWeight = 0; // 선택한 제품의 단위중량값
         int selectedProductHiValue = 0; // 선택한 제품의 상한값
         int selectedProductLoValue = 0; // 선택한 제품의 하한값
 
@@ -206,6 +207,38 @@ namespace HadoFND
             if(Product_Name_Combobox.SelectedIndex < 0)
             {
                 var text = "제품을 선택해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+
+            //
+            // 상한, 하한 값 입력했는지 확인
+            //
+            if(Hi_Textbox.Text == "" || Hi_Textbox == null)
+            {
+                var text = "상한값을 입력해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+
+            if (Lo_Textbox.Text == "" || Lo_Textbox == null)
+            {
+                var text = "하한값을 입력해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+
+            selectedProductHiValue = Convert.ToInt32(Hi_Textbox.Text);
+            selectedProductLoValue = Convert.ToInt32(Lo_Textbox.Text);
+            if (selectedProductHiValue <= selectedProductUnitWeight)
+            {
+                var text = "상한값을 다시 설정해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+            if (selectedProductLoValue >= selectedProductUnitWeight)
+            {
+                var text = "하한값을 다시 설정해주세요.";
                 MessageBox.Show(text);
                 return;
             }
@@ -579,7 +612,11 @@ namespace HadoFND
                 var selectedProduct = productList[Product_Name_Combobox.SelectedIndex];
 
                 // 선택한 제품의 id값
-                currentProductId = selectedProduct.id;                
+                currentProductId = selectedProduct.id;
+
+                // 선택한 제품의 단위중량값
+                selectedProductUnitWeight = selectedProduct.unit_weight;
+                ProductUnitWeight_Textbox.Text = selectedProduct.unit_weight.ToString();
 
                 selectedProductHiValue = selectedProduct.unit_weight + _configFile.Hi_Value;
                 selectedProductLoValue = selectedProduct.unit_weight - _configFile.Lo_Value;
@@ -657,6 +694,22 @@ namespace HadoFND
             catch (Exception ex)
             {
                 Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+            }
+        }
+
+        private void Hi_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Lo_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
             }
         }
     }
