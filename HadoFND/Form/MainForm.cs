@@ -513,7 +513,7 @@ namespace HadoFND
                             //
                             // 현재 추가 중량이 상한 또는 하한 값 범위를 벗어나면 경광등으로 신호 전달
                             //
-                            if (currentAddWeightG < selectedProductLoValue || currentAddWeightG > selectedProductHiValue)
+                            if (currentAddWeightG <= selectedProductLoValue || currentAddWeightG >= selectedProductHiValue)
                             {
                                 //
                                 // 경광등으로 신호 전달
@@ -521,7 +521,7 @@ namespace HadoFND
 
                                 // LO 적색등
                                 if (currentAddWeightG < selectedProductLoValue)
-                                {
+                                 {
                                     ledSerialPort.Write("L\r\n");
                                 }
                                 // HI 황색등
