@@ -255,6 +255,13 @@ namespace HadoFND
             Product_Name_Combobox.Enabled = false;
 
             //
+            // 상한, 하한 입력 안되도록
+            //
+
+            Hi_Textbox.Enabled = false;
+            Lo_Textbox.Enabled = false;
+
+            //
             // 선택한 제품으로 가장 최근에 작업을 했으나 작업완료를 하지 못한 기록이 있는지 검색하기
             //
             var selectedProductId = Product_Name_Combobox.SelectedValue;
@@ -416,6 +423,12 @@ namespace HadoFND
                 WorkStart_Button.Enabled = true;
                 Product_Name_Combobox.Enabled = true;
                 WorkEnd_Button.Enabled = false;
+
+                //
+                // 상한, 하한 입력 되도록
+                //
+                Hi_Textbox.Enabled = true;
+                Lo_Textbox.Enabled = true;
 
                 currentWorkCount = 0; // 현재 작업수
                 currentTotalWeight = 0; // 총 작업 중량
