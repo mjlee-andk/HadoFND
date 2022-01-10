@@ -249,17 +249,17 @@ namespace HadoFND
         {
             ExcelExportForm excelExportForm = new ExcelExportForm();
             excelExportForm.ShowDialog();
-        }        
+        }
 
         //
-        // 작업 시작 버튼 클릭
+        // 작업 시작
         //
-        private void WorkStart_Button_Click(object sender, EventArgs e)
+        private void WorkStart()
         {
             //
             // 제품 선택 여부 확인
             //
-            if(Product_Name_Combobox.SelectedIndex < 0)
+            if (Product_Name_Combobox.SelectedIndex < 0)
             {
                 var text = "제품을 선택해주세요.";
                 MessageBox.Show(text);
@@ -269,7 +269,7 @@ namespace HadoFND
             //
             // 상한, 하한 값 입력했는지 확인
             //
-            if(Hi_Textbox.Text == "" || Hi_Textbox == null)
+            if (Hi_Textbox.Text == "" || Hi_Textbox == null)
             {
                 var text = "상한값을 입력해주세요.";
                 MessageBox.Show(text);
@@ -298,6 +298,8 @@ namespace HadoFND
                 return;
             }
 
+            WorkStartEnd_Button.Text = "작업종료";
+
             //
             // 작업 시작 후 통신설정,제품관리,유저관리,엑셀추출,작업시작 버튼 안눌리도록 
             //
@@ -305,8 +307,6 @@ namespace HadoFND
             ProductManage_Button.Enabled = false;
             UserManage_Button.Enabled = false;
             ExcelExport_Button.Enabled = false;
-            WorkStart_Button.Enabled = false;
-            WorkEnd_Button.Enabled = true;
             Product_Name_Combobox.Enabled = false;
 
             //
@@ -390,7 +390,7 @@ namespace HadoFND
 
                 // 경광등 시리얼 통신 연결
                 ledSerialPort = new SerialPortStream(_configFile.Led_Comport, _configFile.Led_BaudRate, _configFile.Led_DataBits, _configFile.Led_Parity, _configFile.Led_StopBits);
-                                
+
                 ledSerialPort.Open();
 
                 ////
@@ -405,9 +405,9 @@ namespace HadoFND
         }
 
         //
-        // 작업 종료 버튼 클릭
+        // 작업 종료
         //
-        private void WorkEnd_Button_Click(object sender, EventArgs e)
+        private void WorkEnd()
         {
             try
             {
@@ -426,7 +426,7 @@ namespace HadoFND
                     dr.Read();
 
                     var workRecordId = dr["id"];
-                    if(workRecordId.Equals("") || workRecordId == null)
+                    if (workRecordId.Equals("") || workRecordId == null)
                     {
                         return;
                     }
@@ -468,6 +468,8 @@ namespace HadoFND
                     Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
                 }
 
+                WorkStartEnd_Button.Text = "작업시작";
+
                 //
                 // 버튼 활성/비활성화
                 //
@@ -475,9 +477,7 @@ namespace HadoFND
                 ProductManage_Button.Enabled = true;
                 UserManage_Button.Enabled = true;
                 ExcelExport_Button.Enabled = true;
-                WorkStart_Button.Enabled = true;
                 Product_Name_Combobox.Enabled = true;
-                WorkEnd_Button.Enabled = false;
 
                 //
                 // 상한, 하한 입력 되도록
@@ -500,6 +500,24 @@ namespace HadoFND
                 WeightText_Label.Text = currentAddWeightG.ToString();
                 // 작업수 표시 초기화
                 WorkCount_Textbox.Text = currentWorkCount.ToString();
+            }
+        }
+
+
+        //
+        // 작업 시작/종료 버튼 클릭
+        //
+        private void WorkStartEnd_Button_Click(object sender, EventArgs e)
+        {
+            // 작업 시작 호출
+            if(WorkStartEnd_Button.Text == "작업시작")
+            {
+                WorkStart();
+            }
+            // 작업 종료 호출
+            else
+            {
+                WorkEnd();                
             }
         }
 
@@ -700,12 +718,12 @@ namespace HadoFND
                 }
                 
                 //
-                // 전체 신호 1초 간격으로 보내기
+                // 전체 신호 0.5초 간격으로 보내기
                 //
                 ledSerialPort.Write("O\r\n");
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 ledSerialPort.Write("L\r\n");
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 ledSerialPort.Write("H\r\n");
             }
             catch (Exception ex)
@@ -763,5 +781,7 @@ namespace HadoFND
                 e.Handled = true;
             }
         }
+
+        
     }
 }

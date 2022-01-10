@@ -24,20 +24,25 @@ namespace HadoFND
 
             string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
             conn = new MySqlConnection(connectString);
-            
-            // 로그인 폼으로 포커싱 주고 아이디 입력창에 포커싱
+
             this.Activate();
-            this.ActiveControl = LoginAccount_TextBox;
-            LoginAccount_TextBox.Focus();
 
             LoginAccount_TextBox.Text = Properties.Settings.Default.LoginIDSave;
+
+            // 아이디 저장이 체크되어 있으면
             if (Properties.Settings.Default.LoginIDSaveChecked)
             {
                 SaveID_CheckBox.Checked = true;
+                // 로그인 폼으로 포커싱 주고 비밀번호 입력창에 포커싱
+                this.ActiveControl = LoginPassword_TextBox;
+                LoginPassword_TextBox.Focus();
             }
             else
             {
                 SaveID_CheckBox.Checked = false;
+                // 로그인 폼으로 포커싱 주고 아이디 입력창에 포커싱
+                this.ActiveControl = LoginAccount_TextBox;
+                LoginAccount_TextBox.Focus();
             }
         }
         

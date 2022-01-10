@@ -37,8 +37,7 @@
             this.ExcelExport_Button = new MetroFramework.Controls.MetroButton();
             this.ProductManage_Button = new MetroFramework.Controls.MetroButton();
             this.UserManage_Button = new MetroFramework.Controls.MetroButton();
-            this.WorkStart_Button = new MetroFramework.Controls.MetroButton();
-            this.WorkEnd_Button = new MetroFramework.Controls.MetroButton();
+            this.WorkStartEnd_Button = new MetroFramework.Controls.MetroButton();
             this.LedOn_Button = new MetroFramework.Controls.MetroButton();
             this.TodayWorkRecords_Datagridview = new MetroFramework.Controls.MetroGrid();
             this.TotalWeight_Label = new MetroFramework.Controls.MetroLabel();
@@ -121,28 +120,17 @@
             this.UserManage_Button.UseSelectable = true;
             this.UserManage_Button.Click += new System.EventHandler(this.UserManage_Button_Click);
             // 
-            // WorkStart_Button
+            // WorkStartEnd_Button
             // 
-            this.WorkStart_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkStart_Button.Location = new System.Drawing.Point(724, 40);
-            this.WorkStart_Button.Name = "WorkStart_Button";
-            this.WorkStart_Button.Size = new System.Drawing.Size(148, 61);
-            this.WorkStart_Button.TabIndex = 4;
-            this.WorkStart_Button.Text = "작업시작";
-            this.WorkStart_Button.UseSelectable = true;
-            this.WorkStart_Button.Click += new System.EventHandler(this.WorkStart_Button_Click);
-            // 
-            // WorkEnd_Button
-            // 
-            this.WorkEnd_Button.Enabled = false;
-            this.WorkEnd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.WorkEnd_Button.Location = new System.Drawing.Point(918, 40);
-            this.WorkEnd_Button.Name = "WorkEnd_Button";
-            this.WorkEnd_Button.Size = new System.Drawing.Size(148, 61);
-            this.WorkEnd_Button.TabIndex = 5;
-            this.WorkEnd_Button.Text = "작업종료";
-            this.WorkEnd_Button.UseSelectable = true;
-            this.WorkEnd_Button.Click += new System.EventHandler(this.WorkEnd_Button_Click);
+            this.WorkStartEnd_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.WorkStartEnd_Button.Location = new System.Drawing.Point(781, 40);
+            this.WorkStartEnd_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.WorkStartEnd_Button.Name = "WorkStartEnd_Button";
+            this.WorkStartEnd_Button.Size = new System.Drawing.Size(240, 72);
+            this.WorkStartEnd_Button.TabIndex = 4;
+            this.WorkStartEnd_Button.Text = "작업시작";
+            this.WorkStartEnd_Button.UseSelectable = true;
+            this.WorkStartEnd_Button.Click += new System.EventHandler(this.WorkStartEnd_Button_Click);
             // 
             // LedOn_Button
             // 
@@ -770,8 +758,7 @@
             this.Controls.Add(this.TodayWorkRecords_Datagridview);
             this.Controls.Add(this.LedOn_Button);
             this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.WorkEnd_Button);
-            this.Controls.Add(this.WorkStart_Button);
+            this.Controls.Add(this.WorkStartEnd_Button);
             this.Controls.Add(this.UserManage_Button);
             this.Controls.Add(this.ProductManage_Button);
             this.Controls.Add(this.ExcelExport_Button);
@@ -794,8 +781,7 @@
         private MetroFramework.Controls.MetroButton ExcelExport_Button;
         private MetroFramework.Controls.MetroButton ProductManage_Button;
         private MetroFramework.Controls.MetroButton UserManage_Button;
-        private MetroFramework.Controls.MetroButton WorkStart_Button;
-        private MetroFramework.Controls.MetroButton WorkEnd_Button;
+        private MetroFramework.Controls.MetroButton WorkStartEnd_Button;
         private MetroFramework.Controls.MetroButton LedOn_Button;
         private MetroFramework.Controls.MetroGrid TodayWorkRecords_Datagridview;
         private MetroFramework.Controls.MetroLabel TotalWeight_Label;
