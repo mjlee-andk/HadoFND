@@ -29,6 +29,16 @@ namespace HadoFND
             this.Activate();
             this.ActiveControl = LoginAccount_TextBox;
             LoginAccount_TextBox.Focus();
+
+            LoginAccount_TextBox.Text = Properties.Settings.Default.LoginIDSave;
+            if (Properties.Settings.Default.LoginIDSaveChecked)
+            {
+                SaveID_CheckBox.Checked = true;
+            }
+            else
+            {
+                SaveID_CheckBox.Checked = false;
+            }
         }
         
         private void login_button_click(object sender, EventArgs e)
@@ -83,6 +93,22 @@ namespace HadoFND
                     return;
                 }
                 conn.Close();
+
+                /*
+                 * 아이디 저장 체크 시
+                 */
+                if(SaveID_CheckBox.Checked)
+                {
+                    Properties.Settings.Default.LoginIDSave = LoginAccount_TextBox.Text;
+                    Properties.Settings.Default.LoginIDSaveChecked = true;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.LoginIDSave = "";
+                    Properties.Settings.Default.LoginIDSaveChecked = false;
+                    Properties.Settings.Default.Save();
+                }
 
                 /*
                 로그인 성공 시 로그인 폼 숨겨두고

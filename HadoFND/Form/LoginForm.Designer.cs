@@ -34,6 +34,7 @@
             this.LoginPassword_TextBox = new MetroFramework.Controls.MetroTextBox();
             this.LoginOk_Button = new MetroFramework.Controls.MetroButton();
             this.LoginClose_Button = new MetroFramework.Controls.MetroButton();
+            this.SaveID_CheckBox = new MetroFramework.Controls.MetroCheckBox();
             this.SuspendLayout();
             // 
             // metroButton1
@@ -53,7 +54,7 @@
             this.metroTextBox1.CustomButton.Image = null;
             this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(53, 1);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 17);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -165,6 +166,16 @@
             this.LoginClose_Button.UseSelectable = true;
             this.LoginClose_Button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
+            // SaveID_CheckBox
+            // 
+            this.SaveID_CheckBox.AutoSize = true;
+            this.SaveID_CheckBox.Location = new System.Drawing.Point(59, 232);
+            this.SaveID_CheckBox.Name = "SaveID_CheckBox";
+            this.SaveID_CheckBox.Size = new System.Drawing.Size(86, 15);
+            this.SaveID_CheckBox.TabIndex = 9;
+            this.SaveID_CheckBox.Text = "아이디 저장";
+            this.SaveID_CheckBox.UseSelectable = true;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginOk_Button;
@@ -172,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.SaveID_CheckBox);
             this.Controls.Add(this.LoginClose_Button);
             this.Controls.Add(this.LoginOk_Button);
             this.Controls.Add(this.LoginPassword_TextBox);
@@ -185,6 +197,7 @@
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -196,6 +209,7 @@
         private MetroFramework.Controls.MetroTextBox LoginPassword_TextBox;
         private MetroFramework.Controls.MetroButton LoginOk_Button;
         private MetroFramework.Controls.MetroButton LoginClose_Button;
+        private MetroFramework.Controls.MetroCheckBox SaveID_CheckBox;
     }
 }
 
