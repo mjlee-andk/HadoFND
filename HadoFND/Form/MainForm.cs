@@ -54,6 +54,60 @@ namespace HadoFND
         }
 
         //
+        // 제품 목록 불러오는 함수
+        // 제품 등록 또는 삭제 후 메인 화면에서 제품 목록 갱신한다.
+        //
+        private void RefreshProductList()
+        {
+            try
+            {
+                string connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
+                conn = new MySqlConnection(connectString);                
+                conn.Open();
+
+                var sqlselect = "SELECT * FROM product WHERE deleted_at is null;";
+                MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                // 등록된 제품 없을 경우 제품 등록 안내
+                if (!dr.HasRows)
+                {
+                    var text = "등록된 제품이 없습니다. 제품 관리에서 제품을 입력 후 프로그램을 재시작해주세요.";
+                    MessageBox.Show(text);
+                    return;
+                }
+
+                productList = new List<DataFormat.Product>();
+                while (dr.Read())
+                {
+                    var product = new DataFormat.Product();
+                    product.id = dr["id"].ToString();
+                    product.name = dr["name"].ToString();
+                    product.unit_weight = Convert.ToInt32(dr["unit_weight"]);
+                    product.code_number = Convert.ToInt32(dr["code_number"]);
+                    product.created_at = Convert.ToDateTime(dr["created_at"]);
+                    product.deleted_at = null;
+
+                    productList.Add(product);
+                }
+                Product_Name_Combobox.DisplayMember = "name";
+                Product_Name_Combobox.ValueMember = "id";
+                Product_Name_Combobox.DataSource = productList;
+                Product_Name_Combobox.SelectedIndex = -1;
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+            }
+            finally
+            {
+                
+            }
+        }
+
+        //
         // 일일 작업 현황 조회
         //
         private void GetTodayWorkRecords()
@@ -175,6 +229,7 @@ namespace HadoFND
         private void ProductManage_Button_Click(object sender, EventArgs e)
         {
             ProductManageForm productManageForm = new ProductManageForm();
+            productManageForm.ProductManageClosedEvent += new ProductManageClosedEventHandler(this.RefreshProductList);
             productManageForm.ShowDialog();
         }
 

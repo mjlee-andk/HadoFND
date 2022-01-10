@@ -5,9 +5,12 @@ using System.Windows.Forms;
 
 namespace HadoFND
 {
+    public delegate void ProductManageClosedEventHandler();
+
     public partial class ProductManageForm : MetroFramework.Forms.MetroForm // 상속 클래스 변경
     {
         ConfigFile _configFile = new ConfigFile();
+        public ProductManageClosedEventHandler ProductManageClosedEvent;
 
         MySqlConnection conn;
         int selectedCodeNumber = 0;
@@ -254,6 +257,15 @@ namespace HadoFND
             {
                 e.Handled = true;
             }
+        }
+
+        //
+        // 제품 등록 페이지 종료될 때 실행
+        // 제품 목록 변경된 것 갱신하기 위해
+        //
+        private void ProductManageForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProductManageClosedEvent();
         }
     }
 }
