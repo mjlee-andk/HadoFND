@@ -781,6 +781,40 @@ namespace HadoFND
             }
         }
 
-        
+        //
+        // DB 백업 버튼
+        //
+        private void DB_Backup_Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                var connectString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", _configFile.Db_IP, _configFile.Db_NAME, _configFile.Db_ID, _configFile.Db_PW);
+                var currentDate = DateTime.Now.ToString("yyyyMMdd");
+                using (MySqlConnection conn = new MySqlConnection(connectString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup mb = new MySqlBackup(cmd))
+                        {
+                            cmd.Connection = conn;
+                            conn.Open();
+                            mb.ExportToFile(_configFile.File_Path + "\\backup_" + currentDate + ".sql");
+                            conn.Close();                            
+                            MessageBox.Show("DB 백업이 완료되었습니다.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.AppStarting;
+            }
+        }
     }
 }

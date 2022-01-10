@@ -75,6 +75,7 @@
             this.SalePlaceStorePhone_Label = new MetroFramework.Controls.MetroLabel();
             this.SalePlaceStoreLeaderName_Label = new MetroFramework.Controls.MetroLabel();
             this.AddressText_Label = new MetroFramework.Controls.MetroLabel();
+            this.DB_Backup_Button = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.TodayWorkRecords_Datagridview)).BeginInit();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -534,7 +535,7 @@
             this.TotalWeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.TotalWeightText_Label.Location = new System.Drawing.Point(142, 9);
             this.TotalWeightText_Label.Name = "TotalWeightText_Label";
-            this.TotalWeightText_Label.Size = new System.Drawing.Size(266, 76);
+            this.TotalWeightText_Label.Size = new System.Drawing.Size(328, 76);
             this.TotalWeightText_Label.TabIndex = 20;
             this.TotalWeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -544,7 +545,7 @@
             this.WeightText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.WeightText_Label.Location = new System.Drawing.Point(142, 100);
             this.WeightText_Label.Name = "WeightText_Label";
-            this.WeightText_Label.Size = new System.Drawing.Size(266, 76);
+            this.WeightText_Label.Size = new System.Drawing.Size(328, 76);
             this.WeightText_Label.TabIndex = 19;
             this.WeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -554,7 +555,7 @@
             this.ScaleValueText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ScaleValueText_Label.Location = new System.Drawing.Point(142, 195);
             this.ScaleValueText_Label.Name = "ScaleValueText_Label";
-            this.ScaleValueText_Label.Size = new System.Drawing.Size(266, 76);
+            this.ScaleValueText_Label.Size = new System.Drawing.Size(328, 76);
             this.ScaleValueText_Label.TabIndex = 18;
             this.ScaleValueText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -568,7 +569,7 @@
             this.htmlLabel3.BackColor = System.Drawing.Color.White;
             this.htmlLabel3.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel3.Location = new System.Drawing.Point(434, 100);
+            this.htmlLabel3.Location = new System.Drawing.Point(476, 100);
             this.htmlLabel3.Name = "htmlLabel3";
             this.htmlLabel3.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel3.TabIndex = 17;
@@ -584,7 +585,7 @@
             this.htmlLabel2.BackColor = System.Drawing.Color.White;
             this.htmlLabel2.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel2.Location = new System.Drawing.Point(434, 195);
+            this.htmlLabel2.Location = new System.Drawing.Point(476, 195);
             this.htmlLabel2.Name = "htmlLabel2";
             this.htmlLabel2.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel2.TabIndex = 17;
@@ -600,7 +601,7 @@
             this.htmlLabel1.BackColor = System.Drawing.Color.White;
             this.htmlLabel1.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.htmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel1.Location = new System.Drawing.Point(434, 9);
+            this.htmlLabel1.Location = new System.Drawing.Point(476, 9);
             this.htmlLabel1.Name = "htmlLabel1";
             this.htmlLabel1.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel1.TabIndex = 16;
@@ -737,11 +738,22 @@
             this.AddressText_Label.TabIndex = 32;
             this.AddressText_Label.Text = "경기도 포천시 소흘읍 송우1리 110-28";
             // 
+            // DB_Backup_Button
+            // 
+            this.DB_Backup_Button.Location = new System.Drawing.Point(495, 11);
+            this.DB_Backup_Button.Name = "DB_Backup_Button";
+            this.DB_Backup_Button.Size = new System.Drawing.Size(75, 23);
+            this.DB_Backup_Button.TabIndex = 33;
+            this.DB_Backup_Button.Text = "DB백업";
+            this.DB_Backup_Button.UseSelectable = true;
+            this.DB_Backup_Button.Click += new System.EventHandler(this.DB_Backup_Button_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 732);
+            this.Controls.Add(this.DB_Backup_Button);
             this.Controls.Add(this.AddressText_Label);
             this.Controls.Add(this.SalePlaceStoreLeaderName_Label);
             this.Controls.Add(this.SalePlaceStoreName_Label);
@@ -819,5 +831,6 @@
         private System.Windows.Forms.Label TotalWeightText_Label;
         private MetroFramework.Controls.MetroTextBox ProductUnitWeight_Textbox;
         private MetroFramework.Controls.MetroLabel ProductUnitWeight_Label;
+        private MetroFramework.Controls.MetroButton DB_Backup_Button;
     }
 }
