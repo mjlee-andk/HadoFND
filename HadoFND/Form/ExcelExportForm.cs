@@ -188,9 +188,9 @@ namespace HadoFND
                 {
                     sqlselect =
                     "SELECT p.code_number AS 품번, p.name AS 제품명, p.unit_weight AS 단위중량_g, " +
+                    "w.state AS 상태, " +
                     "u.name AS 작업자, " +
-                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시, " +
-                    "w.state AS 상태 " +
+                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +                    
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +
@@ -204,9 +204,9 @@ namespace HadoFND
                 {
                     sqlselect =
                     "SELECT p.code_number AS 품번, p.name AS 제품명, p.unit_weight AS 단위중량_g, " +
+                    "w.state AS 상태, " +
                     "u.name AS 작업자, " +
-                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시, " +
-                    "w.state AS 상태 " +
+                    "w.weight AS 추가중량_g, w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +                    
                     "FROM workrecord w " +
                     "LEFT JOIN product p " +
                     "ON w.product_id = p.id " +

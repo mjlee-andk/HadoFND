@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductList_Label = new MetroFramework.Controls.MetroLabel();
             this.WorkRecordList_Datagridview = new MetroFramework.Controls.MetroGrid();
             this.ExcelExportClose_Button = new MetroFramework.Controls.MetroButton();
@@ -67,34 +67,35 @@
             this.WorkRecordList_Datagridview.AllowUserToDeleteRows = false;
             this.WorkRecordList_Datagridview.AllowUserToResizeColumns = false;
             this.WorkRecordList_Datagridview.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WorkRecordList_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WorkRecordList_Datagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.WorkRecordList_Datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkRecordList_Datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.WorkRecordList_Datagridview.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.WorkRecordList_Datagridview.BackgroundColor = System.Drawing.Color.Silver;
+            this.WorkRecordList_Datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WorkRecordList_Datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.WorkRecordList_Datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.WorkRecordList_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.WorkRecordList_Datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.WorkRecordList_Datagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WorkRecordList_Datagridview.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.WorkRecordList_Datagridview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.WorkRecordList_Datagridview.DefaultCellStyle = dataGridViewCellStyle8;
             this.WorkRecordList_Datagridview.EnableHeadersVisualStyles = false;
             this.WorkRecordList_Datagridview.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.WorkRecordList_Datagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -102,31 +103,31 @@
             this.WorkRecordList_Datagridview.Name = "WorkRecordList_Datagridview";
             this.WorkRecordList_Datagridview.ReadOnly = true;
             this.WorkRecordList_Datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.WorkRecordList_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.WorkRecordList_Datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.WorkRecordList_Datagridview.RowHeadersWidth = 20;
             this.WorkRecordList_Datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            this.WorkRecordList_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(3);
+            this.WorkRecordList_Datagridview.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.WorkRecordList_Datagridview.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.WorkRecordList_Datagridview.RowTemplate.Height = 23;
             this.WorkRecordList_Datagridview.RowTemplate.ReadOnly = true;
             this.WorkRecordList_Datagridview.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.WorkRecordList_Datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.WorkRecordList_Datagridview.Size = new System.Drawing.Size(762, 490);
+            this.WorkRecordList_Datagridview.Size = new System.Drawing.Size(887, 572);
             this.WorkRecordList_Datagridview.TabIndex = 11;
             // 
             // ExcelExportClose_Button
             // 
             this.ExcelExportClose_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ExcelExportClose_Button.Location = new System.Drawing.Point(802, 571);
+            this.ExcelExportClose_Button.Location = new System.Drawing.Point(926, 653);
             this.ExcelExportClose_Button.Name = "ExcelExportClose_Button";
             this.ExcelExportClose_Button.Size = new System.Drawing.Size(186, 56);
             this.ExcelExportClose_Button.TabIndex = 13;
@@ -137,7 +138,7 @@
             // ExcelExport_Button
             // 
             this.ExcelExport_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.ExcelExport_Button.Location = new System.Drawing.Point(802, 510);
+            this.ExcelExport_Button.Location = new System.Drawing.Point(926, 592);
             this.ExcelExport_Button.Name = "ExcelExport_Button";
             this.ExcelExport_Button.Size = new System.Drawing.Size(186, 55);
             this.ExcelExport_Button.TabIndex = 12;
@@ -151,7 +152,7 @@
             this.ProductList_Combobox.ItemHeight = 23;
             this.ProductList_Combobox.Location = new System.Drawing.Point(249, 102);
             this.ProductList_Combobox.Name = "ProductList_Combobox";
-            this.ProductList_Combobox.Size = new System.Drawing.Size(141, 29);
+            this.ProductList_Combobox.Size = new System.Drawing.Size(205, 29);
             this.ProductList_Combobox.TabIndex = 17;
             this.ProductList_Combobox.UseSelectable = true;
             this.ProductList_Combobox.SelectedIndexChanged += new System.EventHandler(this.ProductList_Combobox_SelectedIndexChanged);
@@ -192,7 +193,7 @@
             this.FilePath_TextBox.CustomButton.Visible = false;
             this.FilePath_TextBox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.FilePath_TextBox.Lines = new string[0];
-            this.FilePath_TextBox.Location = new System.Drawing.Point(477, 102);
+            this.FilePath_TextBox.Location = new System.Drawing.Point(541, 102);
             this.FilePath_TextBox.MaxLength = 45;
             this.FilePath_TextBox.Name = "FilePath_TextBox";
             this.FilePath_TextBox.PasswordChar = '\0';
@@ -202,7 +203,7 @@
             this.FilePath_TextBox.SelectionLength = 0;
             this.FilePath_TextBox.SelectionStart = 0;
             this.FilePath_TextBox.ShortcutsEnabled = true;
-            this.FilePath_TextBox.Size = new System.Drawing.Size(227, 29);
+            this.FilePath_TextBox.Size = new System.Drawing.Size(287, 29);
             this.FilePath_TextBox.TabIndex = 24;
             this.FilePath_TextBox.UseSelectable = true;
             this.FilePath_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -212,7 +213,7 @@
             // 
             this.FilePath_Label.AutoSize = true;
             this.FilePath_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.FilePath_Label.Location = new System.Drawing.Point(477, 67);
+            this.FilePath_Label.Location = new System.Drawing.Point(541, 67);
             this.FilePath_Label.Name = "FilePath_Label";
             this.FilePath_Label.Size = new System.Drawing.Size(130, 25);
             this.FilePath_Label.TabIndex = 23;
@@ -221,7 +222,7 @@
             // FilePath_Button
             // 
             this.FilePath_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.FilePath_Button.Location = new System.Drawing.Point(710, 102);
+            this.FilePath_Button.Location = new System.Drawing.Point(834, 102);
             this.FilePath_Button.Name = "FilePath_Button";
             this.FilePath_Button.Size = new System.Drawing.Size(75, 29);
             this.FilePath_Button.TabIndex = 25;
@@ -232,7 +233,7 @@
             // Search_Button
             // 
             this.Search_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.Search_Button.Location = new System.Drawing.Point(396, 102);
+            this.Search_Button.Location = new System.Drawing.Point(460, 102);
             this.Search_Button.Name = "Search_Button";
             this.Search_Button.Size = new System.Drawing.Size(75, 29);
             this.Search_Button.TabIndex = 26;
@@ -261,7 +262,7 @@
             // AllSearch_Button
             // 
             this.AllSearch_Button.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.AllSearch_Button.Location = new System.Drawing.Point(396, 67);
+            this.AllSearch_Button.Location = new System.Drawing.Point(460, 67);
             this.AllSearch_Button.Name = "AllSearch_Button";
             this.AllSearch_Button.Size = new System.Drawing.Size(75, 29);
             this.AllSearch_Button.TabIndex = 29;
@@ -273,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.ClientSize = new System.Drawing.Size(1125, 732);
             this.ControlBox = false;
             this.Controls.Add(this.AllSearch_Button);
             this.Controls.Add(this.DateEnd_DateTime);
