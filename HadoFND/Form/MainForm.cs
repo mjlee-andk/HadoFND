@@ -582,77 +582,76 @@ namespace HadoFND
                     if (currentAddWeightG > _configFile.Min_Weight)
                     {
                         //
-                        // 현재 추가 중량이 상한 또는 하한 값 범위를 벗어나면 경광등으로 신호 전달
+                        // 경광등으로 신호 전달
                         //
-                        if (currentAddWeightG <= selectedProductLoValue || currentAddWeightG >= selectedProductHiValue)
-                        {
-                            //
-                            // 경광등으로 신호 전달
-                            //
+                        var state = "";
 
-                            // LO 적색등
-                            if (currentAddWeightG < selectedProductLoValue)
-                            {
-                                ledSerialPort.Write("L\r\n");
-                            }
-                            // HI 황색등
-                            if (currentAddWeightG > selectedProductHiValue)
-                            {
-                                ledSerialPort.Write("H\r\n");
-                            }
+                        // LO 적색등
+                        if (currentAddWeightG <= selectedProductLoValue)
+                        {
+                            ledSerialPort.Write("L\r\n");
+                            state = "LO";
                         }
+                        // HI 황색등
+                        else if (currentAddWeightG >= selectedProductHiValue)
+                        {
+                            ledSerialPort.Write("H\r\n");
+                            state = "HI";
+                        }
+                        // OK 녹색등
+                        else
+                        {   
+                            ledSerialPort.Write("O\r\n");
+                            state = "OK";
+                        }
+
                         //
                         // 현재 추가 중량 및 총 중량 DB에 기록
                         //
-                        else
+
+                        // 작업수 +1
+                        currentWorkCount++;
+                        // 총 작업 중량 = 총 작업 중량 + 추가 중량
+                        currentTotalWeight += currentAddWeight;
+
+                        try
                         {
-                            // 이상없을 경우 경광등의 등 모두 끄고 OK 신호 보내기
-                            // OK 녹색등
-                            ledSerialPort.Write("O\r\n");
+                            var sqlInsert = "INSERT INTO workrecord ( id, user_id, product_id, weight, total_weight, work_count, is_finish, created_at, state ) VALUES (@id, @user_id, @product_id, @weight, @total_weight, @work_count, @is_finish, @created_at, @state)";
+                            MySqlCommand cmd = new MySqlCommand(sqlInsert, conn);
 
-                            // 작업수 +1
-                            currentWorkCount++;
-                            // 총 작업 중량 = 총 작업 중량 + 추가 중량
-                            currentTotalWeight += currentAddWeight;
+                            cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
+                            cmd.Parameters.AddWithValue("@user_id", currentUserId);
+                            cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
+                            cmd.Parameters.AddWithValue("@weight", currentAddWeightG);
+                            cmd.Parameters.AddWithValue("@total_weight", currentTotalWeight);
+                            cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
+                            cmd.Parameters.AddWithValue("@is_finish", false);
+                            cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@state", state);
 
-                            try
-                            {
-                                var sqlInsert = "INSERT INTO workrecord ( id, user_id, product_id, weight, total_weight, work_count, is_finish, created_at ) VALUES (@id, @user_id, @product_id, @weight, @total_weight, @work_count, @is_finish, @created_at)";
-                                MySqlCommand cmd = new MySqlCommand(sqlInsert, conn);
-
-                                cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
-                                cmd.Parameters.AddWithValue("@user_id", currentUserId);
-                                cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
-                                cmd.Parameters.AddWithValue("@weight", currentAddWeightG);
-                                cmd.Parameters.AddWithValue("@total_weight", currentTotalWeight);
-                                cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
-                                cmd.Parameters.AddWithValue("@is_finish", false);
-                                cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
-
-                                conn.Open();
-                                cmd.ExecuteNonQuery();
-                            }
-                            catch (Exception ex)
-                            {
-                                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
-                            }
-                            finally
-                            {
-                                conn.Close();
-                                // 이전 총 중량 = 이전 총 중량 + 추가 중량
-                                beforeTotalWeight += currentAddWeight;
-                                TotalWeightText_Label.Text = currentTotalWeight.ToString("F2");
-                                // 작업 수 갱신
-                                WorkCount_Textbox.Text = currentWorkCount.ToString();
-                            }
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                            // 이전 총 중량 = 이전 총 중량 + 추가 중량
+                            beforeTotalWeight += currentAddWeight;
+                            TotalWeightText_Label.Text = currentTotalWeight.ToString("F2");
+                            // 작업 수 갱신
+                            WorkCount_Textbox.Text = currentWorkCount.ToString();
                         }
                     }
 
                     /*
-                    플랫폼에 더이상 물건을 올릴 수 없을 때 물건을 모두 내리고 다시 올린다.
-                    이 때 추가 중량은 0보다 작은 값이 나올 것이다.
-                    물건을 모두 내렸으므로 작업을 처음 시작하는 것과 동일하게 이전 총 중량을 0으로 리셋해야한다.
-                    단, 저울 계량값이 최소 무게보다 작을 경우에만 이전 총 중량을 0으로 리셋한다.
+                        플랫폼에 더이상 물건을 올릴 수 없을 때 물건을 모두 내리고 다시 올린다.
+                        이 때 추가 중량은 0보다 작은 값이 나올 것이다.
+                        물건을 모두 내렸으므로 작업을 처음 시작하는 것과 동일하게 이전 총 중량을 0으로 리셋해야한다.
+                        단, 저울 계량값이 최소 무게보다 작을 경우에만 이전 총 중량을 0으로 리셋한다.
                      */
                     else
                     {
