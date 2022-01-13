@@ -27,6 +27,9 @@ namespace HadoFND
         float currentAddWeight = 0; // 현재 추가 중량(kg)
         int currentAddWeightG = 0; // 현재 추가 중량(g)
 
+        int stWeightCnt = 0; // 안정상태 계량값이 전달된 횟수를 체크하는 변수
+        int beforeCurrentAddWeightG = 0; // 지금 출력된 계량값의 바로 이전에 출력된 계량값
+
         int selectedProductUnitWeight = 0; // 선택한 제품의 단위중량값
         int selectedProductHiValue = 0; // 선택한 제품의 상한값
         int selectedProductLoValue = 0; // 선택한 제품의 하한값
@@ -494,8 +497,8 @@ namespace HadoFND
 
                 // 총 작업 중량 표시 초기화
                 TotalWeightText_Label.Text = currentTotalWeight.ToString("F2");
-                // 저울 계량값 표시 초기화
-                ScaleValueText_Label.Text = currentScaleValue.ToString("F2");
+                //// 저울 계량값 표시 초기화
+                //ScaleValueText_Label.Text = currentScaleValue.ToString("F2");
                 // 현재 추가 중량 표시 초기화
                 WeightText_Label.Text = currentAddWeightG.ToString();
                 // 작업수 표시 초기화
@@ -512,12 +515,13 @@ namespace HadoFND
             // 작업 시작 호출
             if(WorkStartEnd_Button.Text == "작업시작")
             {
+                stWeightCnt = 0;
                 WorkStart();
             }
             // 작업 종료 호출
             else
             {
-                WorkEnd();                
+                WorkEnd();
             }
         }
 
@@ -560,7 +564,7 @@ namespace HadoFND
 
                 // 시리얼 데이터에서 계량값(숫자만) 추출해서 저울 계량값에 표시
                 currentScaleValue = float.Parse(onlyNumber);
-                ScaleValueText_Label.Text = currentScaleValue.ToString("F2");
+                //ScaleValueText_Label.Text = currentScaleValue.ToString("F2");
 
                 // 추가 중량 = 저울 계량값 - 이전 총 중량
                 currentAddWeight = currentScaleValue - beforeTotalWeight;
@@ -576,75 +580,84 @@ namespace HadoFND
                 //
                 if (header1 == "ST")
                 {
+                    if(currentAddWeightG == beforeCurrentAddWeightG)
+                    {
+                        stWeightCnt++;
+                    }
+
                     //
                     // 현재 추가 중량이 최소 무게보다 클 경우에 작업으로 기록
                     //
                     if (currentAddWeightG > _configFile.Min_Weight)
                     {
-                        //
-                        // 경광등으로 신호 전달
-                        //
-                        var state = "";
-
-                        // LO 적색등
-                        if (currentAddWeightG <= selectedProductLoValue)
+                        if (stWeightCnt >= 10)
                         {
-                            ledSerialPort.Write("L\r\n");
-                            state = "LO";
-                        }
-                        // HI 황색등
-                        else if (currentAddWeightG >= selectedProductHiValue)
-                        {
-                            ledSerialPort.Write("H\r\n");
-                            state = "HI";
-                        }
-                        // OK 녹색등
-                        else
-                        {   
-                            ledSerialPort.Write("O\r\n");
-                            state = "OK";
-                        }
+                            //
+                            // 경광등으로 신호 전달
+                            //
+                            var state = "";
 
-                        //
-                        // 현재 추가 중량 및 총 중량 DB에 기록
-                        //
+                            // LO 적색등
+                            if (currentAddWeightG <= selectedProductLoValue)
+                            {
+                                ledSerialPort.Write("L\r\n");
+                                state = "LO";
+                            }
+                            // HI 황색등
+                            else if (currentAddWeightG >= selectedProductHiValue)
+                            {
+                                ledSerialPort.Write("H\r\n");
+                                state = "HI";
+                            }
+                            // OK 녹색등
+                            else
+                            {
+                                ledSerialPort.Write("O\r\n");
+                                state = "OK";
+                            }
 
-                        // 작업수 +1
-                        currentWorkCount++;
-                        // 총 작업 중량 = 총 작업 중량 + 추가 중량
-                        currentTotalWeight += currentAddWeight;
+                            //
+                            // 현재 추가 중량 및 총 중량 DB에 기록
+                            //
 
-                        try
-                        {
-                            var sqlInsert = "INSERT INTO workrecord ( id, user_id, product_id, weight, total_weight, work_count, is_finish, created_at, state ) VALUES (@id, @user_id, @product_id, @weight, @total_weight, @work_count, @is_finish, @created_at, @state)";
-                            MySqlCommand cmd = new MySqlCommand(sqlInsert, conn);
+                            // 작업수 +1
+                            currentWorkCount++;
+                            //// 총 작업 중량 = 총 작업 중량 + 추가 중량
+                            //currentTotalWeight += currentAddWeight;
 
-                            cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
-                            cmd.Parameters.AddWithValue("@user_id", currentUserId);
-                            cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
-                            cmd.Parameters.AddWithValue("@weight", currentAddWeightG);
-                            cmd.Parameters.AddWithValue("@total_weight", currentTotalWeight);
-                            cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
-                            cmd.Parameters.AddWithValue("@is_finish", false);
-                            cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
-                            cmd.Parameters.AddWithValue("@state", state);
+                            try
+                            {
+                                var sqlInsert = "INSERT INTO workrecord ( id, user_id, product_id, weight, total_weight, work_count, is_finish, created_at, state ) VALUES (@id, @user_id, @product_id, @weight, @total_weight, @work_count, @is_finish, @created_at, @state)";
+                                MySqlCommand cmd = new MySqlCommand(sqlInsert, conn);
 
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                        }
-                        catch (Exception ex)
-                        {
-                            Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                            // 이전 총 중량 = 이전 총 중량 + 추가 중량
-                            beforeTotalWeight += currentAddWeight;
-                            TotalWeightText_Label.Text = currentTotalWeight.ToString("F2");
-                            // 작업 수 갱신
-                            WorkCount_Textbox.Text = currentWorkCount.ToString();
-                        }
+                                cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
+                                cmd.Parameters.AddWithValue("@user_id", currentUserId);
+                                cmd.Parameters.AddWithValue("@product_id", Product_Name_Combobox.SelectedValue);
+                                cmd.Parameters.AddWithValue("@weight", currentAddWeightG);
+                                cmd.Parameters.AddWithValue("@total_weight", currentScaleValue);
+                                cmd.Parameters.AddWithValue("@work_count", currentWorkCount);
+                                cmd.Parameters.AddWithValue("@is_finish", false);
+                                cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
+                                cmd.Parameters.AddWithValue("@state", state);
+
+                                conn.Open();
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                Util.LogFile(ex.Message, ex.ToString(), "", 0, this.FindForm().Name);
+                            }
+                            finally
+                            {
+                                conn.Close();
+                                // 이전 총 중량 = 이전 총 중량 + 추가 중량
+                                beforeTotalWeight += currentAddWeight;
+                                TotalWeightText_Label.Text = currentScaleValue.ToString("F2");
+                                // 작업 수 갱신
+                                WorkCount_Textbox.Text = currentWorkCount.ToString();
+                                stWeightCnt = 0;
+                            }
+                        }                        
                     }
 
                     /*
@@ -655,12 +668,16 @@ namespace HadoFND
                      */
                     else
                     {
-                        if ((int)(currentScaleValue * 1000) < _configFile.Min_Weight)
-                        {
-                            // 이전 총 중량을 0으로 리셋
-                            beforeTotalWeight = 0;
-                        }
-                    }
+                        beforeTotalWeight = currentScaleValue;
+                        TotalWeightText_Label.Text = currentScaleValue.ToString("F2");
+                        //if ((int)(currentScaleValue * 1000) < _configFile.Min_Weight)
+                        //{
+                        //    // 이전 총 중량을 0으로 리셋
+                        //    beforeTotalWeight = 0;
+                        //}
+                    }                                      
+
+                    beforeCurrentAddWeightG = currentAddWeightG;
                 }
             }
             catch(Exception ex)
@@ -783,6 +800,8 @@ namespace HadoFND
 
         //
         // DB 백업 버튼
+        // 참고 사이트
+        // https://kwikedemy.com/create-backup-and-restore-of-mysql-database-using-winform-application-c/
         //
         private void DB_Backup_Button_Click(object sender, EventArgs e)
         {

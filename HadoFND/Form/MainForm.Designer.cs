@@ -52,15 +52,12 @@
             this.Hi_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.Lo_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.Product_Name_Combobox = new MetroFramework.Controls.MetroComboBox();
-            this.ScaleValue_Label = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.ProductUnitWeight_Textbox = new MetroFramework.Controls.MetroTextBox();
             this.ProductUnitWeight_Label = new MetroFramework.Controls.MetroLabel();
             this.TotalWeightText_Label = new System.Windows.Forms.Label();
             this.WeightText_Label = new System.Windows.Forms.Label();
-            this.ScaleValueText_Label = new System.Windows.Forms.Label();
             this.htmlLabel3 = new MetroFramework.Drawing.Html.HtmlLabel();
-            this.htmlLabel2 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.LedOff_Button = new MetroFramework.Controls.MetroButton();
@@ -438,28 +435,14 @@
             this.Product_Name_Combobox.UseSelectable = true;
             this.Product_Name_Combobox.SelectedIndexChanged += new System.EventHandler(this.Product_Name_Combobox_SelectedIndexChanged);
             // 
-            // ScaleValue_Label
-            // 
-            this.ScaleValue_Label.AutoSize = true;
-            this.ScaleValue_Label.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ScaleValue_Label.Location = new System.Drawing.Point(12, 222);
-            this.ScaleValue_Label.Name = "ScaleValue_Label";
-            this.ScaleValue_Label.Size = new System.Drawing.Size(89, 25);
-            this.ScaleValue_Label.TabIndex = 17;
-            this.ScaleValue_Label.Text = "저울 중량";
-            this.ScaleValue_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.ProductUnitWeight_Textbox);
             this.metroPanel1.Controls.Add(this.ProductUnitWeight_Label);
             this.metroPanel1.Controls.Add(this.TotalWeightText_Label);
             this.metroPanel1.Controls.Add(this.WeightText_Label);
-            this.metroPanel1.Controls.Add(this.ScaleValueText_Label);
             this.metroPanel1.Controls.Add(this.htmlLabel3);
-            this.metroPanel1.Controls.Add(this.htmlLabel2);
             this.metroPanel1.Controls.Add(this.htmlLabel1);
-            this.metroPanel1.Controls.Add(this.ScaleValue_Label);
             this.metroPanel1.Controls.Add(this.Product_Name_Combobox);
             this.metroPanel1.Controls.Add(this.Lo_Textbox);
             this.metroPanel1.Controls.Add(this.Hi_Textbox);
@@ -549,16 +532,6 @@
             this.WeightText_Label.TabIndex = 19;
             this.WeightText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ScaleValueText_Label
-            // 
-            this.ScaleValueText_Label.BackColor = System.Drawing.Color.LightGray;
-            this.ScaleValueText_Label.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ScaleValueText_Label.Location = new System.Drawing.Point(142, 195);
-            this.ScaleValueText_Label.Name = "ScaleValueText_Label";
-            this.ScaleValueText_Label.Size = new System.Drawing.Size(328, 76);
-            this.ScaleValueText_Label.TabIndex = 18;
-            this.ScaleValueText_Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // htmlLabel3
             // 
             this.htmlLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -574,22 +547,6 @@
             this.htmlLabel3.Size = new System.Drawing.Size(83, 76);
             this.htmlLabel3.TabIndex = 17;
             this.htmlLabel3.Text = "g";
-            // 
-            // htmlLabel2
-            // 
-            this.htmlLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.htmlLabel2.AutoScroll = true;
-            this.htmlLabel2.AutoScrollMinSize = new System.Drawing.Size(81, 74);
-            this.htmlLabel2.AutoSize = false;
-            this.htmlLabel2.BackColor = System.Drawing.Color.White;
-            this.htmlLabel2.Font = new System.Drawing.Font("돋움", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.htmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.htmlLabel2.Location = new System.Drawing.Point(476, 195);
-            this.htmlLabel2.Name = "htmlLabel2";
-            this.htmlLabel2.Size = new System.Drawing.Size(83, 76);
-            this.htmlLabel2.TabIndex = 17;
-            this.htmlLabel2.Text = "kg";
             // 
             // htmlLabel1
             // 
@@ -808,11 +765,9 @@
         private MetroFramework.Controls.MetroTextBox Hi_Textbox;
         private MetroFramework.Controls.MetroTextBox Lo_Textbox;
         private MetroFramework.Controls.MetroComboBox Product_Name_Combobox;
-        private MetroFramework.Controls.MetroLabel ScaleValue_Label;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel3;
-        private MetroFramework.Drawing.Html.HtmlLabel htmlLabel2;
         private MetroFramework.Drawing.Html.HtmlLabel htmlLabel1;
         private MetroFramework.Controls.MetroButton LedOff_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -826,7 +781,6 @@
         private MetroFramework.Controls.MetroLabel SalePlaceStoreName_Label;
         private MetroFramework.Controls.MetroLabel SalePlaceStorePhone_Label;
         private MetroFramework.Controls.MetroLabel AddressText_Label;
-        private System.Windows.Forms.Label ScaleValueText_Label;
         private System.Windows.Forms.Label WeightText_Label;
         private System.Windows.Forms.Label TotalWeightText_Label;
         private MetroFramework.Controls.MetroTextBox ProductUnitWeight_Textbox;
