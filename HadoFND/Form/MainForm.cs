@@ -494,6 +494,7 @@ namespace HadoFND
                 beforeTotalWeight = 0; // 이전 총중량
                 currentAddWeight = 0; // 현재 추가 중량(kg)
                 currentAddWeightG = 0; // 현재 추가 중량(g)
+                beforeCurrentAddWeightG = 0; // 직전 현재 추가 중량(g)
 
                 // 총 작업 중량 표시 초기화
                 TotalWeightText_Label.Text = currentTotalWeight.ToString("F2");
@@ -655,6 +656,7 @@ namespace HadoFND
                                     // 작업 수 갱신
                                     WorkCount_Textbox.Text = currentWorkCount.ToString();
                                     stWeightCnt = 0;
+                                    beforeCurrentAddWeightG = 0;
                                 }
                             }
                         }
@@ -675,7 +677,11 @@ namespace HadoFND
                             //    beforeTotalWeight = 0;
                             //}
                         }
-                    }                    
+                    }
+                    else
+                    {
+                        stWeightCnt = 0;
+                    }
 
                     beforeCurrentAddWeightG = currentAddWeightG;
                 }
