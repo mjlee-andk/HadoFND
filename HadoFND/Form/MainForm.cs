@@ -311,6 +311,7 @@ namespace HadoFND
             UserManage_Button.Enabled = false;
             ExcelExport_Button.Enabled = false;
             Product_Name_Combobox.Enabled = false;
+            DB_Backup_Button.Enabled = false;
 
             //
             // 상한, 하한 입력 안되도록
@@ -481,6 +482,7 @@ namespace HadoFND
                 UserManage_Button.Enabled = true;
                 ExcelExport_Button.Enabled = true;
                 Product_Name_Combobox.Enabled = true;
+                DB_Backup_Button.Enabled = true;
 
                 //
                 // 상한, 하한 입력 되도록

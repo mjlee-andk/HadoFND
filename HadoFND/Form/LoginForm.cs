@@ -83,47 +83,53 @@ namespace HadoFND
                 {
                     var text = "등록되지 않은 계정입니다. 아이디를 확인해주세요.";
                     MessageBox.Show(text);
-                    return;
-                }
-
-                dr.Read();
-
-                user_id = dr["id"].ToString();
-
-                // 비밀번호 일치하면 메인화면으로 이동
-                if (!user_password.Equals(dr["password"].ToString()))
-                {
-                    var text = "비밀번호가 맞지 않습니다.";
-                    MessageBox.Show(text);
-                    return;
-                }
-                conn.Close();
-
-                /*
-                 * 아이디 저장 체크 시
-                 */
-                if(SaveID_CheckBox.Checked)
-                {
-                    Properties.Settings.Default.LoginIDSave = LoginAccount_TextBox.Text;
-                    Properties.Settings.Default.LoginIDSaveChecked = true;
-                    Properties.Settings.Default.Save();
+                    conn.Close();
                 }
                 else
                 {
-                    Properties.Settings.Default.LoginIDSave = "";
-                    Properties.Settings.Default.LoginIDSaveChecked = false;
-                    Properties.Settings.Default.Save();
+                    dr.Read();
+
+                    user_id = dr["id"].ToString();
+
+                    // 비밀번호 일치하면 메인화면으로 이동
+                    if (!user_password.Equals(dr["password"].ToString()))
+                    {
+                        var text = "비밀번호가 맞지 않습니다.";
+                        MessageBox.Show(text);
+                        conn.Close();
+                    }
+                    else
+                    {
+                        conn.Close();
+                        /*
+                         * 아이디 저장 체크 시
+                         */
+                        if (SaveID_CheckBox.Checked)
+                        {
+                            Properties.Settings.Default.LoginIDSave = LoginAccount_TextBox.Text;
+                            Properties.Settings.Default.LoginIDSaveChecked = true;
+                            Properties.Settings.Default.Save();
+                        }
+                        else
+                        {
+                            Properties.Settings.Default.LoginIDSave = "";
+                            Properties.Settings.Default.LoginIDSaveChecked = false;
+                            Properties.Settings.Default.Save();
+                        }
+
+                        /*
+                        로그인 성공 시 로그인 폼 숨겨두고
+                        메인 폼 띄운다. 메인 폼 종료 시 로그인 폼의 this.Close()가 실행된다.
+                         */
+                        this.Hide();
+                        MainForm.currentUserId = user_id;
+                        MainForm mainForm = new MainForm();
+                        mainForm.ShowDialog();
+                        this.Close();
+                    }                    
                 }
 
-                /*
-                로그인 성공 시 로그인 폼 숨겨두고
-                메인 폼 띄운다. 메인 폼 종료 시 로그인 폼의 this.Close()가 실행된다.
-                 */
-                this.Hide();
-                MainForm.currentUserId = user_id;
-                MainForm mainForm = new MainForm();
-                mainForm.ShowDialog();
-                this.Close();
+                
             }
             catch (Exception ex)
             {

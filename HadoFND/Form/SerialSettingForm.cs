@@ -204,12 +204,12 @@ namespace HadoFND
                 var ledParity = Led_Parity_ComboBox.Text;
                 var ledStopbits = Led_Stopbits_ComboBox.Text;
 
-                if (indicatorPort.Equals(ledPort))
-                {
-                    var text = "동일한 포트는 사용할 수 없습니다.";
-                    MessageBox.Show(text);
-                    return;
-                }
+                //if (indicatorPort.Equals(ledPort))
+                //{
+                //    var text = "동일한 포트는 사용할 수 없습니다.";
+                //    MessageBox.Show(text);
+                //    return;
+                //}
 
                 if (indicatorPort.Equals("") || indicatorPort == null)
                 {
