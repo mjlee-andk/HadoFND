@@ -72,7 +72,7 @@ namespace HadoFND
             {
                 conn.Open();
 
-                var sqlSelect = "SELECT * FROM user WHERE account = @account;";
+                var sqlSelect = "SELECT * FROM user WHERE account = @account AND deleted_at is null;";
                 
 
                 MySqlCommand cmd = new MySqlCommand(sqlSelect, conn);
