@@ -124,12 +124,13 @@ namespace HadoFND
             //
             sqlselect =
                 "SELECT p.name AS 제품명, " +
-                "w.total_weight AS 총중량_kg, w.work_count AS 작업수, w.created_at AS 작업일시 " +
+                "w.weight AS 추가중량_g, w.work_count AS 작업수, w.created_at AS 작업일시 " +
                 "FROM workrecord w " +
                 "LEFT JOIN product p " +
                 "ON w.product_id = p.id " +
-                "WHERE w.is_finish = TRUE AND DATE(w.created_at) BETWEEN @startDate AND @endDate " +
-                "ORDER BY w.created_at ASC, w.work_count ASC";
+                "WHERE DATE(w.created_at) BETWEEN @startDate AND @endDate " +
+                //"WHERE w.is_finish = TRUE AND DATE(w.created_at) BETWEEN @startDate AND @endDate " +
+                "ORDER BY w.created_at DESC, w.work_count DESC";
 
             MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
             cmd.Parameters.AddWithValue("@startDate", startDate);
@@ -454,7 +455,6 @@ namespace HadoFND
             finally
             {
                 MessageBox.Show("작업이 종료 되었습니다.");
-                GetTodayWorkRecords();
                 conn.Close();
                 //
                 // 시리얼 포트 닫기
@@ -644,6 +644,8 @@ namespace HadoFND
 
                                     conn.Open();
                                     cmd.ExecuteNonQuery();
+
+                                    GetTodayWorkRecords();
                                 }
                                 catch (Exception ex)
                                 {
