@@ -302,6 +302,25 @@ namespace HadoFND
                 return;
             }
 
+            //
+            // 작업 수 입력했는지 확인
+            //
+
+            if(WorkCount_Textbox.Text == "" || WorkCount_Textbox == null)
+            {
+                var text = "작업수를 입력해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+            int workCnt = Convert.ToInt32(WorkCount_Textbox.Text);
+            if (workCnt < 0)
+            {
+                var text = "작업수는 0이상의 값을 입력해주세요.";
+                MessageBox.Show(text);
+                return;
+            }
+            currentWorkCount = workCnt;
+
             WorkStartEnd_Button.Text = "작업종료";
 
             //
@@ -320,6 +339,11 @@ namespace HadoFND
 
             Hi_Textbox.Enabled = false;
             Lo_Textbox.Enabled = false;
+
+            //
+            // 작업수 입력 안되도록
+            //
+            WorkCount_Textbox.Enabled = false;
 
             //
             // 선택한 제품으로 가장 최근에 작업을 했으나 작업완료를 하지 못한 기록이 있는지 검색하기
@@ -489,6 +513,11 @@ namespace HadoFND
                 //
                 Hi_Textbox.Enabled = true;
                 Lo_Textbox.Enabled = true;
+
+                //
+                // 작업수 입력 되도록
+                //
+                WorkCount_Textbox.Enabled = true;
 
                 currentWorkCount = 0; // 현재 작업수
                 currentTotalWeight = 0; // 총 작업 중량
@@ -843,6 +872,14 @@ namespace HadoFND
             finally
             {
                 Cursor.Current = Cursors.AppStarting;
+            }
+        }
+
+        private void WorkCount_Textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
             }
         }
     }
