@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HadoFND.Form;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -266,6 +267,32 @@ namespace HadoFND
         private void ProductManageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ProductManageClosedEvent();
+        }
+
+        //
+        // 제품 목록에서 더블 클릭 시 제품 정보 수정 가능
+        //
+        private void ProductList_Datagridview_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //
+            // 선택한 셀의 품번(Code_Number)으로 이벤트 처리
+            //
+            if (ProductList_Datagridview.SelectedCells[2] == null)
+            {
+                selectedCodeNumber = 0;
+                return;
+            }
+
+            if (ProductList_Datagridview.SelectedCells[2].Value.ToString().Equals("") || ProductList_Datagridview.SelectedCells[2].Value.ToString() == null)
+            {
+                selectedCodeNumber = 0;
+                return;
+            }
+
+            ProductManageEditForm productManageEditForm = new ProductManageEditForm();
+            ProductManageEditForm.currentProductCodeNumber = Convert.ToInt32(ProductList_Datagridview.SelectedCells[2].Value);
+            productManageEditForm.ProductManageEditClosedEvent += new ProductManageEditClosedEventHandler(this.SetDefaultValue);
+            productManageEditForm.ShowDialog();            
         }
     }
 }

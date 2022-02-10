@@ -139,7 +139,10 @@ namespace HadoFND
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
-            Util.CloseCurrentFormMessageBox(this);
+            if (MessageBox.Show("종료하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -272,6 +272,7 @@
             this.ProductList_Datagridview.Size = new System.Drawing.Size(380, 300);
             this.ProductList_Datagridview.TabIndex = 10;
             this.ProductList_Datagridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductList_Datagridview_CellClick);
+            this.ProductList_Datagridview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductList_Datagridview_CellDoubleClick);
             // 
             // ProductManageForm
             // 
