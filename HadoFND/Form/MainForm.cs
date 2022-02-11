@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using RJCP.IO.Ports;
 using System.Data;
 using System.Threading;
+using System.Reflection;
 
 namespace HadoFND
 {
@@ -45,6 +46,7 @@ namespace HadoFND
         private void MainForm_Load(object sender, EventArgs e)
         {
             SetDefaultValue();
+            TodayWorkRecords_Datagridview.DoubleBuffered(true);
         }
 
         //
@@ -129,7 +131,7 @@ namespace HadoFND
                 "LEFT JOIN product p " +
                 "ON w.product_id = p.id " +
                 "WHERE DATE(w.created_at) BETWEEN @startDate AND @endDate " +
-                //"WHERE w.is_finish = TRUE AND DATE(w.created_at) BETWEEN @startDate AND @endDate " +
+                //"WHERE w.is_finish =                                                                                                                                                TRUE AND DATE(w.created_at) BETWEEN @startDate AND @endDate " +
                 "ORDER BY w.created_at DESC, w.work_count DESC";
 
             MySqlCommand cmd = new MySqlCommand(sqlselect, conn);
@@ -881,6 +883,20 @@ namespace HadoFND
             {
                 e.Handled = true;
             }
+        }        
+    }
+
+    //
+    // DataGridView 더블버퍼 추가하여 속도 개선
+    //
+    public static class ExtensionMethods
+    {
+        public static void DoubleBuffered(this DataGridView dgv, bool setting)
+        {
+            Type dgvType = dgv.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, setting, null);
         }
     }
 }
